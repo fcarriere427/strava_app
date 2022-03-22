@@ -17,6 +17,13 @@ function App() {
         >
           Learn React puis voir Venise et mourir
         </a>
+
+        <p> Lien vers
+          <a href="letsq.xyz/strava_old_app">
+            l'ancienne appli Strava
+          </a>
+        </p>
+
       </header>
     </div>
   );
