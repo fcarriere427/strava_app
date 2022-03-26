@@ -10,9 +10,7 @@ class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <p>Welcome to my personal Strava app</p>
         </header>
-        <div className="tracker">
-          <StravaTracker name = "Florian"/>
-        </div>
+        <StravaTracker name = "Florian"/>
         <p><a href="strava_old_app">Ancienne appli Strava</a></p>
       </div>
     );
@@ -21,17 +19,12 @@ class App extends React.Component {
 
 class StravaTracker extends React.Component {
   render() {
-      return (
-        <div className="tracker">
-          <h1>Tracker for {this.props.name}</h1>
-          <ul>
-            <li>Instagram</li>
-            <li>WhatsApp</li>
-            <li>Oculus</li>
-          </ul>
-        </div>
-      );
-    }
+    return (
+      <div className="Tracker">
+        <h3>Tracker for {this.props.name}</h3>
+      </div>
+    );
+  }
 }
 
 export default App;
