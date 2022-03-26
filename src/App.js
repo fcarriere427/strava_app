@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p> Lien vers <br />
-          <a href="strava_old_app">l\'ancienne appli Strava</a>
+          <a href="strava_old_app">l'ancienne appli Strava</a>
         </p>
       </header>
     </div>
