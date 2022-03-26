@@ -16,18 +16,22 @@ class App extends React.Component {
 
 class Header extends React.Component {
   render() {
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Welcome to my personal Strava app</p>
-    </header>
+    return(
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>Welcome to my personal Strava app</p>
+      </header>
+    )
   }
 }
 
 class Footer extends React.Component {
   render() {
-    <header className="App-footer">
-      <p><a href="strava_old_app">Ancienne appli Strava</a></p>
-    </header>
+    return(
+      <header className="App-footer">
+        <p><a href="strava_old_app">Ancienne appli Strava</a></p>
+      </header>
+    )
   }
 }
 
