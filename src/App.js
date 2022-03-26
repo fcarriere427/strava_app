@@ -1,4 +1,4 @@
-import logo from './atom_icon.png';
+import logo from './atom.png';
 import './App.css';
 
 function App() {
