@@ -8,6 +8,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <p>Welcome to my personal Strava app</p>
         </header>
         <div className="tracker">
           <StravaTracker name = "Florian"/>
