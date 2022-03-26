@@ -19,7 +19,7 @@ function App() {
         </a>
 
         <p> Lien vers
-          <a href="letsq.xyz/strava_old_app">
+          <a href="strava_old_app">
             l'ancienne appli Strava
           </a>
         </p>
