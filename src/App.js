@@ -56,10 +56,10 @@ class StravaTracker extends React.Component {
   }
 
   render() {
+    let cumul = calcCumulAnnuel();
     return (
       <div className="Tracker">
         <h3>Tracker for {this.props.name}</h3>
-        let cumul = calcCumulAnnuel();
         <h3>Current mileage (as of today): {cumul}</h3>
       </div>
     );
