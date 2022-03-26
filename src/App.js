@@ -66,10 +66,11 @@ function getMonthDistances(){
 // récupération des distances réelles par mois
 function calcCumulAnnuel(){
   let cumul = 0;
+  console.log("on est dans calcCumulAnnuel");
   getMonthDistances()
   .then(cumulMensuel => {
     // ici, cumulMensuel['2015,07'] renvoie la bonne valeur, en mètres
-    console.log("on est dans calcCumulAnnuel");
+    console.log("on est dans le then de getMonthDistances");
     for (let i = 1; i <= 12; i++){
       // prepare la clé de lecture dans le tableau reduce
       let month = (i).toString(); if (month.length<2) { month = '0' + month };
