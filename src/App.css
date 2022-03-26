@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: orange;/* #282c34;*/
-  min-height: 10vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +26,7 @@
 
 .Tracker {
   background-color: #e6f2ff; /* bleu ciel */
-  min-height: 60vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
