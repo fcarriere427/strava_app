@@ -49,6 +49,7 @@ class StravaTracker extends React.Component {
 
 // récupération des distances réelles par mois
 function getMonthDistances(){
+  console.log("on est dans getMonthDistances");
   return new Promise((resolve, reject) => {
     let reduce = [];
     fetch('/strava_old/month_distance')
@@ -68,6 +69,7 @@ function calcCumulAnnuel(){
   getMonthDistances()
   .then(cumulMensuel => {
     // ici, cumulMensuel['2015,07'] renvoie la bonne valeur, en mètres
+    console.log("on est dans calcCumulAnnuel");
     for (let i = 1; i <= 12; i++){
       // prepare la clé de lecture dans le tableau reduce
       let month = (i).toString(); if (month.length<2) { month = '0' + month };
