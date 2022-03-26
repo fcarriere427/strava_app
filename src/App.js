@@ -28,7 +28,7 @@ class Header extends React.Component {
 class Footer extends React.Component {
   render() {
     return(
-      <header className="App-footer">
+      <header className="App-header">
         <p><a href="strava_old_app">Ancienne appli Strava</a></p>
       </header>
     )
