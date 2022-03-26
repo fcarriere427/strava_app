@@ -64,7 +64,7 @@ function getMonthDistances(){
 
 // récupération des distances réelles par mois
 function calcCumulAnnuel(){
-  const cumul = 0;
+  let cumul = 0;
   getMonthDistances()
   .then(cumulMensuel => {
     // ici, reduce['2015,07'] renvoie la bonne valeur, en mètres
