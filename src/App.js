@@ -36,25 +36,6 @@ class Footer extends React.Component {
 }
 
 class StravaTracker extends React.Component {
-
-  calcCumulAnnuel(){
-    const cumul = 0;
-    getMonthDistances()
-    .then(cumulMensuel => {
-      // ici, reduce['2015,07'] renvoie la bonne valeur, en mètres
-      for (let i = 1; i <= 12; i++){
-        // prepare la clé de lecture dans le tableau reduce
-        let month = (i).toString(); if (month.length<2) { month = '0' + month };
-        let now = new Date();
-        let year = now.getFullYear();
-        let key = year + ',' + month;
-        // si la valeur n'est pas nulle, on l'ajoute au cumul
-        if (cumulMensuel[key]) {cumul = cumul + cumulMensuel[key]};
-      }
-      return Math.round(cumul/1000*10)/10;; // div par 1000 pour passer en km, puis arrondi au dixième
-    })
-  }
-
   render() {
     let cumul = calcCumulAnnuel();
     return (
@@ -78,6 +59,25 @@ function getMonthDistances(){
       })
     })
     .then(data => resolve(reduce));
+  })
+}
+
+// récupération des distances réelles par mois
+function calcCumulAnnuel(){
+  const cumul = 0;
+  getMonthDistances()
+  .then(cumulMensuel => {
+    // ici, reduce['2015,07'] renvoie la bonne valeur, en mètres
+    for (let i = 1; i <= 12; i++){
+      // prepare la clé de lecture dans le tableau reduce
+      let month = (i).toString(); if (month.length<2) { month = '0' + month };
+      let now = new Date();
+      let year = now.getFullYear();
+      let key = year + ',' + month;
+      // si la valeur n'est pas nulle, on l'ajoute au cumul
+      if (cumulMensuel[key]) {cumul = cumul + cumulMensuel[key]};
+    }
+    return Math.round(cumul/1000*10)/10;; // div par 1000 pour passer en km, puis arrondi au dixième
   })
 }
 
