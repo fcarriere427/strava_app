@@ -1,5 +1,4 @@
-//import logo from './logo.svg';
-import logo from './favicon.ico';
+import logo from './atom_icon.png';
 import './App.css';
 
 function App() {
@@ -7,7 +6,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        // <link rel="icon" type="image/png" href="./img/favicon.ico"/>
         <p><a href="strava_old_app">Ancienne appli Strava</a>
         </p>
       </header>
