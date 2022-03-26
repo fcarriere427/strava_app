@@ -45,10 +45,11 @@ class StravaTracker extends React.Component {
       for (let i = 1; i <= 12; i++){
         // prepare la clé de lecture dans le tableau reduce
         let month = (i).toString(); if (month.length<2) { month = '0' + month };
+        let now = new Date();
         let year = now.getFullYear();
         let key = year + ',' + month;
         // si la valeur n'est pas nulle, on l'ajoute au cumul
-        if (cumulMensuel[key]) {cumul = cumul + reduce[key]};
+        if (cumulMensuel[key]) {cumul = cumul + cumulMensuel[key]};
       }
       return Math.round(cumul/1000*10)/10;; // div par 1000 pour passer en km, puis arrondi au dixième
     })
@@ -58,7 +59,8 @@ class StravaTracker extends React.Component {
     return (
       <div className="Tracker">
         <h3>Tracker for {this.props.name}</h3>
-        <h3>Current mileage (as of today): {calcCumulAnnuel()}</h3>
+        let cumul = calcCumulAnnuel();
+        <h3>Current mileage (as of today): {cumul}</h3>
       </div>
     );
   }
