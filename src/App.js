@@ -41,7 +41,7 @@ class StravaTracker extends React.Component {
     return (
       <div className="Tracker">
         <h3>Tracker for {this.props.name}</h3>
-        <h3>Current mileage (as of today): {cumul}</h3>
+        <h3>Current mileage: {cumul} km</h3>
       </div>
     );
   }
@@ -77,6 +77,7 @@ function calcCumulAnnuel(){
       // si la valeur n'est pas nulle, on l'ajoute au cumul
       if (cumulMensuel[key]) {cumul = cumul + cumulMensuel[key]};
     }
+    console.log('cumul = ' + cumul);
     return Math.round(cumul/1000*10)/10;; // div par 1000 pour passer en km, puis arrondi au dixième
   })
 }
