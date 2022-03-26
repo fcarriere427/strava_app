@@ -55,6 +55,7 @@ function getMonthDistances(){
     fetch('/strava_old/month_distance')
     .then(response => response.json())
     .then(data => {
+      console.log("on est dansle then au sein de getMonthDistances");
       data.rows.forEach(doc => {
         reduce[doc.key] = doc.value;
       })
