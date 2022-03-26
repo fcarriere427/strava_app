@@ -67,7 +67,7 @@ function calcCumulAnnuel(){
   let cumul = 0;
   getMonthDistances()
   .then(cumulMensuel => {
-    // ici, reduce['2015,07'] renvoie la bonne valeur, en mètres
+    // ici, cumulMensuel['2015,07'] renvoie la bonne valeur, en mètres
     for (let i = 1; i <= 12; i++){
       // prepare la clé de lecture dans le tableau reduce
       let month = (i).toString(); if (month.length<2) { month = '0' + month };
