@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from './atom.png';
 import './App.css';
 
