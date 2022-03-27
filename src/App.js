@@ -54,7 +54,7 @@ function calcCumulAnnuel(){
       if (cumulMensuel[key]) {cumul = cumul + cumulMensuel[key]};
     }
     console.log('cumul = ' + cumul);
-    this.setState({ cumulAnnuel: Math.round(cumul/1000*10)/10;}); // div par 1000 pour passer en km, puis arrondi au dixième
+    this.setState({ cumulAnnuel: Math.round(cumul/1000*10)/10 }); // div par 1000 pour passer en km, puis arrondi au dixième
   })
 }
 
