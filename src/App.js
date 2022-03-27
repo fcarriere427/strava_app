@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import './App.css';
 import Header from './components/Global/Header/Header';
+import Footer from './components/Global/Footer/Footer';
 
 class App extends React.Component {
   render() {
@@ -14,18 +15,7 @@ class App extends React.Component {
   }
 }
 
-class Footer extends React.Component {
-  render() {
-    return(
-      <header className="App-header">
-        <p><a href="strava_old_app">Ancienne appli Strava</a></p>
-      </header>
-    )
-  }
-}
-
 class StravaTracker extends React.Component {
-
   render() {
     let cumul = calcCumulAnnuel();
     console.log('cumul (dans le render) = ' + cumul);
