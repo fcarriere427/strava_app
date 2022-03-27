@@ -59,6 +59,7 @@ class StravaTracker extends React.Component {
     .catch(error => {
       console.log('erreur fetch = ' + error);
       reject(error);
+    })
     .then(cumulMensuel => {
       // ici, cumulMensuel['2015,07'] renvoie la bonne valeur, en mètres
       console.log("4. on est dans le then de getMonthDistances");
