@@ -49,6 +49,10 @@ class StravaTracker extends React.Component {
     console.log("1. on est dans calcCumulAnnuel");
     fetch('/strava_old/month_distance')
     //.then(response => response.json())
+
+//// REPRENDRE ICI /////////
+
+
     .then(data => {
       console.log("2. on remplit le tableau reduce, avec data = " + data.toString());
       let reduce = [];
