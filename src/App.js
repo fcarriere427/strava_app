@@ -25,6 +25,47 @@ class StravaTracker extends React.Component {
     this.calcCumulAnnuel();
   }
 
+  // récupération des distances réelles par mois
+  function calcCumulAnnuel(){
+    let cumul = 0;
+    console.log("1. on est dans calcCumulAnnuel");
+    getMonthDistances()
+    .then(cumulMensuel => {
+      // ici, cumulMensuel['2015,07'] renvoie la bonne valeur, en mètres
+      console.log("4. on est dans le then de getMonthDistances");
+      for (let i = 1; i <= 12; i++){
+        // prepare la clé de lecture dans le tableau reduce
+        let month = (i).toString(); if (month.length<2) { month = '0' + month };
+        let now = new Date();
+        let year = now.getFullYear();
+        let key = year + ',' + month;
+        // si la valeur n'est pas nulle, on l'ajoute au cumul
+        if (cumulMensuel[key]) {cumul = cumul + cumulMensuel[key]};
+      }
+      console.log('cumul = ' + cumul);
+      this.setState({ cumulAnnuel: Math.round(cumul/1000*10)/10 }); // div par 1000 pour passer en km, puis arrondi au dixième
+    })
+  }
+
+  // récupération des distances réelles par mois
+  function getMonthDistances(){
+    console.log("2. on est dans getMonthDistances");
+    return new Promise((resolve, reject) => {
+      let reduce = [];
+      fetch('/strava_old/month_distance')
+      .then(response => response.json())
+      .then(data => {
+        console.log("3. on est dans le then au sein de getMonthDistances");
+        data.rows.forEach(doc => {reduce[doc.key] = doc.value })
+      })
+      .then(data => resolve(reduce))
+      .catch(error => {
+        console.log('erreur fetch = ' + error);
+        reject(error);
+      });
+    })
+  }
+
   render() {
     return (
       <div className="Tracker">
@@ -35,46 +76,5 @@ class StravaTracker extends React.Component {
   }
 }
 
-
-// récupération des distances réelles par mois
-function calcCumulAnnuel(){
-  let cumul = 0;
-  console.log("1. on est dans calcCumulAnnuel");
-  getMonthDistances()
-  .then(cumulMensuel => {
-    // ici, cumulMensuel['2015,07'] renvoie la bonne valeur, en mètres
-    console.log("4. on est dans le then de getMonthDistances");
-    for (let i = 1; i <= 12; i++){
-      // prepare la clé de lecture dans le tableau reduce
-      let month = (i).toString(); if (month.length<2) { month = '0' + month };
-      let now = new Date();
-      let year = now.getFullYear();
-      let key = year + ',' + month;
-      // si la valeur n'est pas nulle, on l'ajoute au cumul
-      if (cumulMensuel[key]) {cumul = cumul + cumulMensuel[key]};
-    }
-    console.log('cumul = ' + cumul);
-    this.setState({ cumulAnnuel: Math.round(cumul/1000*10)/10 }); // div par 1000 pour passer en km, puis arrondi au dixième
-  })
-}
-
-// récupération des distances réelles par mois
-function getMonthDistances(){
-  console.log("2. on est dans getMonthDistances");
-  return new Promise((resolve, reject) => {
-    let reduce = [];
-    fetch('/strava_old/month_distance')
-    .then(response => response.json())
-    .then(data => {
-      console.log("3. on est dans le then au sein de getMonthDistances");
-      data.rows.forEach(doc => {reduce[doc.key] = doc.value })
-    })
-    .then(data => resolve(reduce))
-    .catch(error => {
-      console.log('erreur fetch = ' + error);
-      reject(error);
-    });
-  })
-}
 
 export default App;
