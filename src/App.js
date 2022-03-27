@@ -16,36 +16,25 @@ class App extends React.Component {
 }
 
 class StravaTracker extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {cumulAnnuel: 0};
+  }
+
+  componentDidMount(){
+    this.calcCumulAnnuel();
+  }
+
   render() {
-    let cumul = calcCumulAnnuel();
-    console.log('cumul (dans le render) = ' + cumul);
     return (
       <div className="Tracker">
         <h3>Tracker for {this.props.name}</h3>
-        <h3>Current mileage: {cumul} km</h3>
+        <h3>Current mileage: {this.state.cumulAnnuel} km</h3>
       </div>
     );
   }
 }
 
-// récupération des distances réelles par mois
-function getMonthDistances(){
-  console.log("2. on est dans getMonthDistances");
-  return new Promise((resolve, reject) => {
-    let reduce = [];
-    fetch('/strava_old/month_distance')
-    .then(response => response.json())
-    .then(data => {
-      console.log("3. on est dans le then au sein de getMonthDistances");
-      data.rows.forEach(doc => {reduce[doc.key] = doc.value })
-    })
-    .then(data => resolve(reduce))
-    .catch(error => {
-      console.log('erreur fetch = ' + error);
-      reject(error);
-    });
-  })
-}
 
 // récupération des distances réelles par mois
 function calcCumulAnnuel(){
@@ -65,7 +54,26 @@ function calcCumulAnnuel(){
       if (cumulMensuel[key]) {cumul = cumul + cumulMensuel[key]};
     }
     console.log('cumul = ' + cumul);
-    return Math.round(cumul/1000*10)/10;; // div par 1000 pour passer en km, puis arrondi au dixième
+    this.setState({ cumulAnnuel: Math.round(cumul/1000*10)/10;}); // div par 1000 pour passer en km, puis arrondi au dixième
+  })
+}
+
+// récupération des distances réelles par mois
+function getMonthDistances(){
+  console.log("2. on est dans getMonthDistances");
+  return new Promise((resolve, reject) => {
+    let reduce = [];
+    fetch('/strava_old/month_distance')
+    .then(response => response.json())
+    .then(data => {
+      console.log("3. on est dans le then au sein de getMonthDistances");
+      data.rows.forEach(doc => {reduce[doc.key] = doc.value })
+    })
+    .then(data => resolve(reduce))
+    .catch(error => {
+      console.log('erreur fetch = ' + error);
+      reject(error);
+    });
   })
 }
 
