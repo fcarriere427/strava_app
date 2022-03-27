@@ -37,6 +37,8 @@ class Footer extends React.Component {
 
 class StravaTracker extends React.Component {
 
+  constructor
+
   render() {
     let cumul = calcCumulAnnuel();
     console.log('cumul (dans le render) = ' + cumul);
@@ -58,11 +60,13 @@ function getMonthDistances(){
     .then(response => response.json())
     .then(data => {
       console.log("3. on est dans le then au sein de getMonthDistances");
-      data.rows.forEach(doc => {
-        reduce[doc.key] = doc.value;
-      })
+      data.rows.forEach(doc => {reduce[doc.key] = doc.value })
     })
-    .then(data => resolve(reduce));
+    .then(data => resolve(reduce))
+    .catch(error => {
+      console.log('erreur fetch = ' + error);
+      reject(error);
+    });
   })
 }
 
