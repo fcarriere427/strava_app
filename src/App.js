@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {Component} from "react";
 import logo from './atom.png';
 import './App.css';
+import Header from './components/Global/Header/Header';
 
 class App extends React.Component {
   render() {
@@ -11,17 +12,6 @@ class App extends React.Component {
         <Footer />
       </div>
     );
-  }
-}
-
-class Header extends React.Component {
-  render() {
-    return(
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Welcome to my personal Strava app</p>
-      </header>
-    )
   }
 }
 
