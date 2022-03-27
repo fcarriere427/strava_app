@@ -37,8 +37,6 @@ class Footer extends React.Component {
 
 class StravaTracker extends React.Component {
 
-  constructor
-
   render() {
     let cumul = calcCumulAnnuel();
     console.log('cumul (dans le render) = ' + cumul);
