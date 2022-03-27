@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import logo from './atom.png';
 import './App.css';
 import Header from './components/Global/Header/Header';
 
