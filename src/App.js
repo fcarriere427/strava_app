@@ -26,29 +26,39 @@ class StravaTracker extends React.Component {
   }
 
   // récupération des distances réelles par mois
-  getMonthDistances(){
-    console.log("2. on est dans getMonthDistances");
-    return new Promise((resolve, reject) => {
-      let reduce = [];
-      fetch('/strava_old/month_distance')
-      .then(response => response.json())
-      .then(data => {
-        console.log("3. on est dans le then au sein de getMonthDistances");
-        data.rows.forEach(doc => {reduce[doc.key] = doc.value })
-      })
-      .then(data => resolve(reduce))
-      .catch(error => {
-        console.log('erreur fetch = ' + error);
-        reject(error);
-      });
-    })
-  }
+  // getMonthDistances(){
+  //   console.log("2. on est dans getMonthDistances");
+  //   return new Promise((resolve, reject) => {
+  //     let reduce = [];
+  //     fetch('/strava_old/month_distance')
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log("3. on est dans le then au sein de getMonthDistances");
+  //       data.rows.forEach(doc => {reduce[doc.key] = doc.value })
+  //     })
+  //     .then(data => resolve(reduce))
+  //     .catch(error => {
+  //       console.log('erreur fetch = ' + error);
+  //       reject(error);
+  //     });
+  //   })
+  // }
 
   // récupération des distances réelles par mois
   calcCumulAnnuel(){
     let cumul = 0;
     console.log("1. on est dans calcCumulAnnuel");
-    getMonthDistances()
+    let reduce = [];
+    fetch('/strava_old/month_distance')
+    .then(response => response.json())
+    .then(data => {
+      console.log("3. on est dans le then au sein de getMonthDistances");
+      data.rows.forEach(doc => {reduce[doc.key] = doc.value })
+    })
+    .then(data => resolve(reduce))
+    .catch(error => {
+      console.log('erreur fetch = ' + error);
+      reject(error);
     .then(cumulMensuel => {
       // ici, cumulMensuel['2015,07'] renvoie la bonne valeur, en mètres
       console.log("4. on est dans le then de getMonthDistances");
