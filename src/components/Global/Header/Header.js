@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
+// import logo from './logo.png';
 
 class Header extends Component {
   render() {
@@ -7,7 +7,7 @@ class Header extends Component {
       <div className="App">
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h1 className="App-title">Welcome to my personal Strava App</h1>
+          <h2 className="App-title">Welcome to my personal Strava App</h2>
         </header>
       </div>
     );
@@ -15,14 +15,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-// class Header extends React.Component {
-//   render() {
-//     return(
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>Welcome to my personal Strava app</p>
-//       </header>
-//     )
-//   }
-// }
