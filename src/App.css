@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 1vmin);
   color: white;
+  display: inline-block; /* pour avoir les 2 éléments sur la même ligne */
 }
 
 .Tracker {
