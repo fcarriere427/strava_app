@@ -37,10 +37,9 @@ class Footer extends React.Component {
 
 class StravaTracker extends React.Component {
 
-
   render() {
     let cumul = calcCumulAnnuel();
-    console.log('cumul (dans le render)= ' + cumul);
+    console.log('cumul (dans le render) = ' + cumul);
     return (
       <div className="Tracker">
         <h3>Tracker for {this.props.name}</h3>
@@ -52,13 +51,13 @@ class StravaTracker extends React.Component {
 
 // récupération des distances réelles par mois
 function getMonthDistances(){
-  console.log("on est dans getMonthDistances");
+  console.log("2. on est dans getMonthDistances");
   return new Promise((resolve, reject) => {
     let reduce = [];
     fetch('/strava_old/month_distance')
     .then(response => response.json())
     .then(data => {
-      console.log("on est dans le then au sein de getMonthDistances");
+      console.log("3. on est dans le then au sein de getMonthDistances");
       data.rows.forEach(doc => {
         reduce[doc.key] = doc.value;
       })
@@ -70,11 +69,11 @@ function getMonthDistances(){
 // récupération des distances réelles par mois
 function calcCumulAnnuel(){
   let cumul = 0;
-  console.log("on est dans calcCumulAnnuel");
+  console.log("1. on est dans calcCumulAnnuel");
   getMonthDistances()
   .then(cumulMensuel => {
     // ici, cumulMensuel['2015,07'] renvoie la bonne valeur, en mètres
-    console.log("on est dans le then de getMonthDistances");
+    console.log("4. on est dans le then de getMonthDistances");
     for (let i = 1; i <= 12; i++){
       // prepare la clé de lecture dans le tableau reduce
       let month = (i).toString(); if (month.length<2) { month = '0' + month };
