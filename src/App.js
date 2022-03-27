@@ -26,7 +26,7 @@ class StravaTracker extends React.Component {
   }
 
   // récupération des distances réelles par mois
-  function calcCumulAnnuel(){
+  calcCumulAnnuel(){
     let cumul = 0;
     console.log("1. on est dans calcCumulAnnuel");
     getMonthDistances()
@@ -48,7 +48,7 @@ class StravaTracker extends React.Component {
   }
 
   // récupération des distances réelles par mois
-  function getMonthDistances(){
+  getMonthDistances(){
     console.log("2. on est dans getMonthDistances");
     return new Promise((resolve, reject) => {
       let reduce = [];
