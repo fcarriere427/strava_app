@@ -26,6 +26,25 @@ class StravaTracker extends React.Component {
   }
 
   // récupération des distances réelles par mois
+  getMonthDistances(){
+    console.log("2. on est dans getMonthDistances");
+    return new Promise((resolve, reject) => {
+      let reduce = [];
+      fetch('/strava_old/month_distance')
+      .then(response => response.json())
+      .then(data => {
+        console.log("3. on est dans le then au sein de getMonthDistances");
+        data.rows.forEach(doc => {reduce[doc.key] = doc.value })
+      })
+      .then(data => resolve(reduce))
+      .catch(error => {
+        console.log('erreur fetch = ' + error);
+        reject(error);
+      });
+    })
+  }
+
+  // récupération des distances réelles par mois
   calcCumulAnnuel(){
     let cumul = 0;
     console.log("1. on est dans calcCumulAnnuel");
@@ -44,25 +63,6 @@ class StravaTracker extends React.Component {
       }
       console.log('cumul = ' + cumul);
       this.setState({ cumulAnnuel: Math.round(cumul/1000*10)/10 }); // div par 1000 pour passer en km, puis arrondi au dixième
-    })
-  }
-
-  // récupération des distances réelles par mois
-  getMonthDistances(){
-    console.log("2. on est dans getMonthDistances");
-    return new Promise((resolve, reject) => {
-      let reduce = [];
-      fetch('/strava_old/month_distance')
-      .then(response => response.json())
-      .then(data => {
-        console.log("3. on est dans le then au sein de getMonthDistances");
-        data.rows.forEach(doc => {reduce[doc.key] = doc.value })
-      })
-      .then(data => resolve(reduce))
-      .catch(error => {
-        console.log('erreur fetch = ' + error);
-        reject(error);
-      });
     })
   }
 
