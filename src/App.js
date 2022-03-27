@@ -50,7 +50,7 @@ class StravaTracker extends React.Component {
     fetch('/strava_old/month_distance')
     //.then(response => response.json())
     .then(data => {
-      console.log("2. on remplit le tableau reduce");
+      console.log("2. on remplit le tableau reduce, avec data = " + data);
       let reduce = [];
       data.rows.forEach(doc => {reduce[doc.key] = doc.value })
     })
