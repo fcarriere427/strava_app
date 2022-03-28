@@ -8,7 +8,7 @@ class Tracker extends React.Component {
 
   componentDidMount(){
     fetch('/strava/testAPI')
-    //.then(response => response.json())
+    .then(response => response.json())
     .then(data => {
       console.log("réponse de l'API Test : " + data);
       this.setState({ cumulAnnuel: data });
