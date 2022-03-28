@@ -5,7 +5,6 @@ class StravaTracker extends React.Component {
   }
 
   componentDidMount(){
-    console.log("1. on est dans calcCumulAnnuel");
     fetch('/strava/testAPI')
     //.then(response => response.json())
     .then(data => {
