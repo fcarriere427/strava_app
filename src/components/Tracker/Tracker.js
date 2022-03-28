@@ -3,20 +3,20 @@ import React, { Component } from 'react';
 class Tracker extends Component {
   constructor(props){
     super(props);
-    this.state = {cumulAnnuel: 0};
+    this.state = {cumulAnnuel: 123};
   }
 
-  componentDidMount(){
-    fetch('/strava_old/testAPI')
-    .then(response => response.json())
-    .then(data => {
-      console.log("réponse de l'API Test : " + data);
-      this.setState({ cumulAnnuel: data });
-    })
-    .catch(error => {
-      console.log('erreur fetch testAPI = ' + error);
-    })
-  }
+  // componentDidMount(){
+  //   fetch('/strava_old/testAPI')
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     console.log("réponse de l'API Test : " + data);
+  //     this.setState({ cumulAnnuel: data });
+  //   })
+  //   .catch(error => {
+  //     console.log('erreur fetch testAPI = ' + error);
+  //   })
+  // }
 
   render() {
     return (
