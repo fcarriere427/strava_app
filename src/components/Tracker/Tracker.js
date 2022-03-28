@@ -7,14 +7,14 @@ class Tracker extends Component {
   }
 
   componentDidMount(){
-    fetch('letsq.xyz/strava_old/testAPI')
+    fetch('strava_old/testAPI')
     .then(response => response.json())
     .then(data => {
       console.log("réponse de l'API Test : " + data);
       this.setState({ cumulAnnuel: data });
     })
     .catch(error => {
-      console.log('erreur fetch testAPI = ' + error);
+      console.log('erreur fetch testAPI = ' + error.message);
     })
   }
 
