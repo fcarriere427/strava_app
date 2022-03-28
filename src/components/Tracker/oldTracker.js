@@ -1,4 +1,6 @@
-class StravaTracker extends React.Component {
+import React, { Component } from 'react';
+
+class StravaTracker extends Component {
   constructor(props){
     super(props);
     this.state = {cumulAnnuel: 0};
@@ -72,4 +74,4 @@ class StravaTracker extends React.Component {
   }
 }
 
-export default Tracker;
+export default StravaTracker;
