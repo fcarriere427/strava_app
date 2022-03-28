@@ -1,4 +1,4 @@
-class StravaTracker extends React.Component {
+class Tracker extends React.Component {
   constructor(props){
     super(props);
     this.state = {cumulAnnuel: 0};
