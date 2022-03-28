@@ -11,7 +11,7 @@ class Tracker extends Component {
     .then(response => response.json())
     .then(data => {
       console.log("réponse de l'API Test : " + data);
-      this.setState({ cumulAnnuel: data });
+      this.setState({ cumulAnnuel: 222 });
     })
     .catch(error => {
       console.log('erreur fetch testAPI = ' + error.message);
