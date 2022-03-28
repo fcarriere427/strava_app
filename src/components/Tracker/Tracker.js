@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Tracker extends React.Component {
+class Tracker extends Component {
   constructor(props){
     super(props);
     this.state = {cumulAnnuel: 0};
