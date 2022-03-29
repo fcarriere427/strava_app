@@ -25,9 +25,9 @@ class Tracker extends Component {
         this.setState({ cumulAnnuel: "???" });
       }
     )
-    .catch(error => {
-      console.log('erreur fetch testAPI = ' + error.message);
-    })
+    // .catch(error => {
+    //   console.log('erreur fetch testAPI = ' + error.message);
+    // })
   }
 
   render() {
