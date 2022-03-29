@@ -21,7 +21,8 @@ class Tracker extends Component {
         this.setState({ cumulAnnuel: result });
       },
       (error) => {
-        this.setState({ cumulAnnuel: "KO" });
+        console.log("réponse ERREUR de l'API Test : " + error);
+        this.setState({ cumulAnnuel: "???" });
       }
     )
     .catch(error => {
