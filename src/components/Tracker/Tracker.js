@@ -7,7 +7,7 @@ class Tracker extends Component {
   }
 
   componentDidMount(){
-    const url = "https://letsq.xyz/strava_old/testAPI";
+    const url = "https://192.168.1.35/strava_old/testAPI";
     var headers = {}
     fetch(url, {
       method : "GET",
@@ -25,9 +25,9 @@ class Tracker extends Component {
         this.setState({ cumulAnnuel: "???" });
       }
     )
-    // .catch(error => {
-    //   console.log('erreur fetch testAPI = ' + error.message);
-    // })
+    .catch(error => {
+      console.log('erreur fetch testAPI = ' + error.message);
+    })
   }
 
   render() {
