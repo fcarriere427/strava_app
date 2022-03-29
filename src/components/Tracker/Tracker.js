@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Tracker extends Component {
   constructor(props){
     super(props);
-    this.state = {cumulAnnuel: 123};
+    this.state = {cumulAnnuel: "123"};
   }
 
   componentDidMount(){
@@ -15,10 +15,15 @@ class Tracker extends Component {
       headers: headers
     })
     .then(response => response.json())
-    .then(data => {
-      console.log("réponse de l'API Test : " + data);
-      this.setState({ cumulAnnuel: 222 });
-    })
+    .then(
+      (result) => {
+        console.log("réponse de l'API Test : " + result);
+        this.setState({ cumulAnnuel: result });
+      },
+      (error) => {
+        this.setState({ cumulAnnuel: "KO" });
+      }
+    )
     .catch(error => {
       console.log('erreur fetch testAPI = ' + error.message);
     })
