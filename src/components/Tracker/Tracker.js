@@ -7,7 +7,7 @@ class Tracker extends Component {
   }
 
   componentDidMount(){
-    const url = "https://192.168.1.35/strava_old/testAPI";
+    const url = "http://192.168.1.35/strava_old/testAPI";
     var headers = {}
     fetch(url, {
       method : "GET",
