@@ -11,7 +11,7 @@ class Tracker extends Component {
     var headers = {}
     fetch(url, {
       method : "GET",
-      mode: 'cors',
+      mode: 'no-cors',
       headers: headers
     })
     .then(response => response.json())
