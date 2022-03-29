@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+const axios = require('axios').default;
+
 class Tracker extends Component {
   constructor(props){
     super(props);
@@ -7,13 +9,8 @@ class Tracker extends Component {
   }
 
   componentDidMount(){
-    const url = "/strava_old/testAPI";
-    var headers = {}
-    fetch(url, {
-      method : "GET",
-      mode: 'no-cors', // obsolete !!!???
-      headers: headers
-    })
+    const url = 'https://letsq.xyz/strava_old/testAPI';
+    axios.get(url)
     .then(response => response.json())
     .then(
       (result) => {
