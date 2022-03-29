@@ -14,7 +14,7 @@ class Tracker extends Component {
       mode: 'no-cors', // obsolete !!!???
       headers: headers
     })
-    //.then(response => response.json())
+    .then(response => response.json())
     .then(
       (result) => {
         console.log("réponse de l'API Test : " + result);
