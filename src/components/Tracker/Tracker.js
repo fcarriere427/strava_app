@@ -7,7 +7,13 @@ class Tracker extends Component {
   }
 
   componentDidMount(){
-    fetch('https://letsq.xyz/strava_old/testAPI')
+    const url = "https://letsq.xyz/strava_old/testAPI";
+    var headers = {}
+    fetch(url, {
+      method : "GET",
+      mode: 'cors',
+      headers: headers
+    })
     .then(response => response.json())
     .then(data => {
       console.log("réponse de l'API Test : " + data);
