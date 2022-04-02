@@ -5,10 +5,13 @@ const axios = require('axios').default;
 class Tracker extends Component {
   constructor(props){
     super(props);
-    this.state = {cumulAnnuel: "123"};
+    this.state = {cumulAnnuel: ""};
+    this.state = {lastActivityDate: ""};
   }
 
   componentDidMount(){
+
+    // API test
     const url = 'https://letsq.xyz/strava/testAPI';
     axios.get(url)
     .then(
@@ -21,9 +24,21 @@ class Tracker extends Component {
         this.setState({ cumulAnnuel: "???" });
       }
     )
-    .catch(error => {
-      console.log('erreur fetch testAPI = ' + error.message);
-    })
+
+    // API test
+    const url = 'https://letsq.xyz/strava/last_activity';
+    axios.get(url)
+    .then(
+      (response) => {
+        console.log("réponse de l'API : " + response.data.);
+        this.setState({ lastActivityDate: response.data });
+      },
+      (error) => {
+        console.log("ERREUR de l'API  : " + error);
+        this.setState({ lastActivityDate: "???" });
+      }
+    )
+
   }
 
   render() {
@@ -31,6 +46,7 @@ class Tracker extends Component {
       <div className="Tracker">
         <h3>Tracker for {this.props.name}</h3>
         <h3>Current mileage: {this.state.cumulAnnuel} km</h3>
+        <p>Last activity: {this.state.lastActivityDate}</p>
       </div>
     );
   }
