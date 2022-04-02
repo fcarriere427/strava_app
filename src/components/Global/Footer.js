@@ -4,10 +4,14 @@ class Footer extends Component {
 
   constructor(props) {
     super(props);
+    this.state = { date: '' };
+  }
+
+  componentDidMount(){
     let today = new Date();
     let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     this.state = { date: date };
-   }
+  }
 
   render() {
     return (
