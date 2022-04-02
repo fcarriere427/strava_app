@@ -4,7 +4,7 @@ class Footer extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { date: '' };
+    this.state = { today: '' };
   }
 
   componentDidMount(){
@@ -13,8 +13,8 @@ class Footer extends Component {
     console.log ("year = " + today.getFullYear());
     let current = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     console.log ("current = " + current );
-    this.setState = { date: current };
-    console.log ("this.state.date = " + this.state.date);
+    this.setState = { today: current };
+    console.log ("this.state.date = " + this.state.today);
   }
 
   render() {
