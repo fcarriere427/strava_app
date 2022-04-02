@@ -9,8 +9,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Tracker name = "Florian"/>
+        <Header name = "Florian"/>
+        <Tracker/>
         <Footer />
       </div>
     );
