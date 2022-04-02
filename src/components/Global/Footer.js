@@ -9,12 +9,8 @@ class Footer extends Component {
 
   componentDidMount(){
     let today = new Date();
-    console.log ("today = " + today);
-    console.log ("year = " + today.getFullYear());
-    let current = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
-    console.log ("current = " + current );
+    let current = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
     this.setState({ today: current });
-    console.log ("this.state.today = " + this.state.today);
   }
 
   render() {
