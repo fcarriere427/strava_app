@@ -5,23 +5,11 @@ const axios = require('axios').default;
 class Tracker extends Component {
   constructor(props){
     super(props);
-    this.state = {cumulAnnuel: ""};
     this.state = {lastActivityDate: ""};
+    this.state = {yearDistance: ""};
   }
 
   componentDidMount(){
-
-    // API test
-    let url = 'https://letsq.xyz/strava/testAPI';
-    axios.get(url)
-    .then(
-      (response) => {
-        this.setState({ cumulAnnuel: response.data.cumulAnnuel });
-      },
-      (error) => {
-        console.log("réponse ERREUR de l'API Test : " + error);
-      }
-    )
 
     // Récupération de la date de la dernière activité (format lisible, en local time)
     url = 'https://letsq.xyz/strava/last_activity';
@@ -29,6 +17,19 @@ class Tracker extends Component {
     .then(
       (response) => {
         this.setState({ lastActivityDate: response.data });
+      },
+      (error) => {
+        console.log("ERREUR de l'API  : " + error);
+      }
+    )
+
+    // Récupération du cumul de l'année
+    let year = '2022';
+    url = 'https://letsq.xyz/strava/year_distance?year=' + year;
+    axios.get(url)
+    .then(
+      (response) => {
+        this.setState({ yearDistance: response.data });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
