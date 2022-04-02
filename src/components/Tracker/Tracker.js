@@ -16,26 +16,22 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        console.log("réponse de l'API Test : " + response.data.cumulAnnuel);
         this.setState({ cumulAnnuel: response.data.cumulAnnuel });
       },
       (error) => {
         console.log("réponse ERREUR de l'API Test : " + error);
-        this.setState({ cumulAnnuel: "???" });
       }
     )
 
-    // API test
+    // Récupération de la date de la dernière activité (format lisible, en local time)
     url = 'https://letsq.xyz/strava/last_activity';
     axios.get(url)
     .then(
       (response) => {
-        console.log("réponse de l'API : " + response.data);
         this.setState({ lastActivityDate: response.data });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
-        this.setState({ lastActivityDate: "???" });
       }
     )
 
