@@ -13,8 +13,8 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        console.log("réponse de l'API Test : " + response.data.toString());
-        this.setState({ cumulAnnuel: response.date });
+        console.log("réponse de l'API Test : " + response.data.cumulAnnuel;
+        this.setState({ cumulAnnuel: response.date.cumulAnnuel });
       },
       (error) => {
         console.log("réponse ERREUR de l'API Test : " + error);
