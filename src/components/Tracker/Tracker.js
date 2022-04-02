@@ -9,7 +9,7 @@ class Tracker extends Component {
   }
 
   componentDidMount(){
-    const url = 'https://letsq.xyz/strava_old/testAPI';
+    const url = 'https://letsq.xyz/strava/testAPI';
     axios.get(url)
     .then(
       (response) => {
