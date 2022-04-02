@@ -11,11 +11,10 @@ class Tracker extends Component {
   componentDidMount(){
     const url = 'https://letsq.xyz/strava_old/testAPI';
     axios.get(url)
-    .then(response => response.data)
     .then(
-      (r) => {
-        console.log("réponse de l'API Test : " + r);
-        this.setState({ cumulAnnuel: r });
+      (response) => {
+        console.log("réponse de l'API Test : " + response.data);
+        this.setState({ cumulAnnuel: response.date });
       },
       (error) => {
         console.log("réponse ERREUR de l'API Test : " + error);
