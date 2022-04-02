@@ -11,7 +11,7 @@ class Tracker extends Component {
   componentDidMount(){
     const url = 'https://letsq.xyz/strava_old/testAPI';
     axios.get(url)
-    .then(response => response.json())
+    .then(response => response.data)
     .then(
       (r) => {
         console.log("réponse de l'API Test : " + r);
