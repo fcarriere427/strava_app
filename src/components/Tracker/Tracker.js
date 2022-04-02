@@ -14,7 +14,7 @@ class Tracker extends Component {
     .then(
       (response) => {
         console.log("réponse de l'API Test : " + response.data.cumulAnnuel);
-        this.setState({ cumulAnnuel: response.date.cumulAnnuel });
+        this.setState({ cumulAnnuel: response.data.cumulAnnuel });
       },
       (error) => {
         console.log("réponse ERREUR de l'API Test : " + error);
