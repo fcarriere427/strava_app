@@ -4,7 +4,7 @@ class Footer extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { today: {} };
+    this.state = { today: "" };
   }
 
   componentDidMount(){
