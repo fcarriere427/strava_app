@@ -10,7 +10,7 @@ class Footer extends Component {
   componentDidMount(){
     let today = new Date();
     let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    this.state = { date: date };
+    this.setState = { date: date };
   }
 
   render() {
