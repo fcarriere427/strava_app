@@ -30,7 +30,7 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        console.log("réponse de l'API : " + response.data.);
+        console.log("réponse de l'API : " + response.data);
         this.setState({ lastActivityDate: response.data });
       },
       (error) => {
