@@ -12,7 +12,7 @@ class Tracker extends Component {
   componentDidMount(){
 
     // API test
-    const url = 'https://letsq.xyz/strava/testAPI';
+    let url = 'https://letsq.xyz/strava/testAPI';
     axios.get(url)
     .then(
       (response) => {
@@ -26,7 +26,7 @@ class Tracker extends Component {
     )
 
     // API test
-    const url = 'https://letsq.xyz/strava/last_activity';
+    url = 'https://letsq.xyz/strava/last_activity';
     axios.get(url)
     .then(
       (response) => {
