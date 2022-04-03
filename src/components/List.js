@@ -5,16 +5,18 @@ const axios = require('axios').default;
 class List extends Component {
   constructor(props){
     super(props);
-    //this.state = {yearDistance: ""};
+    this.state = {
+      activitiesList: []
+    };
   }
 
   componentDidMount(){
     // Récupération de la date de la dernière activité (format lisible, en local time)
-    let url = 'https://letsq.xyz/strava/last_activity_date';
+    let url = 'https://letsq.xyz/strava/activities_list';
     axios.get(url)
     .then(
       (response) => {
-        this.setState({ lastActivityDate: response.data.last_activity_date });
+        this.setState({ activitiesList: response.data });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -26,6 +28,9 @@ class List extends Component {
     return (
       <div className="List">
         <p>List</p>
+        {this.state.items.map((item, index) => (
+          <Item key={index} item={item} />
+        )}
         {/* <h3>Current mileage: {this.state.yearDistance} km</h3> */}
       </div>
     );
