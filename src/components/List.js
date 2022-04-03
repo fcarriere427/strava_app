@@ -26,10 +26,16 @@ class List extends Component {
 
   render() {
     return (
-      <div className="List">
-        <p>List: {this.state.activitiesList} </p>
-        {/* <h3>Current mileage: {this.state.yearDistance} km</h3> */}
-      </div>
+      <React.Fragment>
+        {this.state.activitiesList.map(id => (
+          <React.Fragment key={id.id}>
+            <p>{activity.id}</p>
+            <p>{activity.distance}</p>
+            {/* <p>{item.url}</p>
+            <p>{item.description}</p> */}
+          </React.Fragment>
+        ))}
+      </React.Fragment>
     );
   }
 }
