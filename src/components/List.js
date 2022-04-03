@@ -27,10 +27,11 @@ class List extends Component {
   render() {
     return (
       <div className="List">
-        <p>List</p>
-        {this.state.items.map((item, index) => (
-          <Item key={index} item={item} />
+        <p>List
+        {this.state.items.map((activity, id) => (
+          <Item key={id} item={activity} />
         )}
+        </p>
         {/* <h3>Current mileage: {this.state.yearDistance} km</h3> */}
       </div>
     );
