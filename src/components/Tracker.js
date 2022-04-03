@@ -31,7 +31,7 @@ class Tracker extends Component {
     .then(
       (response) => {
         console.log("year = " + year);
-        console.log("response.data = " + response.data);
+        console.log("response.data.toString() = " + response.data.toString());
         let distance = response.data.year;
         console.log("distance  = " + response.data.year);
         //this.setState({ yearDistance: response.data.year_distance });
