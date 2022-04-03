@@ -43,7 +43,7 @@ class Tracker extends Component {
     return (
       <div className="Tracker">
         <h3>Tracker</h3>
-        <h3>Current mileage: {this.state.yearDistance} km</h3>
+        <h3>Current year: {this.state.yearDistance} km</h3>
         <p>Last activity: {this.state.lastActivityDate}</p>
       </div>
     );
