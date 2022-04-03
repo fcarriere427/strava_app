@@ -27,11 +27,7 @@ class List extends Component {
   render() {
     return (
       <div className="List">
-        <p>List
-        {this.state.activitiesList.map((activity, id) => (
-          <Item key={id} item={activity} />
-        )}
-        </p>
+        <p>List: {this.state.activitiesList} </p>
         {/* <h3>Current mileage: {this.state.yearDistance} km</h3> */}
       </div>
     );
