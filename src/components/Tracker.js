@@ -30,11 +30,7 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        console.log("year = " + year);
-        //let distance = response.data.2022;
-        console.log("distance  = " + response.data[year]);
-        //this.setState({ yearDistance: response.data.year_distance });
-        this.setState({ yearDistance: 300 });
+        this.setState({ yearDistance: response.data[year] });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
