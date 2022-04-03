@@ -28,7 +28,7 @@ class List extends Component {
     return (
       <div className="List">
         <p>List
-        {this.state.items.map((activity, id) => (
+        {this.state.activitiesList.map((activity, id) => (
           <Item key={id} item={activity} />
         )}
         </p>
