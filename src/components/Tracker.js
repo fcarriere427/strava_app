@@ -25,11 +25,17 @@ class Tracker extends Component {
 
     // Récupération du cumul de l'année
     let year = '2022';
-    url = 'https://letsq.xyz/strava/year_distance?year=' + year;
+    url = 'https://letsq.xyz/strava/year_distance';
     axios.get(url)
     .then(
       (response) => {
-        this.setState({ yearDistance: response.data.year_distance });
+        console.log("response.data = " + response.data);
+        let distance = response.data.year;
+        console.log("response = " + response);
+        console.log("year = " + year);
+        console.log("response.year = " + response.year);
+        //this.setState({ yearDistance: response.data.year_distance });
+        this.setState({ yearDistance: 300 });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
