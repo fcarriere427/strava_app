@@ -24,7 +24,7 @@ class Tracker extends Component {
     // Récupération du cumul de l'année
     let today = new Date();
     let year = today.getFullYear().toString();
-    url = 'https://letsq.xyz/strava/yearDistances';
+    url = 'https://letsq.xyz/strava/year_distances';
     axios.get(url)
     .then(
       (response) => {
