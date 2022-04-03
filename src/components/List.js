@@ -25,9 +25,8 @@ class List extends Component {
   render() {
     return (
       <div className="List">
-        <h3>List</h3>
-        {/* <h3>Current mileage: {this.state.yearDistance} km</h3>
-        <p>Last activity: {this.state.lastActivityDate}</p> */}
+        <p>List</p>
+        {/* <h3>Current mileage: {this.state.yearDistance} km</h3> */}
       </div>
     );
   }

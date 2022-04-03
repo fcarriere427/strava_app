@@ -10,7 +10,6 @@ class Tracker extends Component {
   }
 
   componentDidMount(){
-
     // Récupération de la date de la dernière activité (format lisible, en local time)
     let url = 'https://letsq.xyz/strava/last_activity_date';
     axios.get(url)
@@ -22,11 +21,10 @@ class Tracker extends Component {
         console.log("ERREUR de l'API  : " + error);
       }
     )
-
     // Récupération du cumul de l'année
     let today = new Date();
     let year = today.getFullYear().toString();
-    url = 'https://letsq.xyz/strava/year_distances';
+    url = 'https://letsq.xyz/strava/activities_list';
     axios.get(url)
     .then(
       (response) => {
@@ -36,13 +34,12 @@ class Tracker extends Component {
         console.log("ERREUR de l'API  : " + error);
       }
     )
-
   }
 
   render() {
     return (
       <div className="Tracker">
-        <h3>Tracker</h3>
+        <p>Tracker</p>
         <h3>Current year: {this.state.yearDistance} km</h3>
         <p>Last activity: {this.state.lastActivityDate}</p>
       </div>
