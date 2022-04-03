@@ -16,7 +16,7 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        this.setState({ lastActivityDate: response.data.last_activity });
+        this.setState({ lastActivityDate: response.data.last_activity_date });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
