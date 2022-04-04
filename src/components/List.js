@@ -17,7 +17,7 @@ class List extends Component {
     .then(
       (response) => {
         this.setState({ activitiesList: response.data });
-        console.log("activitiesList = " + activitiesList);
+        console.log("activitiesList = " + this.state.activitiesList);
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
