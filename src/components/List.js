@@ -11,13 +11,16 @@ class List extends Component {
   }
 
   componentDidMount(){
-    // Récupération de la date de la dernière activité (format lisible, en local time)
-    let url = 'https://letsq.xyz/strava/activities_list';
+    // pour l'instant, on fixe l'année, ensuite il faudra en faire un "state"
+    let today = new Date();
+    let year = today.getFullYear();
+    // Récupération des activités
+    let url = 'https://letsq.xyz/strava/activities_list?year=' + year;
     axios.get(url)
     .then(
       (response) => {
         this.setState({ activitiesList: response.data });
-        console.log("response.data = " + response.data);
+        console.log("response.data[0] = " + response.data[0]);
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
