@@ -27,16 +27,16 @@ class List extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        {this.state.activitiesList.map((id, activity) => (
-          <React.Fragment key={id.id}>
-            <p>{activity.id}</p>
-            <p>{activity.distance}</p>
-            {/* <p>{item.url}</p>
-            <p>{item.description}</p> */}
-          </React.Fragment>
-        ))}
-      </React.Fragment>
+      // <React.Fragment>
+      //   {this.state.activitiesList.map((id, activity) => (
+      //     <React.Fragment key={id.id}>
+      //       <p>{activity.id}</p>
+      //       <p>{activity.distance}</p>
+      //       {/* <p>{item.url}</p>
+      //       <p>{item.description}</p> */}
+      //     </React.Fragment>
+      //   ))}
+      // </React.Fragment>
     );
   }
 }
