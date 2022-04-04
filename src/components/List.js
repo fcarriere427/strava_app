@@ -20,7 +20,7 @@ class List extends Component {
     .then(
       (response) => {
         this.setState({ activitiesList: response.data });
-        console.log("response.data[0] = " + response.data[0]);
+        console.log("response.data[6430353430] = " + response.data[6430353430]);
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
