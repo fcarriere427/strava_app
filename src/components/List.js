@@ -27,6 +27,7 @@ class List extends Component {
 
   render() {
     return (
+      <p> coucou </p>
       // <React.Fragment>
       //   {this.state.activitiesList.map((id, activity) => (
       //     <React.Fragment key={id.id}>
