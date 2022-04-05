@@ -30,9 +30,9 @@ class List extends Component {
 
   render() {
     const items = this.state.activitiesList.map((d) => {
-      const val= Object.values(d)[0];
+      const val = Object.values(d)[0];
       return (<li>{val.doc.id}</li>);
-    }
+    });
   }
 }
 
