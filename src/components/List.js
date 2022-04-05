@@ -20,7 +20,7 @@ class List extends Component {
     .then(
       (response) => {
         this.setState({ activitiesList: response.data });
-        console.log("response.data[6430353430] = " + response.data[6430353430]);
+        console.log("response.data.doc.id = " + response.data.doc.id);
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -30,19 +30,12 @@ class List extends Component {
 
   render() {
     return (
-      <p> coucou </p>
-      // <React.Fragment>
-      //   {this.state.activitiesList.map((id, activity) => (
-      //     <React.Fragment key={id.id}>
-      //       <p>{activity.id}</p>
-      //       <p>{activity.distance}</p>
-      //       {/* <p>{item.url}</p>
-      //       <p>{item.description}</p> */}
-      //     </React.Fragment>
-      //   ))}
-      // </React.Fragment>
-    );
+      const items = this.state.activitiesList.map((d) => {
+        const val= Object.values(d)[0];
+        return (<li>{val.doc.id}</li>);
+      }
+    )
   }
-}
+
 
 export default List;
