@@ -34,6 +34,6 @@ class List extends Component {
       return (<li>{val.doc.id}</li>);
     }
   }
-
+}
 
 export default List;
