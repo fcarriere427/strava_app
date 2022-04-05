@@ -27,9 +27,11 @@ class List extends Component {
 
   render() {
     return(
-      {this.state.activitiesList.map((d, index) => (
-        (<p key={index}>{d.doc.id, d.doc.distance}</p>)
-      ))}
+      <div>
+        {this.state.activitiesList.map((d, index) => (
+          (<p key={index}>{d.doc.id, d.doc.distance}</p>)
+        ))}
+      </div>
     );
   }
 }
