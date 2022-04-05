@@ -29,7 +29,7 @@ class List extends Component {
     return(
       <div>
         {this.state.activitiesList.map((d, index) => (
-          (<p key={index}>{d.doc.id}, {d.doc.distance}</p>)
+          (<p key={index}>id: {d.doc.id}, date: {d.doc.start_date_local}, distance: {d.doc.distance}</p>)
         ))}
       </div>
     );
