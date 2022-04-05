@@ -31,8 +31,8 @@ class List extends Component {
   render() {
     return(
       <ol>
-        {this.state.activitiesList.map((d) => (
-          (<li>{d.doc.id}</li>)
+        {this.state.activitiesList.map((d, index) => (
+          (<li key=index>{d.doc.id}</li>)
         ))}
       </ol>
     );
