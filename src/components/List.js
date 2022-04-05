@@ -33,10 +33,9 @@ class List extends Component {
       <ol>
         {this.state.activitiesList.map((d) => (
           (<li>{d.doc.id}</li>)
-        ));
-        }
+        ))}
       </ol>
-    )
+    );
   }
 }
 
