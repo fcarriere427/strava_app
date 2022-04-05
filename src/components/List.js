@@ -29,10 +29,12 @@ class List extends Component {
   }
 
   render() {
-    const items = this.state.activitiesList.map((d) => {
-      const val = Object.values(d).doc;
-      return (<li>{val.doc.id}</li>);
-    });
+    return(
+      const items = this.state.activitiesList.map((d) => {
+        const val = Object.values(d).doc;
+        return (<li>{val.doc.id}</li>);
+      });
+    )
   }
 }
 
