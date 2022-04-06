@@ -7,12 +7,12 @@ const gaugeData = [
 ]
 
 class GaugeChart extends Component {
-  componentDidMount({
+  componentDidMount() {
     gaugeData = [
       ['Label', 'Value'],
       ['Delta', this.props.value],
     ]
-  })
+  }
 
   render() {
     return (
