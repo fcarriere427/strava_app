@@ -2,15 +2,12 @@ import React, { Component } from 'react'
 import Chart from 'react-google-charts'
 const gaugeData = [
   ['Label', 'Value'],
-  ['Memory', 80],
-  ['CPU', 55],
-  ['Network', 68],
+  ['Delta', 0],
 ]
 class GaugeChart extends Component {
   render() {
     return (
       <div className="container mt-5">
-        <h2>React Gauge Chart Example</h2>
          <Chart
                 width={600}
                 height={140}
