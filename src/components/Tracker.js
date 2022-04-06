@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import {daysInYear, daysInYear} from '../utils/functions'
 
 const axios = require('axios').default;
 
 class Tracker extends Component {
   constructor(props){
     super(props);
-    this.state = {lastActivityDate: ""};
-    this.state = {yearDistance: ""};
+    this.state = { lastActivityDate: "?" };
+    this.state = { yearDistance: "0" };
+    this.state = { targetToDate: "0" };
+    this.state = { deltaDays: "0" };
+    this.state = { newAvg: "0" };
   }
 
   componentDidMount(){
@@ -34,6 +38,23 @@ class Tracker extends Component {
         console.log("ERREUR de l'API  : " + error);
       }
     )
+
+    // target à date
+    var now = new Date();
+    var start = new Date(now.getFullYear(), 0, 0);
+    var diff = now - start;
+    var oneDay = 1000 * 60 * 60 * 24;
+    var day = Math.floor(diff / oneDay);
+    let target_date = Math.round(day / daysInYear(year) * tgt*10)/10;
+    // delta
+    let delta = Math.round((actual - target_date)*10)/10;
+    let delta_days = Math.round(delta / tgt * daysInYear(year)*10)/10;
+    // new_avg_week
+    let new_avg_week = Math.round((tgt - delta) / daysInYear(year) * 7 * 10)/10;
+    // update state
+    this.setState({ targetToDate: target_date });
+    this.setState({ deltaDays: delta_days });
+    this.setState({ newAvg: new_avg_week });
   }
 
   render() {
@@ -41,6 +62,9 @@ class Tracker extends Component {
       <div className="Tracker">
         <p>Tracker</p>
         <h3>Current year: {this.state.yearDistance} km</h3>
+        <h4>Target: {this.state.targetToDate} km</h4>
+        <h4>Delta: {this.state.deltaDays} days</h4>
+        <h4>New avg/week: {this.state.newAvg} km</h4>
         <p>Last activity: {this.state.lastActivityDate}</p>
       </div>
     );
