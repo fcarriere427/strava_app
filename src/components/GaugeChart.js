@@ -17,7 +17,7 @@ class GaugeChart extends Component {
     console.log("value = " + value)
     gaugeData = [
       ['Label', 'Value'],
-      ['Delta', value],
+      ['Delta', 50],
     ]
   }
 
