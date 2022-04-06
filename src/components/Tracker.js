@@ -35,6 +35,14 @@ class Tracker extends Component {
     .then(
       (response) => {
         this.setState({ yearDistance: response.data[year] });
+        // delta
+        let delta = Math.round((this.yearDistance - target_date)*10)/10;
+        let delta_days = Math.round(delta / tgt * daysInYear(year)*10)/10;
+        // new_avg_week
+        let new_avg_week = Math.round((tgt - delta) / daysInYear(year) * 7 * 10)/10;
+        // update state
+        this.setState({ deltaDays: delta_days });
+        this.setState({ newAvg: new_avg_week });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -48,15 +56,8 @@ class Tracker extends Component {
     var oneDay = 1000 * 60 * 60 * 24;
     var day = Math.floor(diff / oneDay);
     let target_date = Math.round(day / daysInYear(year) * tgt*10)/10;
-    // delta
-    let delta = Math.round((this.yearDistance - target_date)*10)/10;
-    let delta_days = Math.round(delta / tgt * daysInYear(year)*10)/10;
-    // new_avg_week
-    let new_avg_week = Math.round((tgt - delta) / daysInYear(year) * 7 * 10)/10;
-    // update state
     this.setState({ targetToDate: target_date });
-    this.setState({ deltaDays: delta_days });
-    this.setState({ newAvg: new_avg_week });
+
   }
 
   render() {
