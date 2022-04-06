@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Chart from 'react-google-charts'
 
-const gaugeData = [
+let gaugeData = [
   ['Label', 'Value'],
   ['Delta', 0],
 ]
