@@ -4,14 +4,13 @@ const axios = require('axios').default;
 
 class Tracker extends Component {
 
-  this.lastActivityDate = "";
-  this.yearDistance = "";
-
   constructor(props){
     super(props);
   }
 
   componentDidMount(){
+    this.lastActivityDate = "";
+    this.yearDistance = "";
     // Récupération de la date de la dernière activité (format lisible, en local time)
     let url = 'https://letsq.xyz/strava/last_activity_date';
     axios.get(url)
