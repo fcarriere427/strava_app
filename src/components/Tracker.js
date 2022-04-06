@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {daysInYear, daysInYear} from '../utils/functions'
+import daysInYear from '../utils/functions'
 
 const axios = require('axios').default;
 
