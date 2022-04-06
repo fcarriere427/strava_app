@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
 import Chart from 'react-google-charts'
+
 const gaugeData = [
   ['Label', 'Value'],
   ['Delta', 0],
 ]
 
 class GaugeChart extends Component {
+  componentDidMount({
+    gaugeData = [
+      ['Label', 'Value'],
+      ['Delta', this.props.value],
+    ]
+  })
+
   render() {
     return (
       <div className="Tracker">
