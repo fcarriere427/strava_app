@@ -14,6 +14,8 @@ class Tracker extends Component {
   }
 
   componentDidMount(){
+    // Target : TO DO = à passer en state ??
+    let tgt = 1000;
     // Récupération de la date de la dernière activité (format lisible, en local time)
     let url = 'https://letsq.xyz/strava/last_activity_date';
     axios.get(url)
@@ -47,7 +49,7 @@ class Tracker extends Component {
     var day = Math.floor(diff / oneDay);
     let target_date = Math.round(day / daysInYear(year) * tgt*10)/10;
     // delta
-    let delta = Math.round((actual - target_date)*10)/10;
+    let delta = Math.round((this.yearDistance - target_date)*10)/10;
     let delta_days = Math.round(delta / tgt * daysInYear(year)*10)/10;
     // new_avg_week
     let new_avg_week = Math.round((tgt - delta) / daysInYear(year) * 7 * 10)/10;
