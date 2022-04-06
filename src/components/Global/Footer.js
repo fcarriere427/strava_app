@@ -4,12 +4,12 @@ class Footer extends Component {
 
   render() {
     let today = new Date();
-    let current = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
-
+    let date_str = today.toLocaleDateString('fr-FR');
+    
     return (
         <footer className="App-footer">
           <p><a href="strava_old_app">Ancienne appli Strava</a></p>
-          <p>Current date : {current} </p>
+          <p>Current date : {date_str} </p>
         </footer>
     );
   }
