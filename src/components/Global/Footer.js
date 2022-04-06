@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 
 class Footer extends Component {
 
-  componentDidMount(){
-    this.setState({ today: current });
-  }
-
   render() {
     let today = new Date();
     let current = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
