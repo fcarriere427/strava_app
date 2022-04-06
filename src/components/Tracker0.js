@@ -3,11 +3,10 @@ import React, { Component } from 'react';
 const axios = require('axios').default;
 
 class Tracker extends Component {
-
   constructor(props){
     super(props);
-    let lastActivityDate = "";
-    let yearDistance = "";
+    this.state = {lastActivityDate: ""};
+    this.state = {yearDistance: ""};
   }
 
   componentDidMount(){
@@ -16,7 +15,7 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        lastActivityDate = response.data.last_activity_date;
+        this.setState({ lastActivityDate: response.data.last_activity_date });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -29,7 +28,7 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        yearDistance = response.data[year];
+        this.setState({ yearDistance: response.data[year] });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -41,8 +40,8 @@ class Tracker extends Component {
     return (
       <div className="Tracker">
         <p>Tracker</p>
-        <h3>Current year: {yearDistance} km</h3>
-        <p>Last activity: {lastActivityDate}</p>
+        <h3>Current year: {this.state.yearDistance} km</h3>
+        <p>Last activity: {this.state.lastActivityDate}</p>
       </div>
     );
   }
