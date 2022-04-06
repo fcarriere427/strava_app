@@ -9,8 +9,6 @@ class Tracker extends Component {
   }
 
   componentDidMount(){
-    // this.lastActivityDate = "";
-    // this.yearDistance = "";
     // Récupération de la date de la dernière activité (format lisible, en local time)
     let url = 'https://letsq.xyz/strava/last_activity_date';
     axios.get(url)
@@ -40,10 +38,11 @@ class Tracker extends Component {
   }
 
   render() {
+    console.log("this.yearDistance = " + this.yearDistance);
     return (
       <div className="Tracker">
         <p>Tracker</p>
-        <h3>Current year: this.yearDistance km</h3>
+        <h3>Current year: {this.yearDistance} km</h3>
         <p>Last activity: {this.lastActivityDate}</p>
       </div>
     );
