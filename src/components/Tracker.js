@@ -36,7 +36,7 @@ class Tracker extends Component {
       (response) => {
         this.setState({ yearDistance: response.data[year] });
         // delta
-        let delta = Math.round((this.yearDistance - target_date)*10)/10;
+        let delta = Math.round((this.state.yearDistance - target_date)*10)/10;
         let delta_days = Math.round(delta / tgt * daysInYear(year)*10)/10;
         // new_avg_week
         let new_avg_week = Math.round((tgt - delta) / daysInYear(year) * 7 * 10)/10;
