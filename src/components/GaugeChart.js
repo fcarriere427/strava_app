@@ -4,27 +4,28 @@ const gaugeData = [
   ['Label', 'Value'],
   ['Delta', 0],
 ]
+
 class GaugeChart extends Component {
   render() {
     return (
       <div className="Tracker">
-         <Chart
-                width={600}
-                height={600}
-                chartType="Gauge"
-                loader={<div>Loading Chart</div>}
-                data={gaugeData}
-                options={{
-                  redFrom: 0,
-                  redTo: 30,
-                  greenFrom:30,
-                  greenTo:70,
-                  yellowFrom: 70,
-                  yellowTo: 100,
-                  minorTicks: 10,
-                }}
-                rootProps={{ 'data-testid': '1' }}
-              />
+        <Chart
+          width={300}
+          // height={600}
+          chartType="Gauge"
+          loader={<div>Loading Chart</div>}
+          data={gaugeData}
+          options={{
+            redFrom: 0,
+            redTo: 30,
+            greenFrom:30,
+            greenTo:70,
+            yellowFrom: 70,
+            yellowTo: 100,
+            minorTicks: 10,
+          }}
+          rootProps={{ 'data-testid': '1' }}
+        />
       </div>
     )
   }
