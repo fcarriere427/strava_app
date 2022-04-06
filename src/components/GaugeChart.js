@@ -7,7 +7,7 @@ const gaugeData = [
 class GaugeChart extends Component {
   render() {
     return (
-      <div className="container mt-5">
+      <div className="Tracker">
          <Chart
                 width={600}
                 height={140}
@@ -15,11 +15,11 @@ class GaugeChart extends Component {
                 loader={<div>Loading Chart</div>}
                 data={gaugeData}
                 options={{
-                  redFrom: 90,
-                  redTo: 100,
-                  yellowFrom: 75,
-                  yellowTo: 90,
-                  minorTicks: 5,
+                  redFrom: 0,
+                  redTo: 30,
+                  yellowFrom: 70,
+                  yellowTo: 100,
+                  minorTicks: 10,
                 }}
                 rootProps={{ 'data-testid': '1' }}
               />
