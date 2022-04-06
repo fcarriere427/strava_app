@@ -7,7 +7,7 @@ let gaugeData = [
 ]
 
 class GaugeChart extends Component {
-  constructor() {
+  constructor(props) {
     super(props);
   }
 
