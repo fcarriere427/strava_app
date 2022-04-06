@@ -12,7 +12,7 @@ class GaugeChart extends Component {
   }
 
   componentDidMount() {
-    console.log("props.value = " + {this.props.value});
+    //console.log("props.value = " + {this.props.value});
     gaugeData = [
       ['Label', 'Value'],
       ['Delta', {this.props.value}],
