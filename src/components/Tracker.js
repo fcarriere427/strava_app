@@ -4,8 +4,8 @@ const axios = require('axios').default;
 
 class Tracker extends Component {
 
-  let lastActivityDate = "";
-  let yearDistance = "";
+  this.lastActivityDate = "";
+  this.yearDistance = "";
 
   constructor(props){
     super(props);
@@ -17,7 +17,7 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        lastActivityDate = response.data.last_activity_date;
+        this.lastActivityDate = response.data.last_activity_date;
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -30,7 +30,7 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        yearDistance = response.data[year];
+        this.yearDistance = response.data[year];
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
