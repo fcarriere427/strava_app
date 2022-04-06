@@ -8,7 +8,7 @@ let gaugeData = [
 
 class GaugeChart extends Component {
   componentDidMount() {
-    console.log("this.props.value = " + this.props.value);
+    console.log("props.value = " + props.value);
     gaugeData = [
       ['Label', 'Value'],
       ['Delta', this.props.value],
