@@ -3,19 +3,19 @@ import React, { Component } from 'react';
 const axios = require('axios').default;
 
 class Tracker extends Component {
-
   constructor(props){
     super(props);
+    this.state = {lastActivityDate: ""};
+    this.state = {yearDistance: ""};
   }
 
-  componentWillMount(){
+  componentDidMount(){
     // Récupération de la date de la dernière activité (format lisible, en local time)
     let url = 'https://letsq.xyz/strava/last_activity_date';
     axios.get(url)
     .then(
       (response) => {
-        this.lastActivityDate = response.data.last_activity_date;
-        console.log("this.lastActivityDate = " + this.lastActivityDate);
+        this.setState({ lastActivityDate: response.data.last_activity_date });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -28,8 +28,7 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        this.yearDistance = response.data[year];
-        console.log("this.yearDistance = " + this.yearDistance);
+        this.setState({ yearDistance: response.data[year] });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -38,12 +37,11 @@ class Tracker extends Component {
   }
 
   render() {
-    console.log("this.yearDistance = " + this.yearDistance);
     return (
       <div className="Tracker">
         <p>Tracker</p>
-        <h3>Current year: {this.yearDistance} km</h3>
-        <p>Last activity: {this.lastActivityDate}</p>
+        <h3>Current year: {this.state.yearDistance} km</h3>
+        <p>Last activity: {this.state.lastActivityDate}</p>
       </div>
     );
   }
