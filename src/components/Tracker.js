@@ -64,10 +64,10 @@ class Tracker extends Component {
     return (
       <div className="Tracker">
         <p>Tracker</p>
-        <h3>Current year: {this.state.yearDistance} km</h3>
-        <h4>Target: {this.state.targetToDate} km</h4>
-        <h4>Delta: {this.state.deltaDays} days</h4>
-        <h4>New avg/week: {this.state.newAvg} km</h4>
+        <p>Current year: {this.state.yearDistance} km</p>
+        <p>Target: {this.state.targetToDate} km</p>
+        <p>Delta: {this.state.deltaDays} days</p>
+        <p>New avg/week: {this.state.newAvg} km</p>
         <p>Last activity: {this.state.lastActivityDate}</p>
       </div>
     );
