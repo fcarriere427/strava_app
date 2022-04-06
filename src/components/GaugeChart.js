@@ -10,13 +10,15 @@ class GaugeChart extends Component {
       <div className="Tracker">
          <Chart
                 width={600}
-                height={140}
+                height={600}
                 chartType="Gauge"
                 loader={<div>Loading Chart</div>}
                 data={gaugeData}
                 options={{
                   redFrom: 0,
                   redTo: 30,
+                  greenFrom:30,
+                  greenTo:70,
                   yellowFrom: 70,
                   yellowTo: 100,
                   minorTicks: 10,
