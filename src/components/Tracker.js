@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GaugeChart from './GaugeChart'
 import daysInYear from '../utils/functions'
 
 const axios = require('axios').default;
@@ -64,6 +65,7 @@ class Tracker extends Component {
     return (
       <div className="Tracker">
         <p>Tracker</p>
+        <GaugeChart />
         <p>Current year: {this.state.yearDistance} km</p>
         <p>Target: {this.state.targetToDate} km</p>
         <p>Delta: {this.state.deltaDays} days</p>
