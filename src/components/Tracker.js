@@ -17,6 +17,7 @@ class Tracker extends Component {
     .then(
       (response) => {
         this.lastActivityDate = response.data.last_activity_date;
+        console.log("this.lastActivityDate = " + this.lastActivityDate);
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -30,6 +31,7 @@ class Tracker extends Component {
     .then(
       (response) => {
         this.yearDistance = response.data[year];
+        console.log("this.yearDistance = " + this.yearDistance);
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
