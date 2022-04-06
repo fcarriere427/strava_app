@@ -4,10 +4,11 @@ const axios = require('axios').default;
 
 class Tracker extends Component {
 
+  let lastActivityDate = "";
+  let yearDistance = "";
+
   constructor(props){
     super(props);
-    let lastActivityDate = "";
-    let yearDistance = "";
   }
 
   componentDidMount(){
