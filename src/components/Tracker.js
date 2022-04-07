@@ -62,6 +62,7 @@ class Tracker extends Component {
   }
 
   render() {
+    console.log("{this.state.deltaDays} in Tracker = " + {this.state.deltaDays});
     return (
       <div className="Tracker">
         <p>Tracker</p>
