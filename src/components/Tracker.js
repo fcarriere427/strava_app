@@ -41,7 +41,7 @@ class Tracker extends Component {
         let delta_km = Math.round((this.state.yearDistance - target_date)*10)/10;
         let delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
         // new_avg_week
-        let new_avg_week = Math.round((tgt - delta) / daysInYear(year) * 7 * 10)/10;
+        let new_avg_week = Math.round((tgt - delta_km) / daysInYear(year) * 7 * 10)/10;
         // update state
         this.setState({ deltaKm: delta_km });
         this.setState({ deltaDays: delta_days });
