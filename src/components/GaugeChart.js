@@ -6,11 +6,6 @@ class GaugeChart extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    console.log("this.props.delta = " + this.props.delta);
-    console.log("this.props.name = " + this.props.name);
-  }
-
   render() {
     let needle = 0.5 + (this.props.delta/100) ; // si delta = 0 --> aiguille à 50% -->
     const chartStyle = {
