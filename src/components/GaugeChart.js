@@ -15,7 +15,7 @@ class GaugeChart extends Component {
       return null
     } else {
       return (
-        <div className="Tracker">
+        <div className="Graph">
           <Chart
             id="tracker-gauge"
             style={chartStyle}

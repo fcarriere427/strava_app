@@ -46,6 +46,15 @@
   color: black;
 }
 
+.Graph {
+  background-color: #e6f2ff; /* bleu ciel */
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .List {
   background-color: Cornsilk;
   min-height: 50vh;
