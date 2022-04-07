@@ -9,7 +9,7 @@ class GaugeChart extends Component {
   render() {
     let needle = 0.5 + (this.props.delta/100) ; // si delta = 0 --> aiguille à 50% -->
     const chartStyle = {
-		    width: 100%,
+		    height: 200,
 	  }
     return (
       <div className="Tracker">
