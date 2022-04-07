@@ -4,13 +4,13 @@ import Chart from 'react-gauge-chart'
 class GaugeChart extends Component {
   constructor(props) {
     super(props);
-    console.log("props.name = " + props.name);
+    console.log("props.delta = " + props.delta);
   }
 
   componentDidMount() {
     //console.log("props.value = " + {this.props.value});
-    let value = this.props.value;
-    console.log("value = " + value);
+    let delta = this.props.delta;
+    console.log("delta = " + delta);
   }
 
   render() {
@@ -25,7 +25,7 @@ class GaugeChart extends Component {
           nrOfLevels={30}
           colors={['#5BE12C', '#F5CD19', '#EA4228']}
           arcWidth={0.3}
-          percent={this.props.value}
+          percent={this.props.delta}
           formatTextValue={value => value + ' days'}
         />
       </div>
