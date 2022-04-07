@@ -37,7 +37,7 @@
 
 .Tracker {
   background-color: #e6f2ff; /* bleu ciel */
-  min-height: 30vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
