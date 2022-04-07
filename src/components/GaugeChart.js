@@ -11,22 +11,26 @@ class GaugeChart extends Component {
     const chartStyle = {
 		    height: 200,
 	  }
-    return (
-      <div className="Tracker">
-        <Chart
-          id="tracker-gauge"
-          style={chartStyle}
-          nrOfLevels={3}
-          colors={['#EA4228', '#5BE12C', '#F5CD19']}
-          nrOfLevels={420}
-          arcsLength={[0.4, 0.2, 0.4]}
-          arcWidth={0.5}
-          hideText={true}
-          percent={needle}
-          // formatTextValue={value => value + ' days'}
-        />
-      </div>
-    )
+    if(!needle){ // see issue in react-gauge-graph
+      return null
+    } else {
+      return (
+        <div className="Tracker">
+          <Chart
+            id="tracker-gauge"
+            style={chartStyle}
+            nrOfLevels={3}
+            colors={['#EA4228', '#5BE12C', '#F5CD19']}
+            nrOfLevels={420}
+            arcsLength={[0.4, 0.2, 0.4]}
+            arcWidth={0.5}
+            hideText={true}
+            percent={needle}
+            // formatTextValue={value => value + ' days'}
+          />
+        </div>
+      )
+    }
   }
 }
 export default GaugeChart
