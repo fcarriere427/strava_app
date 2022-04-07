@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import Chart from 'react-gauge-chart'
 
-let gaugeData = [
-  ['Label', 'Value'],
-  ['Delta', 0],
-]
-
-class GaugeChart extends Component {
+class GaugeChart extends Chart {
   constructor(props) {
     super(props);
     console.log("props = " + props.value);
@@ -15,11 +10,7 @@ class GaugeChart extends Component {
   componentDidMount() {
     //console.log("props.value = " + {this.props.value});
     let value = this.props.value;
-    console.log("value = " + value)
-    gaugeData = [
-      ['Label', 'Value'],
-      ['Delta', 50],
-    ]
+    console.log("value = " + value);
   }
 
   render() {
