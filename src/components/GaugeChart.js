@@ -4,7 +4,7 @@ import Chart from 'react-gauge-chart'
 class GaugeChart extends Component {
   constructor(props) {
     super(props);
-    console.log("props = " + props.value);
+    console.log("props.name = " + props.name);
   }
 
   componentDidMount() {
