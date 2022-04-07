@@ -15,7 +15,7 @@ class GaugeChart extends Component {
     const chartStyle = {
         height: 250,
     };
-    let needle = 0.5 + (this.props.delta/100) ; // si delta = 0 --> aiguille à 50% --> 
+    let needle = 0.5 + (this.props.delta/100) ; // si delta = 0 --> aiguille à 50% -->
     return (
       <div className="Tracker">
         <Chart
@@ -24,7 +24,7 @@ class GaugeChart extends Component {
           nrOfLevels={30}
           colors={['#5BE12C', '#F5CD19', '#EA4228']}
           arcWidth={0.3}
-          percent={delta}
+          percent={needle}
           formatTextValue={value => value + ' days'}
         />
       </div>
