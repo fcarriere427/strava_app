@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Chart from 'react-google-charts'
+import Chart from 'react-gauge-chart'
 
 let gaugeData = [
   ['Label', 'Value'],
