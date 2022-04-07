@@ -12,7 +12,7 @@ class App extends React.Component {
       <div className="App">
         <Header name = "Florian" />
         <Tracker />
-        <List />
+        {/* <List /> */}
         <Footer />
       </div>
     );
