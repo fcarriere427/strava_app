@@ -62,6 +62,10 @@ class Tracker extends Component {
   }
 
   render() {
+    const chartStyle = {
+		    height: 250,
+	  };
+    
     return (
       <div className="Tracker">
         <p>Tracker</p>
