@@ -13,11 +13,14 @@ class GaugeChart extends Component {
 
   render() {
     let needle = 0.5 + (this.props.delta/100) ; // si delta = 0 --> aiguille à 50% -->
+    const chartStyle = {
+		    height: 400,
+	  }
     return (
       <div className="Tracker">
         <Chart
           id="tracker-gauge"
-          style={width:'100%'}
+          style={chartStyle}
           nrOfLevels={3}
           colors={['#EA4228', '#5BE12C', '#EA4228']}
           arcWidth={0.5}
