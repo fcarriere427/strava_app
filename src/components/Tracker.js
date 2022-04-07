@@ -62,22 +62,10 @@ class Tracker extends Component {
   }
 
   render() {
-    const chartStyle = {
-		    height: 250,
-	  };
-
     return (
       <div className="Tracker">
         <p>Tracker</p>
-        <GaugeChart
-          id="gauge-chart8"
-          style={chartStyle}
-          nrOfLevels={30}
-          colors={['#5BE12C', '#F5CD19', '#EA4228']}
-          arcWidth={0.3}
-          percent={this.state.deltaDays}
-          formatTextValue={value => value + ' days'}
-        />
+        <GaugeChart />
         <p>Current year: {this.state.yearDistance} km</p>
         <p>Target: {this.state.targetToDate} km</p>
         <p>Delta: {this.state.deltaDays} days</p>

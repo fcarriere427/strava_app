@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Chart from 'react-gauge-chart'
 
-class GaugeChart extends Chart {
+class GaugeChart extends Component {
   constructor(props) {
     super(props);
     console.log("props = " + props.value);
@@ -14,24 +14,19 @@ class GaugeChart extends Chart {
   }
 
   render() {
+    const chartStyle = {
+        height: 250,
+    };
     return (
       <div className="Tracker">
         <Chart
-          width={300}
-          // height={600}
-          chartType="Gauge"
-          loader={<div>Loading Chart</div>}
-          data={gaugeData}
-          options={{
-            redFrom: 0,
-            redTo: 30,
-            greenFrom:30,
-            greenTo:70,
-            yellowFrom: 70,
-            yellowTo: 100,
-            minorTicks: 10,
-          }}
-          rootProps={{ 'data-testid': '1' }}
+          id="tracker-gauge"
+          style={chartStyle}
+          nrOfLevels={30}
+          colors={['#5BE12C', '#F5CD19', '#EA4228']}
+          arcWidth={0.3}
+          percent={this.props.value}
+          formatTextValue={value => value + ' days'}
         />
       </div>
     )
