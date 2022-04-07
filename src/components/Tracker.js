@@ -65,7 +65,6 @@ class Tracker extends Component {
     return (
       <div className="Tracker">
         <p>Tracker</p>
-        <p>TMP // GaugeChart value = {this.state.deltaDays}</p>
         <GaugeChart value = {this.state.deltaDays}/>
         <p>Current year: {this.state.yearDistance} km</p>
         <p>Target: {this.state.targetToDate} km</p>
