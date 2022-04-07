@@ -10,6 +10,7 @@ class Tracker extends Component {
     this.state = { lastActivityDate: "?" };
     this.state = { yearDistance: "0" };
     this.state = { targetToDate: "0" };
+    this.state = { deltaKm: "0" };
     this.state = { deltaDays: "0" };
     this.state = { newAvg: "0" };
   }
@@ -37,11 +38,12 @@ class Tracker extends Component {
       (response) => {
         this.setState({ yearDistance: response.data[year] });
         // delta
-        let delta = Math.round((this.state.yearDistance - target_date)*10)/10;
-        let delta_days = Math.round(delta / tgt * daysInYear(year)*10)/10;
+        let delta_km = Math.round((this.state.yearDistance - target_date)*10)/10;
+        let delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
         // new_avg_week
         let new_avg_week = Math.round((tgt - delta) / daysInYear(year) * 7 * 10)/10;
         // update state
+        this.setState({ deltaKm: delta_km });
         this.setState({ deltaDays: delta_days });
         this.setState({ newAvg: new_avg_week });
       },
@@ -64,7 +66,8 @@ class Tracker extends Component {
   render() {
     return (
       <div className="Tracker">
-        <h2>Delta: {this.state.deltaDays} days</h2>
+        <h2>Delta: {this.state.deltaKm} km</h2>
+        <p>({this.state.deltaDays} days)</p>
         <GaugeChart delta = {this.state.deltaDays} name = "coucou"/>
         <h3>New avg/week: {this.state.newAvg} km</h3>
         <p>Current year: {this.state.yearDistance} km</p>
