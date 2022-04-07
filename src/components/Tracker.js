@@ -65,7 +65,15 @@ class Tracker extends Component {
     return (
       <div className="Tracker">
         <p>Tracker</p>
-        <GaugeChart value = {this.state.deltaDays}/>
+        <GaugeChart
+              id="gauge-chart8"
+              style={chartStyle}
+              nrOfLevels={30}
+              colors={['#5BE12C', '#F5CD19', '#EA4228']}
+              arcWidth={0.3}
+              percent={this.state.deltaDays}
+              formatTextValue={value => value + ' days'}
+            />
         <p>Current year: {this.state.yearDistance} km</p>
         <p>Target: {this.state.targetToDate} km</p>
         <p>Delta: {this.state.deltaDays} days</p>
