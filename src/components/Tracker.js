@@ -72,7 +72,7 @@ class Tracker extends Component {
         <h2>Delta: {this.state.deltaKm} km</h2>
         <p>({this.state.deltaDays} days)</p>
         <div className="Graph">
-          <Gauge delta = {this.state.deltaKm} />
+          <Gauge value = {this.state.deltaKm} />
         </div>
         <h3>New avg/week: {this.state.newAvg} km</h3>
         <p>New avg/day: {Math.floor(this.state.newAvg/7*10)/10} km</p>
