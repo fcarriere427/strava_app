@@ -2,12 +2,9 @@ import React, { Component } from 'react'
 import Chart from 'react-gauge-chart'
 
 class GaugeChart extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   render() {
-    let needle = 0.5 + (this.props.delta/100/2) ; // delta = -100 -> 0 //  delta = 0 -> 0.5 // delta = 100 -> 1 
+    let needle = 0.5 + (this.props.delta/100/2) ; // delta = -100 -> 0 //  delta = 0 -> 0.5 // delta = 100 -> 1
     const chartStyle = {
 		    height: 200,
 	  }
@@ -19,7 +16,6 @@ class GaugeChart extends Component {
           <Chart
             id="tracker-gauge"
             style={chartStyle}
-            nrOfLevels={3}
             colors={['#EA4228', '#5BE12C', '#F5CD19']}
             nrOfLevels={420}
             arcsLength={[0.4, 0.2, 0.4]}
