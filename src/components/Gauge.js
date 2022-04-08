@@ -1,6 +1,6 @@
 // based on https://wattenberger.com/blog/gauge
 
-import React from "react"
+import React, { Component } from "react"
 import { arc } from "d3-shape"
 import { scaleLinear } from "d3-scale"
 
@@ -26,10 +26,10 @@ class GaugeChart extends Component {
       ()
 
     const percentScale = scaleLinear()
-      .domain([min, max])
+      .domain([this.props.min, this.props.max])
       .range([0, 1])
 
-    const percent = percentScale(value)
+    const percent = percentScale(this.props.value)
 
     const angleScale = scaleLinear()
       .domain([0, 1])
@@ -52,6 +52,11 @@ class GaugeChart extends Component {
 
     const gradientSteps = colorScale.ticks(10)
       .map(value => colorScale(value))
+
+    const getCoordsOnArc = (angle, offset=10) => [
+        Math.cos(angle - (Math.PI / 2)) * offset,
+        Math.sin(angle - (Math.PI / 2)) * offset,
+    ]
 
     const markerLocation = getCoordsOnArc(
       angle,
