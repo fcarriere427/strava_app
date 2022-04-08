@@ -3,6 +3,7 @@
 import React, { Component } from "react"
 import { arc } from "d3-shape"
 import { scaleLinear } from "d3-scale"
+import { format } from "d3-format"
 
 class GaugeChart extends Component {
 
@@ -60,7 +61,9 @@ class GaugeChart extends Component {
     )
 
     return (
-      <div className="Graph">
+      <div className="Graph" style={{
+        textAlign: "center",
+      }}>
         <svg style={{overflow: "visible"}}
           width="9em"
           viewBox={[
@@ -116,6 +119,38 @@ class GaugeChart extends Component {
             fill="#6a6a85"
           />
         </svg>
+
+        <div style={{
+          marginTop: "0.4em",
+          fontSize: "3em",
+          lineHeight: "1em",
+          fontWeight: "900",
+          fontFeatureSettings: "'zero', 'tnum' 1",
+        }}>
+          { format(",")(value) }
+        </div>
+        {!!label && (
+          <div style={{
+            color: "#8b8ba7",
+            marginTop: "0.6em",
+            fontSize: "1.3em",
+            lineHeight: "1.3em",
+            fontWeight: "700",
+          }}>
+            { label }
+          </div>
+        )}
+        {!!units && (
+          <div style={{
+            color: "#8b8ba7",
+            lineHeight: "1.3em",
+            fontWeight: "300",
+          }}>
+            { units }
+          </div>
+        )}
+      </div>
+
       </div>
     )
   }
