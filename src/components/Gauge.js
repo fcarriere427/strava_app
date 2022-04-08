@@ -151,7 +151,6 @@ class GaugeChart extends Component {
         )}
       </div>
 
-      </div>
     )
   }
 }
