@@ -4,10 +4,10 @@ import { scaleLinear } from "d3-scale"
 
 const Gauge = ({
   value=50,
-  min=0,
-  max=100,
-  label,
-  units,
+  // min=0,
+  // max=100,
+  // label,
+  // units,
 }) => {
   const backgroundArc = arc()
     .innerRadius(0.65)
