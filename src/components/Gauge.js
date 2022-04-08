@@ -6,16 +6,13 @@ import { scaleLinear } from "d3-scale"
 
 class GaugeChart extends Component {
 
-  constructor(props) {
-    super(props);
-    props.value=0;
-    props.min=-100;
-    props.max=100;
-    props.label="Delta";
-    props.units="km";
-  }
-
   render() {
+
+    this.props.value=0;
+    this.props.min=-100;
+    this.props.max=100;
+    this.props.label="Delta";
+    this.props.units="km";
 
     const backgroundArc = arc()
       .innerRadius(0.65)
