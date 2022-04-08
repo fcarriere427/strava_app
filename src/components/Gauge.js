@@ -60,6 +60,7 @@ class GaugeChart extends Component {
       1 - ((1 - 0.65) / 2),
     )
 
+    console.log("markerLocation[0] = " + markerLocation[0]);
     if (!markerLocation) {
       return null;
     } else {
