@@ -70,6 +70,7 @@ class Tracker extends Component {
         <p>({this.state.deltaDays} days)</p>
         <GaugeChart delta = {this.state.deltaKm} />
         <h3>New avg/week: {this.state.newAvg} km</h3>
+        <p>New avg/day: {Math.floor(this.state.newAvg/7*10)/10} km</p>
         <p>Current year: {this.state.yearDistance} km</p>
         <p>Target: {this.state.targetToDate} km</p>
         <p>Last activity: {this.state.lastActivityDate}</p>
