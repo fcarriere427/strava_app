@@ -12,7 +12,7 @@ class GaugeChart extends Component {
     let min=-100;
     let max=100;
     let label="Delta";
-    let units="km";
+    let units="(km)";
 
     const backgroundArc = arc()
       .innerRadius(0.65)

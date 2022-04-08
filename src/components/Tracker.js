@@ -69,15 +69,17 @@ class Tracker extends Component {
   render() {
     return (
       <div className="Tracker">
-        <h2>Delta: {this.state.deltaKm} km</h2>
-        <p>({this.state.deltaDays} days)</p>
         <div className="Graph">
           <GaugeChart value = {this.state.deltaKm} />
         </div>
-        <h3>New avg/week: {this.state.newAvg} km</h3>
+        <p>Delta: ({this.state.deltaDays} days)</p>
+        <hr />
+        <p>New avg/week: {this.state.newAvg} km</p>
         <p>New avg/day: {Math.floor(this.state.newAvg/7*10)/10} km</p>
+        <hr />
         <p>Current year: {this.state.yearDistance} km</p>
         <p>Target: {this.state.targetToDate} km</p>
+        <hr />
         <p>Last activity: {this.state.lastActivityDate}</p>
       </div>
     );
