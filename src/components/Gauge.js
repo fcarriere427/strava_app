@@ -97,7 +97,7 @@ class GaugeChart extends Component {
           <line
             y1="-1"
             y2="-0.65"
-            stroke="white"
+            stroke="#e6f2ff" /* bleu ciel */
             strokeWidth="0.027"
           />
           <circle
