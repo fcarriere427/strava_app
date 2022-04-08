@@ -7,12 +7,10 @@ import { scaleLinear } from "d3-scale"
 class GaugeChart extends Component {
 
   render() {
-
-    this.props.value=0;
-    this.props.min=-100;
-    this.props.max=100;
-    this.props.label="Delta";
-    this.props.units="km";
+    let min=-100;
+    let max=100;
+    let label="Delta";
+    let units="km";
 
     const backgroundArc = arc()
       .innerRadius(0.65)
@@ -23,7 +21,7 @@ class GaugeChart extends Component {
       ()
 
     const percentScale = scaleLinear()
-      .domain([this.props.min, this.props.max])
+      .domain([min, max])
       .range([0, 1])
 
     const percent = percentScale(this.props.value)
@@ -48,7 +46,7 @@ class GaugeChart extends Component {
       .range(["#dbdbe7", "#4834d4"])
 
     const gradientSteps = colorScale.ticks(10)
-      .map(value => colorScale(value))
+      .map(this.props.value => colorScale(this.props.value))
 
     const getCoordsOnArc = (angle, offset=10) => [
         Math.cos(angle - (Math.PI / 2)) * offset,
