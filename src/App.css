@@ -47,7 +47,7 @@
 }
 
 .Graph {
-  background-color: white;
+  background-color: #e6f2ff; /* bleu ciel */
   min-height: 10vh;
   /* display: flex; */
   /* flex-direction: column; */

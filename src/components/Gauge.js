@@ -59,8 +59,6 @@ class GaugeChart extends Component {
       1 - ((1 - 0.65) / 2),
     )
 
-    //let needle = 0.5 + (this.props.value/100/2) ; // delta = -100 -> 0 //  delta = 0 -> 0.5 // delta = 100 -> 1
-
     return (
       <div className="Graph">
         <svg style={{overflow: "visible"}}
