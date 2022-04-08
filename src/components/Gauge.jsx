@@ -2,6 +2,8 @@ import React from "react"
 import { arc } from "d3-shape"
 import { scaleLinear } from "d3-scale"
 
+// from : https://wattenberger.com/blog/gauge
+
 const Gauge = ({
   value=50,
   min=0,
@@ -20,6 +22,7 @@ const Gauge = ({
   const percentScale = scaleLinear()
     .domain([min, max])
     .range([0, 1])
+
   const percent = percentScale(value)
 
   const angleScale = scaleLinear()
@@ -50,7 +53,7 @@ const Gauge = ({
   )
 
   return (
-    <div>
+    <div className = "Graph">
       <svg style={{overflow: "visible"}}
         width="9em"
         viewBox={[
