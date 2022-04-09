@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-//import GaugeChart from './GaugeChart'
 import GaugeChart from './Gauge'
-
-
 import daysInYear from '../utils/functions'
 
 const axios = require('axios').default;
@@ -15,14 +12,18 @@ class Tracker extends Component {
     let lastActivityDate = "";
     let yearDistance = "0";
     // use state to store variables that will be modified (by "target" moficiation for instance)
-    this.state = { targetToDate: "0" };
-    this.state = { deltaKm: "0" };
-    this.state = { deltaDays: "0" };
-    this.state = { newAvg: "0" };
+    this.state = {
+       target: "0",
+       targetToDate: "0",
+       deltaKm: "0",
+       deltaDays: "0",
+       newAvg: "0"
+     };
   }
 
   componentDidMount(){
     // Target : TO DO = à passer en state ??
+
     let tgt = 1000;
     // Récupération de la date de la dernière activité (format lisible, en local time)
     let url = 'https://letsq.xyz/strava/last_activity_date';
