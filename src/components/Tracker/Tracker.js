@@ -89,7 +89,6 @@ class Tracker extends Component {
   render() {
     return (
       <Container fluid className='bg-grey text-black text-center'>
-        <input value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
         <div className="Graph">
           <GaugeChart value = {this.state.deltaKm} />
         </div>
@@ -102,6 +101,8 @@ class Tracker extends Component {
         <p>Target to date: {this.state.targetToDate} km</p>
         <hr />
         <p>Last activity: {this.state.lastActivityDate}</p>
+        <hr />
+        <input type="range" min="0" max ="2000" value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
       </Container>
     );
   }
