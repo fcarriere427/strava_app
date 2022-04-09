@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Container from 'react-bootstrap/Container'
+import Container from 'bootstrap/Container'
 import GaugeChart from './Gauge'
 import daysInYear from '../../utils/functions'
 
