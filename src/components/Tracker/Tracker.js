@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import 'bootstrap/dist/css/bootstrap.min.css'
-//import { Container } from 'bootstrap'
+//import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container } from 'reactstrap'
 import GaugeChart from './Gauge'
 import daysInYear from '../../utils/functions'
 
