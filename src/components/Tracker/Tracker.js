@@ -88,7 +88,7 @@ class Tracker extends Component {
 
   render() {
     return (
-      <div className="Tracker" class='container-fluid bg-dark text-white border'>
+      <container className='container-fluid bg-dark text-white border'>
         <input value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
         <div className="Graph">
           <GaugeChart value = {this.state.deltaKm} />
@@ -102,7 +102,7 @@ class Tracker extends Component {
         <p>Target to date: {this.state.targetToDate} km</p>
         <hr />
         <p>Last activity: {this.state.lastActivityDate}</p>
-      </div>
+      </container>
     );
   }
 }
