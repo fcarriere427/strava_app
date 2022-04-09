@@ -84,7 +84,7 @@ class Tracker extends Component {
         <p>Current year: {this.state.yearDistance} km</p>
         <p>Target: {this.state.targetToDate} km</p>
         <hr />
-        <p>Last activity: {this.state.lastActivityDate}</p>
+        <p>Last activity: {lastActivityDate}</p>
       </div>
     );
   }
