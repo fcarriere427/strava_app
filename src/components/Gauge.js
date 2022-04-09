@@ -146,7 +146,7 @@ class GaugeChart extends Component {
           {!!units && (
             <div style={{
               color: "#8b8ba7",
-              lineHeight: "1.3em",
+              lineHeight: "1em",
               fontWeight: "300",
             }}>
               { units }
