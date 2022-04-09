@@ -104,7 +104,7 @@ class GaugeChart extends Component {
               y1="-1"
               y2="-0.65"
               stroke="#e6f2ff" /* bleu ciel */
-              strokeWidth="0.027"
+              strokeWidth="0.01"
             />
             <circle
               cx={markerLocation[0]}
