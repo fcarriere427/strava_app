@@ -38,10 +38,9 @@ class Tracker extends Component {
     .then(
       (response) => {
         this.yearDistance = response.data[this.year];
-        // delta
+        // calculs
         let delta_km = Math.round((this.yearDistance - this.target_date)*10)/10;
         let delta_days = Math.round(delta_km / this.state.target * daysInYear(this.year)*10)/10;
-        // new_avg_week
         let new_avg_week = Math.round((this.state.target - delta_km) / daysInYear(this.year) * 7 * 10)/10;
         // update state
         this.setState({ deltaKm: delta_km });
@@ -54,10 +53,11 @@ class Tracker extends Component {
     )
 
     // Récupération de la date de la dernière activité (format lisible, en local time)
-    url = 'https://letsq.xyz/strava/last_activity_date';
-    axios.get(url)
+    let url2 = 'https://letsq.xyz/strava/last_activity_date';
+    axios.get(url2)
     .then(
       (response) => {
+        console.log("last act = " + response.data.last_activity_date);
         this.lastActivityDate = response.data.last_activity_date;
       },
       (error) => {
