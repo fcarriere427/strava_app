@@ -9,7 +9,7 @@ import Tracker from './components/Tracker/Tracker';
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" class='container-fluid bg-dark text-white border'>
         <Header name = "Florian" />
         <Tracker />
         {/* <List /> */}

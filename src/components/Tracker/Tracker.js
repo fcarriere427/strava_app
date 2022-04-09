@@ -87,7 +87,7 @@ class Tracker extends Component {
 
   render() {
     return (
-      <div className="Tracker">
+      <div className="Tracker" class='container-fluid bg-dark text-white border'>
         <input value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
         <div className="Graph">
           <GaugeChart value = {this.state.deltaKm} />
