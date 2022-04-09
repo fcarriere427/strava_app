@@ -7,8 +7,8 @@ const axios = require('axios').default;
 class Tracker extends Component {
 
   // local variables (that won't be modified)
-  let lastActivityDate = "";
-  let yearDistance = "0";
+  lastActivityDate = "";
+  yearDistance = "0";
   // calculs locaux pour initier
   let today = new Date();
   let year = today.getFullYear().toString();
