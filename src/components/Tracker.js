@@ -10,9 +10,8 @@ const axios = require('axios').default;
 class Tracker extends Component {
 
   constructor(props){
-    super(props);
     let lastActivityDate = "";
-
+    super(props);
     this.state = { yearDistance: "0" };
     this.state = { targetToDate: "0" };
     this.state = { deltaKm: "0" };
@@ -28,7 +27,7 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        let lastActivityDate = response.data.last_activity_date;
+        lastActivityDate = response.data.last_activity_date;
         // this.setState({ lastActivityDate: response.data.last_activity_date });
       },
       (error) => {
