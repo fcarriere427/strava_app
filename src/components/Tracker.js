@@ -27,7 +27,7 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        lastActivityDate = response.data.last_activity_date;
+        this.lastActivityDate = response.data.last_activity_date;
         // this.setState({ lastActivityDate: response.data.last_activity_date });
       },
       (error) => {
@@ -83,7 +83,7 @@ class Tracker extends Component {
         <p>Current year: {this.state.yearDistance} km</p>
         <p>Target: {this.state.targetToDate} km</p>
         <hr />
-        <p>Last activity: {lastActivityDate}</p>
+        <p>Last activity: {this.lastActivityDate}</p>
       </div>
     );
   }
