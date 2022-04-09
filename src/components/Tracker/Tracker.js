@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-//import ReactDOM from 'react-dom'
 import { Container } from 'reactstrap'
 import GaugeChart from './Gauge'
 import daysInYear from '../../utils/functions'
@@ -27,7 +26,7 @@ class Tracker extends Component {
        deltaKm: "0",
        deltaDays: "0",
        newAvg: "0",
-       //  won't be modified, but needed in state because async... if not: not correctly rendered (updated)
+       //  won't be modified, but needed in state because async calls... if not in state : not correctly rendered when APi answers
        lastActivityDate: "",
        yearDistance: "0"
      };
@@ -89,7 +88,7 @@ class Tracker extends Component {
 
   render() {
     return (
-      <Container className='container-fluid bg-dark text-white border'>
+      <Container className='container-fluid bg-dark text-white'>
         <input value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
         <div className="Graph">
           <GaugeChart value = {this.state.deltaKm} />
