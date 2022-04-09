@@ -6,17 +6,6 @@ const axios = require('axios').default;
 
 class Tracker extends Component {
 
-  // local variables (that won't be modified)
-  lastActivityDate = "";
-  yearDistance = "0";
-  // calculs locaux pour initier
-  static today = new Date();
-  static year = today.getFullYear().toString();
-  static start = new Date(today.getFullYear(), 0, 0);
-  static diff = today - start;
-  static day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
-  static percentOfYear = day / daysInYear(year);
-
   constructor(props){
     super(props);
     // use state to store variables that will be modified (by "target" moficiation for instance)
@@ -27,24 +16,31 @@ class Tracker extends Component {
        deltaDays: "0",
        newAvg: "0"
      };
+     // local variables (that won't be modified)
+     this.lastActivityDate = "";
+     this.yearDistance = "0";
+     // calculs locaux pour initier
+     this.today = new Date();
+     this.year = today.getFullYear().toString();
+     this.start = new Date(today.getFullYear(), 0, 0);
+     this.diff = today - start;
+     this.day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
+     this.percentOfYear = day / daysInYear(year);
+     this.target_date = Math.round(percentOfYear * this.state.target*10)/10;
   }
 
   componentDidMount(){
-    // target à date
-    let target_date = Math.round(percentOfYear * this.state.target*10)/10;
-    this.setState({ targetToDate: target_date });
-
     // Récupération du cumul de l'année
     url = 'https://letsq.xyz/strava/year_distances';
     axios.get(url)
     .then(
       (response) => {
-        this.yearDistance = response.data[year];
+        this.yearDistance = response.data[this.year];
         // delta
-        delta_km = Math.round((this.yearDistance - target_date)*10)/10;
-        delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
+        let delta_km = Math.round((this.yearDistance - this.target_date)*10)/10;
+        let delta_days = Math.round(delta_km / this.state.target * daysInYear(this.year)*10)/10;
         // new_avg_week
-        new_avg_week = Math.round((this.state.target - delta_km) / daysInYear(year) * 7 * 10)/10;
+        let new_avg_week = Math.round((this.state.target - delta_km) / daysInYear(this.year) * 7 * 10)/10;
         // update state
         this.setState({ deltaKm: delta_km });
         this.setState({ deltaDays: delta_days });
@@ -74,14 +70,14 @@ class Tracker extends Component {
     // récupération de l'input
     const newTarget = evt.target.value;
     // calculs
-    target_date = Math.round(percentOfYear * newTarget *10)/10;
-    delta_km = Math.round((this.yearDistance - target_date)*10)/10;
-    delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
-    new_avg_week = Math.round((newTarget - delta_km) / daysInYear(year) * 7 * 10)/10;
+    this.target_date = Math.round(percentOfYear * newTarget *10)/10;
+    let delta_km = Math.round((this.yearDistance - target_date)*10)/10;
+    let delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
+    let new_avg_week = Math.round((newTarget - delta_km) / daysInYear(year) * 7 * 10)/10;
     // mise à jour de state
     this.setState({
       target: newTarget,
-      targetToDate: target_date,
+      targetToDate: this.target_date,
       deltaKm: delta_km,
       deltaDays: delta_days,
       newAvg: new_avg_week
