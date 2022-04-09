@@ -72,9 +72,17 @@ class Tracker extends Component {
 
   }
 
+  updateTarget(evt) {
+    const val = evt.target.value;
+    this.setState({
+      target: val
+    });
+  }
+
   render() {
     return (
       <div className="Tracker">
+        <input value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
         <div className="Graph">
           <GaugeChart value = {this.state.deltaKm} />
         </div>
