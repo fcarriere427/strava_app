@@ -94,7 +94,7 @@ class GaugeChart extends Component {
             </defs>
             <path
               d={backgroundArc}
-              fill="#dbdbe7"
+              fill="#ffffff" //
             />
             <path
               d={filledArc}
