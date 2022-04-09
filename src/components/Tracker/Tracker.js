@@ -9,9 +9,6 @@ class Tracker extends Component {
   constructor(props){
     super(props);
     const init_target = 1000;
-    // local variables (that won't be modified)
-    this.lastActivityDate = "";
-    this.yearDistance = "0";
     // calculs locaux pour initier
     this.today = new Date();
     this.year = this.today.getFullYear().toString();
@@ -19,7 +16,7 @@ class Tracker extends Component {
     this.diff = this.today - this.start;
     this.day = Math.floor(this.diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
     this.percentOfYear = this.day / daysInYear(this.year);
-    this.target_date = Math.round(this.percentOfYear * init_target*10)/10;
+    this.target_date = Math.round(this.percentOfYear * init_target*10)/10; // used for init only, after it's in the state
 
     // use state to store variables that will be modified (by "target" moficiation for instance)
     this.state = {
@@ -27,7 +24,10 @@ class Tracker extends Component {
        targetToDate: this.target_date,
        deltaKm: "0",
        deltaDays: "0",
-       newAvg: "0"
+       newAvg: "0",
+       //  won't be modified, but needed in state because async... if not: not correctly rendered (updated)
+       lastActivityDate: "",
+       yearDistance: "0"
      };
    }
 
@@ -37,9 +37,9 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        this.yearDistance = response.data[this.year];
+        this.setState({ yearDistance : response.data[this.year] });
         // calculs
-        let delta_km = Math.round((this.yearDistance - this.target_date)*10)/10;
+        let delta_km = Math.round((this.state.yearDistance - this.target_date)*10)/10;
         let delta_days = Math.round(delta_km / this.state.target * daysInYear(this.year)*10)/10;
         let new_avg_week = Math.round((this.state.target - delta_km) / daysInYear(this.year) * 7 * 10)/10;
         // update state
@@ -57,10 +57,7 @@ class Tracker extends Component {
     axios.get(url2)
     .then(
       (response) => {
-        console.log("appel de last_activity_date");
-        this.lastActivityDate = response.data.last_activity_date;
-        console.log("réponse : " + response.data.last_activity_date);
-        console.log("et donc this.lastActivityDate : " + this.lastActivityDate);
+        this.setState({ lastActivityDate : response.data.last_activity_date });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -86,7 +83,6 @@ class Tracker extends Component {
       deltaDays: delta_days,
       newAvg: new_avg_week
     });
-    console.log("updateTarget met à jour --> this.lastActivityDate = " + this.lastActivityDate);
   }
 
   render() {
