@@ -57,6 +57,7 @@ class Tracker extends Component {
     axios.get(url2)
     .then(
       (response) => {
+        console.log("appel de last_activity_date");
         this.lastActivityDate = response.data.last_activity_date;
       },
       (error) => {
