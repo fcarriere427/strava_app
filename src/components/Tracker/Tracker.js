@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-//import 'bootstrap/dist/css/bootstrap.min.css'
+//import ReactDOM from 'react-dom'
 import { Container } from 'reactstrap'
 import GaugeChart from './Gauge'
 import daysInYear from '../../utils/functions'
