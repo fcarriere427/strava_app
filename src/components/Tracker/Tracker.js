@@ -72,7 +72,7 @@ class Tracker extends Component {
     const newTarget = evt.target.value;
     // calculs
     this.target_date = Math.round(this.percentOfYear * newTarget *10)/10;
-    let delta_km = Math.round((this.yearDistance - this.target_date)*10)/10;
+    let delta_km = Math.round((this.state.yearDistance - this.target_date)*10)/10;
     let delta_days = Math.round(delta_km / newTarget * daysInYear(this.year)*10)/10;
     let new_avg_week = Math.round((newTarget - delta_km) / daysInYear(this.year) * 7 * 10)/10;
     // mise à jour de state
@@ -97,10 +97,10 @@ class Tracker extends Component {
         <p>New avg/week: {this.state.newAvg} km</p>
         <p>New avg/day: {Math.floor(this.state.newAvg/7*10)/10} km</p>
         <hr />
-        <p>Current year: {this.yearDistance} km</p>
+        <p>Current year: {this.state.yearDistance} km</p>
         <p>Target to date: {this.state.targetToDate} km</p>
         <hr />
-        <p>Last activity: {this.lastActivityDate}</p>
+        <p>Last activity: {this.state.lastActivityDate}</p>
       </div>
     );
   }
