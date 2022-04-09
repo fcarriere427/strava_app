@@ -59,6 +59,8 @@ class Tracker extends Component {
       (response) => {
         console.log("appel de last_activity_date");
         this.lastActivityDate = response.data.last_activity_date;
+        console.log("réponse : " + response.data.last_activity_date);
+        console.log("et donc this.lastActivityDate : " + this.lastActivityDate);
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
