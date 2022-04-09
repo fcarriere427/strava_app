@@ -6,11 +6,19 @@ const axios = require('axios').default;
 
 class Tracker extends Component {
 
+  // local variables (that won't be modified)
+  let lastActivityDate = "";
+  let yearDistance = "0";
+  // calculs locaux pour initier
+  let today = new Date();
+  let year = today.getFullYear().toString();
+  let start = new Date(today.getFullYear(), 0, 0);
+  let diff = today - start;
+  let day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
+  let percentOfYear = day / daysInYear(year);
+
   constructor(props){
     super(props);
-    // local variables (that won't be modified)
-    let lastActivityDate = "";
-    let yearDistance = "0";
     // use state to store variables that will be modified (by "target" moficiation for instance)
     this.state = {
        target: "1000",
@@ -19,18 +27,11 @@ class Tracker extends Component {
        deltaDays: "0",
        newAvg: "0"
      };
-    // calculs locaux pour initier
-    let today = new Date();
-    let year = today.getFullYear().toString();
-    let start = new Date(today.getFullYear(), 0, 0);
-    let diff = today - start;
-    let day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
-    let percentOfYear = day / daysInYear(year);
-    let target_date = Math.round(percentOfYear * this.state.target*10)/10;
   }
 
   componentDidMount(){
     // target à date
+    let target_date = Math.round(percentOfYear * this.state.target*10)/10;
     this.setState({ targetToDate: target_date });
 
     // Récupération du cumul de l'année
@@ -70,12 +71,14 @@ class Tracker extends Component {
 
   // Actions quand on modifie la cible
   updateTarget(evt) {
+    // récupération de l'input
     const newTarget = evt.target.value;
+    // calculs
     target_date = Math.round(percentOfYear * newTarget *10)/10;
     delta_km = Math.round((this.yearDistance - target_date)*10)/10;
     delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
     new_avg_week = Math.round((newTarget - delta_km) / daysInYear(year) * 7 * 10)/10;
-
+    // mise à jour de state
     this.setState({
       target: newTarget,
       targetToDate: target_date,
