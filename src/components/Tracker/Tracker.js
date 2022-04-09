@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GaugeChart from './Gauge'
-import daysInYear from '../utils/functions'
+import daysInYear from '../../utils/functions'
 
 const axios = require('axios').default;
 
