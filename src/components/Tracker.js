@@ -8,9 +8,11 @@ import daysInYear from '../utils/functions'
 const axios = require('axios').default;
 
 class Tracker extends Component {
+
   constructor(props){
     super(props);
-    this.state = { lastActivityDate: "?" };
+    let lastActivityDate = "";
+
     this.state = { yearDistance: "0" };
     this.state = { targetToDate: "0" };
     this.state = { deltaKm: "0" };
@@ -26,12 +28,14 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        this.setState({ lastActivityDate: response.data.last_activity_date });
+        let lastActivityDate = response.data.last_activity_date;
+        // this.setState({ lastActivityDate: response.data.last_activity_date });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
       }
     )
+
     // Récupération du cumul de l'année
     let today = new Date();
     let year = today.getFullYear().toString();
