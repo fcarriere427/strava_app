@@ -70,10 +70,10 @@ class Tracker extends Component {
     // récupération de l'input
     const newTarget = evt.target.value;
     // calculs
-    this.target_date = Math.round(percentOfYear * newTarget *10)/10;
-    let delta_km = Math.round((this.yearDistance - target_date)*10)/10;
-    let delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
-    let new_avg_week = Math.round((newTarget - delta_km) / daysInYear(year) * 7 * 10)/10;
+    this.target_date = Math.round(this.percentOfYear * newTarget *10)/10;
+    let delta_km = Math.round((this.yearDistance - this.target_date)*10)/10;
+    let delta_days = Math.round(delta_km / this.state.target * daysInYear(this.year)*10)/10;
+    let new_avg_week = Math.round((newTarget - delta_km) / daysInYear(this.year) * 7 * 10)/10;
     // mise à jour de state
     this.setState({
       target: newTarget,
