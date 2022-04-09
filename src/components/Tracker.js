@@ -37,17 +37,15 @@ class Tracker extends Component {
 
     // Récupération du cumul de l'année
     url = 'https://letsq.xyz/strava/year_distances';
-    let today = new Date();
-    let year = today.getFullYear().toString();
     axios.get(url)
     .then(
       (response) => {
         this.yearDistance = response.data[year];
         // delta
-        let delta_km = Math.round((this.yearDistance - target_date)*10)/10;
-        let delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
+        delta_km = Math.round((this.yearDistance - target_date)*10)/10;
+        delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
         // new_avg_week
-        let new_avg_week = Math.round((this.state.target - delta_km) / daysInYear(year) * 7 * 10)/10;
+        new_avg_week = Math.round((this.state.target - delta_km) / daysInYear(year) * 7 * 10)/10;
         // update state
         this.setState({ deltaKm: delta_km });
         this.setState({ deltaDays: delta_days });
