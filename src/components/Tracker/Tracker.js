@@ -86,6 +86,7 @@ class Tracker extends Component {
       deltaDays: delta_days,
       newAvg: new_avg_week
     });
+    console.log("updateTarget met à jour --> this.lastActivityDate = " + this.lastActivityDate);
   }
 
   render() {
