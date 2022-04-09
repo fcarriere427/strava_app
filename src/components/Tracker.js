@@ -27,6 +27,11 @@ class Tracker extends Component {
      this.day = Math.floor(this.diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
      this.percentOfYear = this.day / daysInYear(this.year);
      this.target_date = Math.round(this.percentOfYear * this.state.target*10)/10;
+     // TMP logs
+     console.log("this.today = " + this.today);
+     console.log("this.year = " + this.year);
+     console.log("this.percentOfYear = " + this.percentOfYear);
+     console.log("this.target_date = " + this.target_date);
   }
 
   componentDidMount(){
