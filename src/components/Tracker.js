@@ -8,26 +8,28 @@ class Tracker extends Component {
 
   constructor(props){
     super(props);
+    const init_target = 1000;
+    // local variables (that won't be modified)
+    this.lastActivityDate = "";
+    this.yearDistance = "0";
+    // calculs locaux pour initier
+    this.today = new Date();
+    this.year = this.today.getFullYear().toString();
+    this.start = new Date(this.today.getFullYear(), 0, 0);
+    this.diff = this.today - this.start;
+    this.day = Math.floor(this.diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
+    this.percentOfYear = this.day / daysInYear(this.year);
+    this.target_date = Math.round(this.percentOfYear * init_target*10)/10;
+
     // use state to store variables that will be modified (by "target" moficiation for instance)
     this.state = {
-       target: "1000",
-       targetToDate: "0",
+       target: init_target,
+       targetToDate: this.target_date,
        deltaKm: "0",
        deltaDays: "0",
        newAvg: "0"
      };
-     // local variables (that won't be modified)
-     this.lastActivityDate = "";
-     this.yearDistance = "0";
-     // calculs locaux pour initier
-     this.today = new Date();
-     this.year = this.today.getFullYear().toString();
-     this.start = new Date(this.today.getFullYear(), 0, 0);
-     this.diff = this.today - this.start;
-     this.day = Math.floor(this.diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
-     this.percentOfYear = this.day / daysInYear(this.year);
-     this.target_date = Math.round(this.percentOfYear * this.state.target*10)/10;
-  }
+   }
 
   componentDidMount(){
     // Récupération du cumul de l'année
