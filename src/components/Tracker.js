@@ -10,9 +10,11 @@ const axios = require('axios').default;
 class Tracker extends Component {
 
   constructor(props){
-    let lastActivityDate = "";
     super(props);
-    this.state = { yearDistance: "0" };
+    // local variables (that won't be modified)
+    let lastActivityDate = "";
+    let yearDistance = "0";
+    // use state to store variables that will be modified (by "target" moficiation for instance)
     this.state = { targetToDate: "0" };
     this.state = { deltaKm: "0" };
     this.state = { deltaDays: "0" };
@@ -42,9 +44,9 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        this.setState({ yearDistance: response.data[year] });
+        this.yearDistance = response.data[year];
         // delta
-        let delta_km = Math.round((this.state.yearDistance - target_date)*10)/10;
+        let delta_km = Math.round((this.yearDistance - target_date)*10)/10;
         let delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
         // new_avg_week
         let new_avg_week = Math.round((tgt - delta_km) / daysInYear(year) * 7 * 10)/10;
@@ -80,7 +82,7 @@ class Tracker extends Component {
         <p>New avg/week: {this.state.newAvg} km</p>
         <p>New avg/day: {Math.floor(this.state.newAvg/7*10)/10} km</p>
         <hr />
-        <p>Current year: {this.state.yearDistance} km</p>
+        <p>Current year: {this.yearDistance} km</p>
         <p>Target: {this.state.targetToDate} km</p>
         <hr />
         <p>Last activity: {this.lastActivityDate}</p>
