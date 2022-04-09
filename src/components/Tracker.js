@@ -92,7 +92,8 @@ class Tracker extends Component {
         <p>New avg/day: {Math.floor(this.state.newAvg/7*10)/10} km</p>
         <hr />
         <p>Current year: {this.yearDistance} km</p>
-        <p>Target: {this.state.targetToDate} km</p>
+        <p>Target to date: {this.state.targetToDate} km</p>
+        <p>Target (EoY) : {this.state.target} km</p>
         <hr />
         <p>Last activity: {this.lastActivityDate}</p>
       </div>
