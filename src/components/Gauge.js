@@ -136,8 +136,8 @@ class GaugeChart extends Component {
             <div style={{
               color: "#8b8ba7",
               marginTop: "0.6em",
-              fontSize: "1.3em",
-              lineHeight: "1.3em",
+              fontSize: "1em",
+              lineHeight: "1em",
               fontWeight: "700",
             }}>
               { label }
