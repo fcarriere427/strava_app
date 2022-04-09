@@ -10,12 +10,12 @@ class Tracker extends Component {
   lastActivityDate = "";
   yearDistance = "0";
   // calculs locaux pour initier
-  let today = new Date();
-  let year = today.getFullYear().toString();
-  let start = new Date(today.getFullYear(), 0, 0);
-  let diff = today - start;
-  let day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
-  let percentOfYear = day / daysInYear(year);
+  static today = new Date();
+  static year = today.getFullYear().toString();
+  static start = new Date(today.getFullYear(), 0, 0);
+  static diff = today - start;
+  static day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
+  static percentOfYear = day / daysInYear(year);
 
   constructor(props){
     super(props);
