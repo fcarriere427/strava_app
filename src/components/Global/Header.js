@@ -6,7 +6,7 @@ import { Container } from 'reactstrap'
 class Header extends Component {
   render() {
     return (
-      <Container className = "container-fluid bg-warning text-black">
+      <Container className = "container-fluid bg-warning text-black text-center">
         <div className="App">
           <header className="App-header">
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
