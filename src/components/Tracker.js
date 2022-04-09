@@ -21,12 +21,12 @@ class Tracker extends Component {
      this.yearDistance = "0";
      // calculs locaux pour initier
      this.today = new Date();
-     this.year = today.getFullYear().toString();
-     this.start = new Date(today.getFullYear(), 0, 0);
-     this.diff = today - start;
-     this.day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
-     this.percentOfYear = day / daysInYear(year);
-     this.target_date = Math.round(percentOfYear * this.state.target*10)/10;
+     this.year = this.today.getFullYear().toString();
+     this.start = new Date(this.today.getFullYear(), 0, 0);
+     this.diff = this.today - this.start;
+     this.day = Math.floor(this.diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
+     this.percentOfYear = this.day / daysInYear(this.year);
+     this.target_date = Math.round(this.percentOfYear * this.state.target*10)/10;
   }
 
   componentDidMount(){
