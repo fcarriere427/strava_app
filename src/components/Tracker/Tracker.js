@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'bootstrap/Container'
 import GaugeChart from './Gauge'
 import daysInYear from '../../utils/functions'
