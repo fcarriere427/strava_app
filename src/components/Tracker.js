@@ -36,7 +36,7 @@ class Tracker extends Component {
 
   componentDidMount(){
     // Récupération du cumul de l'année
-    url = 'https://letsq.xyz/strava/year_distances';
+    let url = 'https://letsq.xyz/strava/year_distances';
     axios.get(url)
     .then(
       (response) => {
