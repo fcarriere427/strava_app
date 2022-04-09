@@ -24,11 +24,9 @@ class Tracker extends Component {
     let year = today.getFullYear().toString();
     let start = new Date(today.getFullYear(), 0, 0);
     let diff = today - start;
-    let oneDay = 1000 * 60 * 60 * 24;
-    let day = Math.floor(diff / oneDay);
+    let day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
     let percentOfYear = day / daysInYear(year);
     let target_date = Math.round(percentOfYear * this.state.target*10)/10;
-
   }
 
   componentDidMount(){
