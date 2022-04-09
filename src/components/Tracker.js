@@ -57,7 +57,7 @@ class Tracker extends Component {
     )
 
     // Récupération de la date de la dernière activité (format lisible, en local time)
-    let url = 'https://letsq.xyz/strava/last_activity_date';
+    url = 'https://letsq.xyz/strava/last_activity_date';
     axios.get(url)
     .then(
       (response) => {
