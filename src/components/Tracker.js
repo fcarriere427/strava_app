@@ -13,35 +13,31 @@ class Tracker extends Component {
     let yearDistance = "0";
     // use state to store variables that will be modified (by "target" moficiation for instance)
     this.state = {
-       target: "0",
+       target: "1000",
        targetToDate: "0",
        deltaKm: "0",
        deltaDays: "0",
        newAvg: "0"
      };
+    // calculs locaux pour initier
+    let now = new Date();
+    let start = new Date(now.getFullYear(), 0, 0);
+    let diff = now - start;
+    let oneDay = 1000 * 60 * 60 * 24;
+    let day = Math.floor(diff / oneDay);
+    let percentOfYear = day / daysInYear(year);
+    let target_date = Math.round(percentOfYear * this.state.target*10)/10;
+
   }
 
   componentDidMount(){
-    // Target : TO DO = à passer en state ??
-
-    let tgt = 1000;
-    // Récupération de la date de la dernière activité (format lisible, en local time)
-    let url = 'https://letsq.xyz/strava/last_activity_date';
-    axios.get(url)
-    .then(
-      (response) => {
-        this.lastActivityDate = response.data.last_activity_date;
-        // this.setState({ lastActivityDate: response.data.last_activity_date });
-      },
-      (error) => {
-        console.log("ERREUR de l'API  : " + error);
-      }
-    )
+    // target à date
+    this.setState({ targetToDate: target_date });
 
     // Récupération du cumul de l'année
+    url = 'https://letsq.xyz/strava/year_distances';
     let today = new Date();
     let year = today.getFullYear().toString();
-    url = 'https://letsq.xyz/strava/year_distances';
     axios.get(url)
     .then(
       (response) => {
@@ -50,7 +46,7 @@ class Tracker extends Component {
         let delta_km = Math.round((this.yearDistance - target_date)*10)/10;
         let delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
         // new_avg_week
-        let new_avg_week = Math.round((tgt - delta_km) / daysInYear(year) * 7 * 10)/10;
+        let new_avg_week = Math.round((this.state.target - delta_km) / daysInYear(year) * 7 * 10)/10;
         // update state
         this.setState({ deltaKm: delta_km });
         this.setState({ deltaDays: delta_days });
@@ -61,21 +57,34 @@ class Tracker extends Component {
       }
     )
 
-    // target à date
-    var now = new Date();
-    var start = new Date(now.getFullYear(), 0, 0);
-    var diff = now - start;
-    var oneDay = 1000 * 60 * 60 * 24;
-    var day = Math.floor(diff / oneDay);
-    let target_date = Math.round(day / daysInYear(year) * tgt*10)/10;
-    this.setState({ targetToDate: target_date });
+    // Récupération de la date de la dernière activité (format lisible, en local time)
+    let url = 'https://letsq.xyz/strava/last_activity_date';
+    axios.get(url)
+    .then(
+      (response) => {
+        this.lastActivityDate = response.data.last_activity_date;
+      },
+      (error) => {
+        console.log("ERREUR de l'API  : " + error);
+      }
+    )
 
   }
 
+  // Actions quand on modifie la cible
   updateTarget(evt) {
-    const val = evt.target.value;
+    const newTarget = evt.target.value;
+    target_date = Math.round(percentOfYear * newTarget *10)/10;
+    delta_km = Math.round((this.yearDistance - target_date)*10)/10;
+    delta_days = Math.round(delta_km / tgt * daysInYear(year)*10)/10;
+    new_avg_week = Math.round((newTarget - delta_km) / daysInYear(year) * 7 * 10)/10;
+
     this.setState({
-      target: val
+      target: newTarget,
+      targetToDate: target_date,
+      deltaKm: delta_km,
+      deltaDays: delta_days,
+      newAvg: new_avg_week
     });
   }
 
