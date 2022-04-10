@@ -11,22 +11,9 @@ class Tracker extends Component {
 
   constructor(props){
     super(props);
-    // calculs locaux pour initier
-    this.today = new Date();
-    this.year = this.today.getFullYear().toString();
-    this.start = new Date(this.today.getFullYear(), 0, 0);
-    this.diff = this.today - this.start;
-    this.day = Math.floor(this.diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
-    this.percentOfYear = this.day / daysInYear(this.year);
-    this.target_date = Math.round(this.percentOfYear * init_target*10)/10; // used for init only, after it's in the state
-
     // use state to store variables that will be modified (by "target" moficiation for instance)
     this.state = {
        target: init_target,
-       targetToDate: this.target_date,
-       deltaKm: "0",
-       deltaDays: "0",
-       //  won't be modified, but needed in state because async calls... if not in state : not correctly rendered when APi answers
        yearDistance: "0"
      };
    }
@@ -38,12 +25,6 @@ class Tracker extends Component {
     .then(
       (response) => {
         this.setState({ yearDistance : response.data[this.year] });
-        // calculs
-        let delta_km = Math.round((this.state.yearDistance - this.target_date)*10)/10;
-        let delta_days = Math.round(delta_km / this.state.target * daysInYear(this.year)*10)/10;
-        // update state
-        this.setState({ deltaKm: delta_km });
-        this.setState({ deltaDays: delta_days });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -56,15 +37,9 @@ class Tracker extends Component {
     // récupération de l'input
     const newTarget = evt.target.value;
     // calculs
-    this.target_date = Math.round(this.percentOfYear * newTarget *10)/10;
-    let delta_km = Math.round((this.state.yearDistance - this.target_date)*10)/10;
-    let delta_days = Math.round(delta_km / newTarget * daysInYear(this.year)*10)/10;
     // mise à jour de state
     this.setState({
       target: newTarget,
-      targetToDate: this.target_date,
-      deltaKm: delta_km,
-      deltaDays: delta_days
     });
   }
 
@@ -72,15 +47,9 @@ class Tracker extends Component {
     // récupération de l'input
     const newTarget = init_target;
     // calculs
-    this.target_date = Math.round(this.percentOfYear * newTarget *10)/10;
-    let delta_km = Math.round((this.state.yearDistance - this.target_date)*10)/10;
-    let delta_days = Math.round(delta_km / newTarget * daysInYear(this.year)*10)/10;
     // mise à jour de state
     this.setState({
       target: newTarget,
-      targetToDate: this.target_date,
-      deltaKm: delta_km,
-      deltaDays: delta_days
     });
   }
 
