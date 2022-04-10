@@ -48,7 +48,7 @@ function targetToDate(target){
   let diff = today - start;
   let day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
   let percentOfYear = day / daysInYear(year);
-  return target_date = Math.round(percentOfYear * this.props.target *10)/10;
+  return Math.round(percentOfYear * this.props.target *10)/10;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
