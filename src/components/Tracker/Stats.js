@@ -12,9 +12,6 @@ class Averages extends Component {
   // }
 
   render() {
-    this.props.current
-    this.props.target
-
     // calculs locaux pour initier
     let today = new Date();
     let year = today.getFullYear().toString();
@@ -32,8 +29,8 @@ class Averages extends Component {
 
     return (
       <div>
-        <p>New avg/week: {newAvgWeek} km</p>
-        <p>New avg/day: {newAvgDay} km</p>
+        <p>New avg/week: {this.newAvgWeek} km</p>
+        <p>New avg/day: {this.newAvgDay} km</p>
       </div>
     );
   }
