@@ -68,5 +68,5 @@ class LastActivityDate extends Component {
 
 export {
   LastActivityDate,
-
+  Averages,
 }
