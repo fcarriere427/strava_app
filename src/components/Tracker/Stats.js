@@ -29,8 +29,8 @@ class Averages extends Component {
 
     return (
       <div>
-        <p>New avg/week: {this.newAvgWeek} km</p>
-        <p>New avg/day: {this.newAvgDay} km</p>
+        <p>New avg/week: {new_avg_week} km</p>
+        <p>New avg/day: {new_avg_day} km</p>
       </div>
     );
   }
