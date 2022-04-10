@@ -4,12 +4,12 @@ import GaugeChart from './Gauge'
 import daysInYear from '../../utils/functions'
 
 const axios = require('axios').default;
+const init_target = 1000;
 
 class Tracker extends Component {
 
   constructor(props){
     super(props);
-    const init_target = 1000;
     // calculs locaux pour initier
     this.today = new Date();
     this.year = this.today.getFullYear().toString();
