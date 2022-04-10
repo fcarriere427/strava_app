@@ -2,7 +2,7 @@ import daysInYear from '../../utils/functions'
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // renvoie la distance cible pour la date du jour / prend la cible annuelle en entrée
-function targetToDate(target){
+export default function targetToDate(target){
   // calculs locaux pour initier
   let today = new Date();
   let start = new Date(today.getFullYear(), 0, 0);
