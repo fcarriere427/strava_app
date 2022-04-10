@@ -26,7 +26,6 @@ class Tracker extends Component {
        targetToDate: this.target_date,
        deltaKm: "0",
        deltaDays: "0",
-       newAvg: "0",
        //  won't be modified, but needed in state because async calls... if not in state : not correctly rendered when APi answers
        yearDistance: "0"
      };
@@ -42,11 +41,9 @@ class Tracker extends Component {
         // calculs
         let delta_km = Math.round((this.state.yearDistance - this.target_date)*10)/10;
         let delta_days = Math.round(delta_km / this.state.target * daysInYear(this.year)*10)/10;
-        let new_avg_week = Math.round((this.state.target - delta_km) / daysInYear(this.year) * 7 * 10)/10;
         // update state
         this.setState({ deltaKm: delta_km });
         this.setState({ deltaDays: delta_days });
-        this.setState({ newAvg: new_avg_week });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -62,14 +59,12 @@ class Tracker extends Component {
     this.target_date = Math.round(this.percentOfYear * newTarget *10)/10;
     let delta_km = Math.round((this.state.yearDistance - this.target_date)*10)/10;
     let delta_days = Math.round(delta_km / newTarget * daysInYear(this.year)*10)/10;
-    let new_avg_week = Math.round((newTarget - delta_km) / daysInYear(this.year) * 7 * 10)/10;
     // mise à jour de state
     this.setState({
       target: newTarget,
       targetToDate: this.target_date,
       deltaKm: delta_km,
-      deltaDays: delta_days,
-      newAvg: new_avg_week
+      deltaDays: delta_days
     });
   }
 
@@ -80,28 +75,24 @@ class Tracker extends Component {
     this.target_date = Math.round(this.percentOfYear * newTarget *10)/10;
     let delta_km = Math.round((this.state.yearDistance - this.target_date)*10)/10;
     let delta_days = Math.round(delta_km / newTarget * daysInYear(this.year)*10)/10;
-    let new_avg_week = Math.round((newTarget - delta_km) / daysInYear(this.year) * 7 * 10)/10;
     // mise à jour de state
     this.setState({
       target: newTarget,
       targetToDate: this.target_date,
       deltaKm: delta_km,
-      deltaDays: delta_days,
-      newAvg: new_avg_week
+      deltaDays: delta_days
     });
   }
 
   render() {
     return (
       <Container fluid className='bg-grey text-black text-center'>
-        <div className="Graph">
-          <GaugeChart value = {this.state.deltaKm} />
-        </div>
+        <GaugeChart value = {this.state.deltaKm} />
         <p>({this.state.deltaDays} days)</p>
         <hr />
         <Averages current={this.state.yearDistance} target={this.state.target} />
         <hr />
-        <Distances current={this.state.yearDistance} target={this.state.targetToDate} />
+        <Distances current={this.state.yearDistance} target={this.state.target} />
         <hr />
         <LastActivityDate />
         <hr />

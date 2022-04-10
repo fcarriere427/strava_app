@@ -7,10 +7,11 @@ const axios = require('axios').default;
 
 class Distances extends Component {
   render() {
+    let target_date = targetToDate (this.props.target);
     return (
       <div>
         <p>Current year: {this.props.current} km</p>
-        <p>Target to date: {this.props.target} km</p>
+        <p>Target to date: {target_date} km</p>
       </div>
     );
   }
@@ -21,16 +22,8 @@ class Distances extends Component {
 class Averages extends Component {
   render() {
     // calculs locaux pour initier
-    let today = new Date();
-    let year = today.getFullYear().toString();
-    let start = new Date(today.getFullYear(), 0, 0);
-    let diff = today - start;
-    let day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
-    let percentOfYear = day / daysInYear(year);
-    let target_date = Math.round(percentOfYear * this.props.target *10)/10;
-
+    let target_date = targetToDate (this.props.target);
     let delta_km = Math.round((this.props.current - target_date)*10)/10;
-    let delta_days = Math.round(delta_km / this.props.target * daysInYear(year)*10)/10;
 
     let new_avg_week = Math.round((this.props.target - delta_km) / daysInYear(year) * 7 * 10)/10;
     let new_avg_day = Math.floor(new_avg_week/7*10)/10;
@@ -42,6 +35,18 @@ class Averages extends Component {
       </div>
     );
   }
+}
+
+// renvoie la distance cible pour la date du jour / prend la cible annuelle en entrée
+function targetToDate(target){
+  // calculs locaux pour initier
+  let today = new Date();
+  let year = today.getFullYear().toString();
+  let start = new Date(today.getFullYear(), 0, 0);
+  let diff = today - start;
+  let day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
+  let percentOfYear = day / daysInYear(year);
+  return target_date = Math.round(percentOfYear * this.props.target *10)/10;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
