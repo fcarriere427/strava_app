@@ -21,10 +21,11 @@ class Tracker extends Component {
   componentDidMount(){
     // Récupération du cumul de l'année
     let url = 'https://letsq.xyz/strava/year_distances';
+    let year = new Date().getFullYear().toString();
     axios.get(url)
     .then(
       (response) => {
-        this.setState({ yearDistance : response.data[this.year] });
+        this.setState({ yearDistance : response.data[year] });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
