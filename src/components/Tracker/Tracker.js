@@ -88,7 +88,7 @@ class Tracker extends Component {
 
   restetTarget(evt) {
     // récupération de l'input
-    const newTarget = init.target;
+    const newTarget = init_target;
     // calculs
     this.target_date = Math.round(this.percentOfYear * newTarget *10)/10;
     let delta_km = Math.round((this.state.yearDistance - this.target_date)*10)/10;
