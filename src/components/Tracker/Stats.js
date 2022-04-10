@@ -28,7 +28,7 @@ class Averages extends Component {
     let delta_days = Math.round(delta_km / this.props.target * daysInYear(year)*10)/10;
 
     let new_avg_week = Math.round((this.props.target - delta_km) / daysInYear(year) * 7 * 10)/10;
-    let new_avg_day = Math.floor(new_avg_week/7*10)/10} km</p>
+    let new_avg_day = Math.floor(new_avg_week/7*10)/10;
 
     return (
       <div>
