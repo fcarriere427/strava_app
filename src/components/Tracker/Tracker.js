@@ -6,7 +6,7 @@ import daysInYear from '../../utils/functions'
 const axios = require('axios').default;
 const init_target = 1000;
 
-class DeltaInDays extend Component {
+class DeltaInDays extends Component {
   constructor(props){
     super(props);
     this.state = { lastActivityDate: "" };
