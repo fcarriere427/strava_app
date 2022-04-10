@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container } from 'reactstrap'
 import GaugeChart from './Gauge'
-import { LastActivityDate, Averages } from './Stats'
+import { LastActivityDate, Averages, Distances } from './Stats'
 import daysInYear from '../../utils/functions'
 
 const axios = require('axios').default;
