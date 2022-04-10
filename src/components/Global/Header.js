@@ -10,7 +10,7 @@ class Header extends Component {
         <div className="App">
           <header className="App-header">
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
-            <h2 className="App-title">{this.props.name}'s Strava App</h2>
+            <h3 className="App-title">{this.props.name}'s Strava App</h3>
           </header>
         </div>
       </Container>

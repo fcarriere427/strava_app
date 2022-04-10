@@ -102,7 +102,8 @@ class Tracker extends Component {
         <hr />
         <p>Last activity: {this.state.lastActivityDate}</p>
         <hr />
-        <input type="range" min="0" max ="2000" value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
+        <input type="range" min="500" max ="1500" value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
+        <p> Target: {this.state.target} </p>
       </Container>
     );
   }
