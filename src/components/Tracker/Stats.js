@@ -7,14 +7,14 @@ const axios = require('axios').default;
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class Deltas extends Component {
   render() {
-    let target_date = targetToDate (this.props.target);
+    let target_date = targetToDate(this.props.target);
     let delta_km = Math.round((this.props.current - target_date)*10)/10;
     let year = new Date().getFullYear().toString();
     let delta_days = Math.round(delta_km / this.props.target * daysInYear(year)*10)/10;
     return (
       <div>
         <p>Delta in km: {delta_km} km</p>
-        <p>Delta in days: {delta_km} days)</p>
+        <p>Delta in days: {delta_days} days</p>
       </div>
     );
   }
@@ -23,7 +23,7 @@ class Deltas extends Component {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class Distances extends Component {
   render() {
-    let target_date = targetToDate (this.props.target);
+    let target_date = targetToDate(this.props.target);
     return (
       <div>
         <p>Current year: {this.props.current} km</p>
