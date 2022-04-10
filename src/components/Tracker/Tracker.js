@@ -122,7 +122,7 @@ class Tracker extends Component {
         <hr />
         <input type="range" min="500" max ="1500" value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
         <p> Target: {this.state.target} </p>
-        <input type="button" value="reset" onChange={evt => this.resetTarget(evt)}/>
+        <input type="button" value="reset" onClick={evt => this.resetTarget(evt)}/>
 
       </Container>
     );
