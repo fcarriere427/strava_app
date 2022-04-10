@@ -86,6 +86,24 @@ class Tracker extends Component {
     });
   }
 
+  restetTarget(evt) {
+    // récupération de l'input
+    const newTarget = init.target;
+    // calculs
+    this.target_date = Math.round(this.percentOfYear * newTarget *10)/10;
+    let delta_km = Math.round((this.state.yearDistance - this.target_date)*10)/10;
+    let delta_days = Math.round(delta_km / newTarget * daysInYear(this.year)*10)/10;
+    let new_avg_week = Math.round((newTarget - delta_km) / daysInYear(this.year) * 7 * 10)/10;
+    // mise à jour de state
+    this.setState({
+      target: newTarget,
+      targetToDate: this.target_date,
+      deltaKm: delta_km,
+      deltaDays: delta_days,
+      newAvg: new_avg_week
+    });
+  }
+
   render() {
     return (
       <Container fluid className='bg-grey text-black text-center'>
@@ -104,6 +122,8 @@ class Tracker extends Component {
         <hr />
         <input type="range" min="500" max ="1500" value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
         <p> Target: {this.state.target} </p>
+        <input type="button" value="reset" onChange={evt => this.resetTarget(evt)}/>
+
       </Container>
     );
   }
