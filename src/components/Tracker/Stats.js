@@ -1,10 +1,26 @@
 import React, { Component } from 'react'
+import targetToDate from './functions'
 import daysInYear from '../../utils/functions'
 
 const axios = require('axios').default;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
+class Deltas extends Component {
+  render() {
+    let target_date = targetToDate (this.props.target);
+    let delta_km = Math.round((this.props.current - target_date)*10)/10;
+    let year = new Date().getFullYear().toString();
+    let delta_days = Math.round(delta_km / this.props.target * daysInYear(year)*10)/10;
+    return (
+      <div>
+        <p>Delta in km: {delta_km} km</p>
+        <p>Delta in days: {delta_km} days)</p>
+      </div>
+    );
+  }
+}
 
+///////////////////////////////////////////////////////////////////////////////////////////////
 class Distances extends Component {
   render() {
     let target_date = targetToDate (this.props.target);
@@ -18,18 +34,13 @@ class Distances extends Component {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-
 class Averages extends Component {
   render() {
-    // calculs locaux pour initier
     let target_date = targetToDate (this.props.target);
     let delta_km = Math.round((this.props.current - target_date)*10)/10;
-
     let year = new Date().getFullYear().toString();
-
     let new_avg_week = Math.round((this.props.target - delta_km) / daysInYear(year) * 7 * 10)/10;
     let new_avg_day = Math.floor(new_avg_week/7*10)/10;
-
     return (
       <div>
         <p>New avg/week: {new_avg_week} km</p>
@@ -39,20 +50,7 @@ class Averages extends Component {
   }
 }
 
-// renvoie la distance cible pour la date du jour / prend la cible annuelle en entrée
-function targetToDate(target){
-  // calculs locaux pour initier
-  let today = new Date();
-  let year = today.getFullYear().toString();
-  let start = new Date(today.getFullYear(), 0, 0);
-  let diff = today - start;
-  let day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
-  let percentOfYear = day / daysInYear(year);
-  return Math.round(percentOfYear * target *10)/10;
-}
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
-
 class LastActivityDate extends Component {
   constructor(props){
     super(props);
@@ -78,6 +76,7 @@ class LastActivityDate extends Component {
   }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////
 export {
   LastActivityDate,
   Averages,

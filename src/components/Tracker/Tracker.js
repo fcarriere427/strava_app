@@ -88,7 +88,8 @@ class Tracker extends Component {
     return (
       <Container fluid className='bg-grey text-black text-center'>
         <GaugeChart value = {this.state.deltaKm} />
-        <p>({this.state.deltaDays} days)</p>
+        <hr />
+        <Deltas current={this.state.yearDistance} target={this.state.target} />
         <hr />
         <Averages current={this.state.yearDistance} target={this.state.target} />
         <hr />
