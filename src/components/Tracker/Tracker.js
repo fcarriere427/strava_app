@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container } from 'reactstrap'
 import GaugeChart from './Gauge'
-import { DeltaInDays } from './Stats'
+import { LastActivityDate, Averages } from './Stats'
 import daysInYear from '../../utils/functions'
 
 const axios = require('axios').default;
@@ -99,13 +99,12 @@ class Tracker extends Component {
         </div>
         <p>({this.state.deltaDays} days)</p>
         <hr />
-        <p>New avg/week: {this.state.newAvg} km</p>
-        <p>New avg/day: {Math.floor(this.state.newAvg/7*10)/10} km</p>
+        <Averages current={this.state.yearDistance} target={this.state.target} />
         <hr />
         <p>Current year: {this.state.yearDistance} km</p>
         <p>Target to date: {this.state.targetToDate} km</p>
         <hr />
-        <DeltaInDays />
+        <LastActivityDate />
         <hr />
         <input type="range" min="500" max ="1500" value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
         <p> Target: {this.state.target} </p>
