@@ -5,10 +5,13 @@ import { arc } from "d3-shape"
 import { scaleLinear } from "d3-scale"
 import { format } from "d3-format"
 
+import targetToDate from './functions'
+
 class GaugeChart extends Component {
 
   render() {
-    let value = this.props.value;
+    let target_date = targetToDate(this.props.target);
+    let value = Math.round((this.props.current - target_date)*10)/10; // value = delta in km
     let min=-100;
     let max=100;
     let label="Delta";
