@@ -2,18 +2,17 @@ import React, { Component } from 'react'
 import { Container } from 'reactstrap'
 import GaugeChart from './Gauge'
 import { LastActivityDate, Averages, Distances, Deltas } from './Stats'
-import daysInYear from '../../utils/functions'
+import Target from './Target'
 
 const axios = require('axios').default;
+
 const init_target = 1000;
 
 class Tracker extends Component {
-
   constructor(props){
     super(props);
-    // use state to store variables that will be modified (by "target" moficiation for instance)
     this.state = {
-       target: init_target,
+       target: "1000",
        yearDistance: "0"
      };
    }
@@ -35,22 +34,14 @@ class Tracker extends Component {
 
   // Actions quand on modifie la cible
   updateTarget(evt) {
-    // récupération de l'input
-    const newTarget = evt.target.value;
-    // calculs
-    // mise à jour de state
     this.setState({
-      target: newTarget,
+      target: evt.target.value
     });
   }
 
-  resetTarget(evt) {
-    // récupération de l'input
-    const newTarget = init_target;
-    // calculs
-    // mise à jour de state
+  resetTarget() {
     this.setState({
-      target: newTarget,
+      target: init_target
     });
   }
 
@@ -67,9 +58,8 @@ class Tracker extends Component {
         <hr />
         <LastActivityDate />
         <hr />
-        <input type="range" min="500" max ="1500" value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
-        <p> Target: {this.state.target} </p>
-        <input type="button" value="reset" onClick={evt => this.resetTarget(evt)}/>
+        <Target value="1000" handler={(evt) => this.updateTarget(evt)}/>
+        <input type="button" value="reset" onClick={() => this.resetTarget()}/>
       </Container>
     );
   }
