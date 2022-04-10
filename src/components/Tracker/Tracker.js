@@ -6,6 +6,31 @@ import daysInYear from '../../utils/functions'
 const axios = require('axios').default;
 const init_target = 1000;
 
+class DeltaInDays extend Component {
+  constructor(props){
+    super(props);
+    this.state = { lastActivityDate: "" };
+  }
+  componentDidMount(){
+    // Récupération de la date de la dernière activité (format lisible, en local time)
+    let url = 'https://letsq.xyz/strava/last_activity_date';
+    axios.get(url)
+    .then(
+      (response) => {
+        this.setState({ lastActivityDate : response.data.last_activity_date });
+      },
+      (error) => {
+        console.log("ERREUR de l'API  : " + error);
+      }
+    )
+  }
+  render() {
+    return (
+      <p>Last activity: {this.state.lastActivityDate}</p>
+    );
+  }
+}
+
 class Tracker extends Component {
 
   constructor(props){
@@ -27,7 +52,6 @@ class Tracker extends Component {
        deltaDays: "0",
        newAvg: "0",
        //  won't be modified, but needed in state because async calls... if not in state : not correctly rendered when APi answers
-       lastActivityDate: "",
        yearDistance: "0"
      };
    }
@@ -52,19 +76,6 @@ class Tracker extends Component {
         console.log("ERREUR de l'API  : " + error);
       }
     )
-
-    // Récupération de la date de la dernière activité (format lisible, en local time)
-    let url2 = 'https://letsq.xyz/strava/last_activity_date';
-    axios.get(url2)
-    .then(
-      (response) => {
-        this.setState({ lastActivityDate : response.data.last_activity_date });
-      },
-      (error) => {
-        console.log("ERREUR de l'API  : " + error);
-      }
-    )
-
   }
 
   // Actions quand on modifie la cible
@@ -118,12 +129,11 @@ class Tracker extends Component {
         <p>Current year: {this.state.yearDistance} km</p>
         <p>Target to date: {this.state.targetToDate} km</p>
         <hr />
-        <p>Last activity: {this.state.lastActivityDate}</p>
+        <DeltaInDays />
         <hr />
         <input type="range" min="500" max ="1500" value={this.state.target} onChange={evt => this.updateTarget(evt)}/>
         <p> Target: {this.state.target} </p>
         <input type="button" value="reset" onClick={evt => this.resetTarget(evt)}/>
-
       </Container>
     );
   }
