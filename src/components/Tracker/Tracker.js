@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container } from 'reactstrap'
 import GaugeChart from './Gauge'
-import DeltaInDays from './Stats'
+import { DeltaInDays } from './Stats'
 import daysInYear from '../../utils/functions'
 
 const axios = require('axios').default;
