@@ -3,14 +3,22 @@ import daysInYear from '../../utils/functions'
 
 const axios = require('axios').default;
 
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+class Distances extends Component {
+  render() {
+    return (
+      <div>
+        <p>Current year: {this.props.current} km</p>
+        <p>Target to date: {this.props.target} km</p>
+      </div>
+    );
+  }
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 class Averages extends Component {
-  // constructor(props){
-  //   super(props);
-  // }
-
   render() {
     // calculs locaux pour initier
     let today = new Date();
@@ -66,4 +74,5 @@ class LastActivityDate extends Component {
 export {
   LastActivityDate,
   Averages,
+  Distances,
 }

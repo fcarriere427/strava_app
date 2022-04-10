@@ -101,8 +101,7 @@ class Tracker extends Component {
         <hr />
         <Averages current={this.state.yearDistance} target={this.state.target} />
         <hr />
-        <p>Current year: {this.state.yearDistance} km</p>
-        <p>Target to date: {this.state.targetToDate} km</p>
+        <Distances current={this.state.yearDistance} target={this.state.targetToDate} />
         <hr />
         <LastActivityDate />
         <hr />
