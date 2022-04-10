@@ -86,7 +86,7 @@ class Tracker extends Component {
     });
   }
 
-  restetTarget(evt) {
+  resetTarget(evt) {
     // récupération de l'input
     const newTarget = init_target;
     // calculs
