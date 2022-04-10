@@ -81,4 +81,5 @@ export {
   LastActivityDate,
   Averages,
   Distances,
+  Deltas
 }
