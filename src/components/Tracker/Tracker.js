@@ -58,8 +58,7 @@ class Tracker extends Component {
         <hr />
         <LastActivityDate />
         <hr />
-        <Target value={this.state.target} handler={(evt) => this.updateTarget(evt)}/>
-        <input type="button" value="reset" onClick={() => this.resetTarget()}/>
+        <Target value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} resetHandler={(evt) => this.resetTarget()}/>
       </Container>
     );
   }

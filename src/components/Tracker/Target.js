@@ -9,8 +9,9 @@ class Target extends Component {
   render(){
     return(
       <div>
-        <input type="range" min="500" max ="1500" value={this.props.value} onChange={this.props.handler}/>
+        <input type="range" min="500" max ="1500" value={this.props.value} onChange={this.props.updateHandler}/>
         <p> Target: {this.props.value} </p>
+        <input type="button" value="reset" onClick={this.props.resetHandler}/>
       </div>
     )
 
