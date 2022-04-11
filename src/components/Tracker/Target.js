@@ -29,7 +29,7 @@ class Target extends Component {
         {/* <input type="range" min="500" max ="1500" value={this.state.value} onChange={this.handleChange} />
           <p> Target: {this.state.value} </p>
         */}
-        <input type="range" min="500" max ="1500" value={this.props.value} onChange={evt => this.props.handler}/>
+        <input type="range" min="500" max ="1500" value={this.props.value} onChange={this.props.handler}/>
         <p> Target: {this.props.value} </p>
       </div>
     )
