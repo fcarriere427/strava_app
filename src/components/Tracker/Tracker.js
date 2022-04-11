@@ -49,13 +49,13 @@ class Tracker extends Component {
     return (
       <Container fluid className='bg-grey text-black text-center'>
 
-        <Row className="bg-light border">
+        <Row className="bg-light border py-2">
           <Col className="my-auto" md="12">
             <GaugeChart current={this.state.yearDistance} target={this.state.target}/>
           </Col>
         </Row>
 
-        <Row className="bg-light border">
+        <Row className="bg-light border py-2">
           <Col className="my-auto border" md="4">
             <Distances current={this.state.yearDistance} target={this.state.target} />
           </Col>
@@ -67,14 +67,14 @@ class Tracker extends Component {
           </Col>
         </Row>
 
-        <Row className="bg-light border">
-          <Col className="my-auto" md="12">
+        <Row className="bg-light border py-2">
+          <Col md="12">
             <Target value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} resetHandler={(evt) => this.resetTarget()}/>
           </Col>
         </Row>
 
         <Row className="bg-light border">
-          <Col className="py-auto" md="12">
+          <Col md="12">
             <LastActivityDate />
           </Col>
         </Row>
