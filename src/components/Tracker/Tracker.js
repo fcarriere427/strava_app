@@ -47,7 +47,8 @@ class Tracker extends Component {
 
   // Actions pour les boutons "update" & "reload"
   updateActivities() {
-    console.log("on va lancer updateActivities")
+    console.log("on va lancer updateActivities");
+
   }
 
   reloadActivities() {
