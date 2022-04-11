@@ -48,8 +48,8 @@ class Tracker extends Component {
   render() {
     return (
       <Container fluid className='bg-grey text-black text-center'>
-        
-        <Row md="4">
+
+        <Row className="justify-content-x-center">
           <Col className="bg-light border" md="6">
             <GaugeChart current={this.state.yearDistance} target={this.state.target}/>
           </Col>
@@ -58,19 +58,19 @@ class Tracker extends Component {
           </Col>
         </Row>
 
-        <Row md="4">
+        <Row className="justify-content-x-center">
+          <Col className="bg-light border" md="4">
+            <Distances current={this.state.yearDistance} target={this.state.target} />
+          </Col>
           <Col className="bg-light border" md="4">
             <Deltas current={this.state.yearDistance} target={this.state.target} />
           </Col>
           <Col className="bg-light border" md="4">
             <Averages current={this.state.yearDistance} target={this.state.target} />
           </Col>
-          <Col className="bg-light border" md="4">
-            <Distances current={this.state.yearDistance} target={this.state.target} />
-          </Col>
         </Row>
 
-        <Row md="4">
+        <Row className="justify-content-x-center">
           <Col className="bg-light border" md="12">
             <LastActivityDate />
           </Col>
