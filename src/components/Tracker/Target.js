@@ -14,7 +14,6 @@ class Target extends Component {
         <input type="button" value="reset" onClick={this.props.resetHandler}/>
       </div>
     )
-
   }
 }
 

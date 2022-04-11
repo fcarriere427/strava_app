@@ -12,7 +12,7 @@ class Tracker extends Component {
   constructor(props){
     super(props);
     this.state = {
-       target: "1000",
+       target: init_target,
        yearDistance: "0"
      };
    }
