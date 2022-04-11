@@ -6,7 +6,7 @@ import { Container } from 'reactstrap'
 class Header extends Component {
   render() {
     return (
-      <Container fluid className = "bg-warning text-black text-center my-auto ">
+      <Container fluid className = "bg-indigo text-white text-center my-auto ">
         <div>
           <header>
             {/* <img src={logo} className="App-logo" alt="logo" /> */}

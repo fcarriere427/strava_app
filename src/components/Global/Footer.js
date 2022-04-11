@@ -8,8 +8,8 @@ class Footer extends Component {
     let date_str = today.toLocaleDateString('fr-FR');
 
     return (
-      <Container fluid className = "bg-warning text-black text-center">
-        <footer className="App-footer">
+      <Container fluid className = "bg-indigo text-white text-center">
+        <footer>
           <p><a href="strava_old_app">Ancienne appli Strava</a></p>
           <p>Current date : {date_str} </p>
         </footer>

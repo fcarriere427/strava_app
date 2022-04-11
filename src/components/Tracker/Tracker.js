@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import GaugeChart from './Gauge'
 import { LastActivityDate, Averages, Distances, Deltas } from './Stats'
-import Target from './Target'
+import { Target, TargetReset } from './Target'
 
 const axios = require('axios').default;
 
@@ -55,7 +55,7 @@ class Tracker extends Component {
           </Col>
         </Row>
 
-        <Row className="bg-light border py-2">
+        <Row className="bg-gray test-white border py-2">
           <Col className="my-auto border" md="4">
             <Distances current={this.state.yearDistance} target={this.state.target} />
           </Col>
@@ -68,12 +68,15 @@ class Tracker extends Component {
         </Row>
 
         <Row className="bg-light border py-2">
-          <Col md="12">
-            <Target value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} resetHandler={(evt) => this.resetTarget()}/>
+          <Col md="8">
+            <Target value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} }/>
+          </Col>
+          <Col md="4">
+            <TargetReset resetHandler={(evt) => this.resetTarget()} />
           </Col>
         </Row>
 
-        <Row className="bg-light border py-2">
+        <Row className="bg-grey text-white border py-2">
           <Col md="12">
             <LastActivityDate />
           </Col>
