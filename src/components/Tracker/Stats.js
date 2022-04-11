@@ -71,7 +71,7 @@ class LastActivityDate extends Component {
   }
   render() {
     return (
-      <p>Last activity: {this.state.lastActivityDate}</p>
+      <p className="fw-light">Last activity: {this.state.lastActivityDate}</p>
     );
   }
 }
