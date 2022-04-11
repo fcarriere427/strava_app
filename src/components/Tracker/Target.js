@@ -4,13 +4,13 @@ import React, { Component } from 'react'
 class Target extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
-    this.handleChange = this.handleChange.bind(this);
+    // this.state = {value: this.props.value};
+    // this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
+  // handleChange(event) {
+  //   this.setState({value: event.target.value});
+  // }
 
   render(){
 
@@ -26,8 +26,11 @@ class Target extends Component {
 
     return(
       <div>
-        <input type="range" min="500" max ="1500" value={this.state.value} onChange={this.handleChange}/>
-        <p> Target: {this.state.value} </p>
+        {/* <input type="range" min="500" max ="1500" value={this.state.value} onChange={this.handleChange} />
+          <p> Target: {this.state.value} </p>
+        */}
+        <input type="range" min="500" max ="1500" value={this.props.value} onChange={evt => this.props.handler}/>
+        <p> Target: {this.props.value} </p>
       </div>
     )
 
