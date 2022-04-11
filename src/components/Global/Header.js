@@ -6,11 +6,11 @@ import { Container } from 'reactstrap'
 class Header extends Component {
   render() {
     return (
-      <Container fluid className = "bg-warning text-black text-center">
-        <div className="App">
-          <header className="App-header">
+      <Container fluid className = "bg-warning text-black text-center my-auto">
+        <div>
+          <header>
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
-            <h3 className="App-title">{this.props.name}'s Strava App</h3>
+            <p className="fw-bold">{this.props.name}'s Strava App</p>
           </header>
         </div>
       </Container>
