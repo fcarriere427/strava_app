@@ -69,7 +69,7 @@ class Tracker extends Component {
 
         <Row className="bg-light border py-2">
           <Col md="8">
-            <Target value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} }/>
+            <Target value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} />
           </Col>
           <Col md="4">
             <TargetReset resetHandler={(evt) => this.resetTarget()} />
