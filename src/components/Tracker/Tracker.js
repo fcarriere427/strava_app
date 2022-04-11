@@ -74,7 +74,7 @@ class Tracker extends Component {
         </Row>
 
         <Row className="bg-light border">
-          <Col className="my-auto" md="12">
+          <Col className="py-auto" md="12">
             <LastActivityDate />
           </Col>
         </Row>
