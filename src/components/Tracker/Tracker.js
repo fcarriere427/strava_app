@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col, Button} from 'reactstrap'
 import GaugeChart from './Gauge'
 import { LastActivityDate, Averages, Distances, Deltas } from './Stats'
 import { Target, TargetReset } from './Target'
@@ -45,6 +45,15 @@ class Tracker extends Component {
     });
   }
 
+  // Actions pour les boutons "update" & "reload"
+  updateActivities() {
+    console.log("on va lancer updateActivities")
+  }
+
+  reloadActivities() {
+    console.log("on va lancer reloadActivities")
+  }
+
   render() {
     return (
       <Container fluid className='bg-grey text-black text-center'>
@@ -81,6 +90,20 @@ class Tracker extends Component {
             <LastActivityDate />
           </Col>
         </Row>
+
+        <Row className="bg-light text-black border py-2">
+          <Col md="6">
+            <button color="primary" onClick={this.updateActivities}>
+              Update
+            </button>
+          </Col>
+          <Col md="6">
+            <button color="danger"  onClick={this.reloadActivities}>
+              Reload(!)
+            </button>
+          </Col>
+        </Row>
+
 
       </Container>
     );
