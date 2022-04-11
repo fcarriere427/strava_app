@@ -48,17 +48,36 @@ class Tracker extends Component {
   render() {
     return (
       <Container fluid className='bg-grey text-black text-center'>
-        <GaugeChart current={this.state.yearDistance} target={this.state.target}/>
-        <hr />
-        <Deltas current={this.state.yearDistance} target={this.state.target} />
-        <hr />
-        <Averages current={this.state.yearDistance} target={this.state.target} />
-        <hr />
-        <Distances current={this.state.yearDistance} target={this.state.target} />
-        <hr />
-        <LastActivityDate />
-        <hr />
-        <Target value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} resetHandler={(evt) => this.resetTarget()}/>
+        <Row md="4">
+          <Col className="bg-light border">
+            <GaugeChart current={this.state.yearDistance} target={this.state.target}/>
+            <hr />
+          </Col>
+          <Col className="bg-light border">
+            <Target value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} resetHandler={(evt) => this.resetTarget()}/>
+            <hr />
+          </Col>
+        </Row>
+
+        <Row md="4">
+          <Col className="bg-light border">
+            <Deltas current={this.state.yearDistance} target={this.state.target} />
+            <hr />
+          </Col>
+          <Col className="bg-light border">
+            <Averages current={this.state.yearDistance} target={this.state.target} />
+            <hr />
+          </Col>
+          <Col className="bg-light border">
+            <Distances current={this.state.yearDistance} target={this.state.target} />
+            <hr />
+          </Col>
+          <Col className="bg-light border">
+            <LastActivityDate />
+            <hr />
+          </Col>
+        </Row>
+        
       </Container>
     );
   }
