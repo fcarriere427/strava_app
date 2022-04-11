@@ -93,14 +93,14 @@ class Tracker extends Component {
 
         <Row className="bg-light text-black border py-2">
           <Col md="6">
-            <button color="primary" onClick={this.updateActivities}>
+            <Button color="primary" onClick={this.updateActivities}>
               Update
-            </button>
+            </Button>
           </Col>
           <Col md="6">
-            <button color="danger"  onClick={this.reloadActivities}>
+            <Button color="danger"  onClick={this.reloadActivities}>
               Reload(!)
-            </button>
+            </Button>
           </Col>
         </Row>
 
