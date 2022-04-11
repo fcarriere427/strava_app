@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import GaugeChart from './Gauge'
 import { LastActivityDate, Averages, Distances, Deltas } from './Stats'
 import Target from './Target'
@@ -77,7 +77,7 @@ class Tracker extends Component {
             <hr />
           </Col>
         </Row>
-        
+
       </Container>
     );
   }
