@@ -55,7 +55,7 @@ class Tracker extends Component {
           </Col>
         </Row>
 
-        <Row className="bg-gray test-white border py-2">
+        <Row className="bg-secondary test-white border py-2">
           <Col className="my-auto border" md="4">
             <Distances current={this.state.yearDistance} target={this.state.target} />
           </Col>
@@ -76,7 +76,7 @@ class Tracker extends Component {
           </Col>
         </Row>
 
-        <Row className="bg-grey text-white border py-2">
+        <Row className="bg-secondary text-white border py-2">
           <Col md="12">
             <LastActivityDate />
           </Col>
