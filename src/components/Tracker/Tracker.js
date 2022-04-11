@@ -50,23 +50,26 @@ class Tracker extends Component {
       <Container fluid className='bg-grey text-black text-center'>
 
         <Row className="bg-light border">
-          <Col className="my-auto" md="6">
+          <Col className="my-auto" md="12">
             <GaugeChart current={this.state.yearDistance} target={this.state.target}/>
-          </Col>
-          <Col className="my-auto" md="6">
-            <Target value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} resetHandler={(evt) => this.resetTarget()}/>
           </Col>
         </Row>
 
         <Row className="bg-light border">
-          <Col className="my-auto" md="4">
+          <Col className="my-auto border" md="4">
             <Distances current={this.state.yearDistance} target={this.state.target} />
           </Col>
-          <Col className="my-auto" md="4">
+          <Col className="my-auto border" md="4">
             <Deltas current={this.state.yearDistance} target={this.state.target} />
           </Col>
-          <Col className="my-auto" md="4">
+          <Col className="my-auto border" md="4">
             <Averages current={this.state.yearDistance} target={this.state.target} />
+          </Col>
+        </Row>
+
+        <Row className="bg-light border">
+          <Col className="my-auto" md="12">
+            <Target value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} resetHandler={(evt) => this.resetTarget()}/>
           </Col>
         </Row>
 
