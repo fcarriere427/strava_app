@@ -48,11 +48,22 @@ class Tracker extends Component {
   // Actions pour les boutons "update" & "reload"
   updateActivities() {
     console.log("on va lancer updateActivities");
-
+    let url = 'https://letsq.xyz/strava/update';
+    axios.get(url)
+    .then(
+      (response) => {
+        console.log(response + " activité(s) récupérée(s) !");
+      },
+      (error) => {
+        console.log("ERREUR de l'API  : " + error);
+      }
+    )
+    // /strava/update
   }
 
   reloadActivities() {
     console.log("on va lancer reloadActivities")
+    // path: "/strava/reload",
   }
 
   render() {
