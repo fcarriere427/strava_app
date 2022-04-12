@@ -62,12 +62,21 @@ class Tracker extends Component {
         console.log("ERREUR de l'API  : " + error);
       }
     )
-    // /strava/update
   }
 
   reloadActivities() {
-    console.log("on va lancer reloadActivities : TO DO !!!")
-    // path: "/strava/reload",
+    console.log("on va lancer reloadActivities, c'est long !!!")
+    let url = 'https://letsq.xyz/strava/reload';
+    axios.get(url)
+    .then(
+      (response) => {
+        this.setState({ count : response.data });
+        console.log(this.state.count + " activité(s) récupérée(s) !");
+      },
+      (error) => {
+        console.log("ERREUR de l'API  : " + error);
+      }
+    )
   }
 
   render() {
