@@ -52,7 +52,7 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        console.log(response + " activité(s) récupérée(s) !");
+        console.log(response.data + " activité(s) récupérée(s) !");
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
