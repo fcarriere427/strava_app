@@ -3,6 +3,8 @@ import { Container, Row, Col, Button} from 'reactstrap'
 import GaugeChart from './Gauge'
 import { LastActivityDate, Averages, Distances, Deltas } from './Stats'
 import { Target, TargetReset } from './Target'
+import { UpdateButton, ReloadButton, UpdateDisplay } from './UpdateComponents'
+
 
 const axios = require('axios').default;
 
@@ -13,7 +15,8 @@ class Tracker extends Component {
     super(props);
     this.state = {
        target: init_target,
-       yearDistance: "0"
+       yearDistance: "0",
+       count: "0"
      };
    }
 
@@ -52,7 +55,8 @@ class Tracker extends Component {
     axios.get(url)
     .then(
       (response) => {
-        console.log(response.data + " activité(s) récupérée(s) !");
+        this.setState({ count : response.data });
+        console.log(this.state.count + " activité(s) récupérée(s) !");
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -62,7 +66,7 @@ class Tracker extends Component {
   }
 
   reloadActivities() {
-    console.log("on va lancer reloadActivities")
+    console.log("on va lancer reloadActivities : TO DO !!!")
     // path: "/strava/reload",
   }
 
@@ -104,15 +108,14 @@ class Tracker extends Component {
         </Row>
 
         <Row className="bg-light text-black border py-2">
-          <Col md="6">
-            <Button color="primary" onClick={this.updateActivities}>
-              Update
-            </Button>
+          <Col md="4">
+            <UpdateButton color="primary" updateActivities={() => this.updateActivities()} />
           </Col>
-          <Col md="6">
-            <Button color="danger"  onClick={this.reloadActivities}>
-              Reload(!)
-            </Button>
+          <Col md="4">
+            <UpdateDisplay count={this.state.count}/>
+          </Col>
+          <Col md="4">
+            <ReloadButton color="danger"  reloadActivities={() => this.reloadActivities()} />
           </Col>
         </Row>
 
