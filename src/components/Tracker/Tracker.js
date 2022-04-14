@@ -50,10 +50,10 @@ class Tracker extends Component {
     return (
       <Container fluid className='bg-grey text-black text-center'>
         <Row>
-          <Col xs="8">
+          <Col xs="6">
             <GaugeChart current={this.state.yearDistance} target={this.state.target}/>
           </Col>
-          <Col xs="4">
+          <Col xs="6">
             <TargetBar value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} resetHandler={(evt) => this.resetTarget()} />
           </Col>
         </Row>
