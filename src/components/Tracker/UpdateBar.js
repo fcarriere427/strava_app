@@ -51,15 +51,15 @@ class UpdateBar extends Component {
         </Col>
         <Col xs="8">
           <Row>
-            <Col xs="4">
+            <Col xs="6">
               <UpdateButton color="primary" updateActivities={() => this.updateActivities()} />
             </Col>
-            <Col xs="4">
+            <Col xs="6">
               <ReloadButton color="danger"  reloadActivities={() => this.reloadActivities()} />
             </Col>
           </Row>
           <Row>
-            <Col xs="8">
+            <Col xs="12">
               <UpdateDisplay count={this.state.count} />
             </Col>
           </Row>
