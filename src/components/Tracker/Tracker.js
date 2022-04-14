@@ -15,8 +15,7 @@ class Tracker extends Component {
     super(props);
     this.state = {
        target: init_target,
-       yearDistance: "0",
-       count: "0"
+       yearDistance: "0"
      };
    }
 
@@ -46,37 +45,6 @@ class Tracker extends Component {
     this.setState({
       target: init_target
     });
-  }
-
-  // Actions pour les boutons "update" & "reload"
-  updateActivities() {
-    console.log("on va lancer updateActivities");
-    let url = 'https://letsq.xyz/strava/update';
-    axios.get(url)
-    .then(
-      (response) => {
-        this.setState({ count : response.data });
-        console.log(this.state.count + " activité(s) récupérée(s) !");
-      },
-      (error) => {
-        console.log("ERREUR de l'API  : " + error);
-      }
-    )
-  }
-
-  reloadActivities() {
-    console.log("on va lancer reloadActivities, c'est long !!!")
-    let url = 'https://letsq.xyz/strava/reload';
-    axios.get(url)
-    .then(
-      (response) => {
-        this.setState({ count : response.data });
-        console.log(this.state.count + " activité(s) récupérée(s) !");
-      },
-      (error) => {
-        console.log("ERREUR de l'API  : " + error);
-      }
-    )
   }
 
   render() {
@@ -116,7 +84,7 @@ class Tracker extends Component {
           </Col>
         </Row>
 
-        <UpdateBar count={this.state.count} />
+        <UpdateBar />
 
       </Container>
     );
