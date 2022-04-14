@@ -5,6 +5,8 @@ import { LastActivityDate, Averages, Distances, Deltas } from './Stats'
 import { Target, TargetReset } from './Target'
 import { UpdateBar } from './UpdateBar'
 
+const axios = require('axios').default;
+
 const init_target = 1000;
 
 class Tracker extends Component {
