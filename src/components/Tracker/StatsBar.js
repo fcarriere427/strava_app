@@ -34,7 +34,7 @@ class Deltas extends Component {
     let delta_days = Math.round(delta_km / this.props.target * daysInYear(year)*10)/10;
     return (
       <div>
-        <p className="fw-light text-grey"><i>Gaps</i></p>
+        <p className="fw-light text-black"><i>Gaps</i></p>
         <p>{delta_km} km</p>
         <p>{delta_days} days</p>
       </div>
