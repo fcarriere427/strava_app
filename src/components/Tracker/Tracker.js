@@ -57,7 +57,7 @@ class Tracker extends Component {
         <Row>
           <StatsBar current={this.state.yearDistance} target={this.state.target} />
         </Row>
-        
+
         <Row>
           <UpdateBar />
         </Row>
