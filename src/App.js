@@ -13,6 +13,7 @@ class App extends React.Component {
         <Tracker />
         {/* <List /> */}
         <Footer />
+        <p className="fw-light text-black"><a href="strava_old_app">Ancienne appli Strava</a></p>
       </div>
     );
   }
