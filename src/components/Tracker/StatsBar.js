@@ -11,13 +11,13 @@ class StatsBar extends Component {
   render(){
     return(
       <Row className="bg-secondary text-white py-2">
-        <Col className="my-auto" xs="4">
+        <Col xs="4">
           <Distances current={this.props.current} target={this.props.target} />
         </Col>
-        <Col className="my-auto" xs="4">
+        <Col xs="4">
           <Gaps current={this.props.current} target={this.props.target} />
         </Col>
-        <Col className="my-auto" xs="4">
+        <Col xs="4">
           <Averages current={this.props.current} target={this.props.target} />
         </Col>
       </Row>

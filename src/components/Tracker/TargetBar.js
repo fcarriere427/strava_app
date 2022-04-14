@@ -4,10 +4,6 @@ import { Container, Row, Col } from 'reactstrap'
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class TargetBar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render(){
     return(
       <Container fluid className='text-black text-center'>
@@ -24,10 +20,6 @@ class TargetBar extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class TargetRange extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render(){
     return(
       <div>
@@ -40,10 +32,6 @@ class TargetRange extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class TargetReset extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render(){
     return(
       <div>
