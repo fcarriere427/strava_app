@@ -49,12 +49,8 @@ class Tracker extends Component {
   render() {
     return (
       <Container fluid className='bg-grey text-black text-center'>
-
-        <Row className="bg-light py-2">
-          <Col className="my-auto" md="12">
-            <GaugeChart current={this.state.yearDistance} target={this.state.target}/>
-          </Col>
-        </Row>
+        
+        <GaugeChart current={this.state.yearDistance} target={this.state.target}/>
 
         <Row className="bg-secondary text-white py-2">
           <Col className="my-auto border" md="4">
