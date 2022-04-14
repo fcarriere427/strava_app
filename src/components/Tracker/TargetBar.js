@@ -11,10 +11,10 @@ class TargetBar extends Component {
   render(){
     return(
       <Row className="bg-light border py-2">
-        <Col md="10">
+        <Col sm="10">
           <TargetRange value={this.props.target} updateHandler={this.props.updateHandler} />
         </Col>
-        <Col md="2">
+        <Col sm="2">
           <TargetReset resetHandler={this.props.resetHandler}/>
         </Col>
       </Row>

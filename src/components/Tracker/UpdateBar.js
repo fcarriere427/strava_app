@@ -46,16 +46,16 @@ class UpdateBar extends Component {
   render(){
     return(
       <Row className="bg-light text-black border py-2">
-        <Col md="4">
+        <Col sm="3">
           <LastActivityDate />
         </Col>
-        <Col md="4">
+        <Col sm="3">
           <UpdateButton color="primary" updateActivities={() => this.updateActivities()} />
         </Col>
-        <Col md="4">
+        <Col sm="3">
           <UpdateDisplay count={this.state.count} />
         </Col>
-        <Col md="4">
+        <Col sm="3">
           <ReloadButton color="danger"  reloadActivities={() => this.reloadActivities()} />
         </Col>
       </Row>
