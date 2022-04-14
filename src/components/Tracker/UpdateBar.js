@@ -130,15 +130,15 @@ class UpdateDisplay extends Component {
   render(){
     if(this.props.count != "xxx"){
       return(
-        <div>
+        <p className="fw-light">
           Updated with {this.props.count} activities
-        </div>
+        </p>
       )
     } else {
       return(
-        <div>
+        <p className="fw-light">
           Not updated yet!
-        </div>
+        </p>
       )
     }
   }
