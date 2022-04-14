@@ -3,7 +3,7 @@ import { Container, Row, Col, Button} from 'reactstrap'
 import GaugeChart from './Gauge'
 import { LastActivityDate, Averages, Distances, Deltas } from './Stats'
 import { Target, TargetReset } from './Target'
-import { UpdateBar } from './UpdateComponents'
+import { UpdateBar } from './UpdateBar'
 
 
 const axios = require('axios').default;
@@ -116,10 +116,7 @@ class Tracker extends Component {
           </Col>
         </Row>
 
-        <Row className="bg-light text-black border py-2">
-          <UpdateBar count={this.state.count} />
-        </Row>
-
+        <UpdateBar count={this.state.count} />
 
       </Container>
     );

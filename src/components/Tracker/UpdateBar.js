@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Col } from 'reactstrap'
+import { Button, Row, Col } from 'reactstrap'
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,15 +56,17 @@ class UpdateBar extends Component {
 
   render(){
     return(
-      <Col md="4">
-        <UpdateButton color="primary" updateActivities={() => this.updateActivities()} />
-      </Col>
-      <Col md="4">
-        <UpdateDisplay count={this.props.count}/>
-      </Col>
-      <Col md="4">
-        <ReloadButton color="danger"  reloadActivities={() => this.reloadActivities()} />
-      </Col>
+      <Row className="bg-light text-black border py-2">
+        <Col md="4">
+          <UpdateButton color="primary" updateActivities={() => this.updateActivities()} />
+        </Col>
+        <Col md="4">
+          <UpdateDisplay count={this.props.count}/>
+        </Col>
+        <Col md="4">
+          <ReloadButton color="danger"  reloadActivities={() => this.reloadActivities()} />
+        </Col>
+      </Row>
     )
   }
 }
