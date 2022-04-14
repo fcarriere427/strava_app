@@ -10,11 +10,11 @@ class TargetBar extends Component {
 
   render(){
     return(
-      <Container fluid className='bg-grey text-black text-center'>
-        <Row className="bg-light border py-2">
+      <Container fluid className='text-black text-center'>
+        <Row className="py-2">
           <TargetRange value={this.props.target} updateHandler={this.props.updateHandler} />
         </Row>
-        <Row className="bg-light border py-2">
+        <Row className="py-2">
           <TargetReset resetHandler={this.props.resetHandler}/>
         </Row>
       </Container>
