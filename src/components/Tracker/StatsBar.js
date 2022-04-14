@@ -15,7 +15,7 @@ class StatsBar extends Component {
           <Distances current={this.props.current} target={this.props.target} />
         </Col>
         <Col className="my-auto" xs="4">
-          <Deltas current={this.props.current} target={this.props.target} />
+          <Gaps current={this.props.current} target={this.props.target} />
         </Col>
         <Col className="my-auto" xs="4">
           <Averages current={this.props.current} target={this.props.target} />
@@ -26,7 +26,21 @@ class StatsBar extends Component {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-class Deltas extends Component {
+class Distances extends Component {
+  render() {
+    let target_date = targetToDate(this.props.target);
+    return (
+      <div>
+        <p className="fw-light text-black"><i>Distances</i></p>
+        <p>Current:<br/> {this.props.current} km</p>
+        <p>Target:<br/> {target_date} km</p>
+      </div>
+    );
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+class Gaps extends Component {
   render() {
     let target_date = targetToDate(this.props.target);
     let delta_km = Math.round((this.props.current - target_date)*10)/10;
@@ -37,20 +51,6 @@ class Deltas extends Component {
         <p className="fw-light text-black"><i>Gaps</i></p>
         <p>{delta_km} km</p>
         <p>{delta_days} days</p>
-      </div>
-    );
-  }
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-class Distances extends Component {
-  render() {
-    let target_date = targetToDate(this.props.target);
-    return (
-      <div>
-        <p className="fw-light text-black"><i>Distances</i></p>
-        <p>Current: {this.props.current} km</p>
-        <p>Target: {target_date} km</p>
       </div>
     );
   }
