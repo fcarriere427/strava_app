@@ -9,7 +9,6 @@ const axios = require('axios').default;
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class StatsBar extends Component {
   render(){
-    console.log('current = ' + this.props.current + " / target = " + this.props.target)
     return(
       <Row className="bg-secondary text-white py-2">
         <Col className="my-auto border" md="4">
