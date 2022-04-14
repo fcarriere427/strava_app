@@ -47,8 +47,9 @@ class Distances extends Component {
     let target_date = targetToDate(this.props.target);
     return (
       <div>
-        <p>Current year: {this.props.current} km</p>
-        <p>Target to date: {target_date} km</p>
+        <p className="fw-light">Distances (km): </p>
+        <p>Current: {this.props.current}</p>
+        <p>Target: {target_date}</p>
       </div>
     );
   }
