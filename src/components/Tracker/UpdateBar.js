@@ -71,4 +71,4 @@ class UpdateBar extends Component {
   }
 }
 
-export default UpdateBar
+export UpdateBar
