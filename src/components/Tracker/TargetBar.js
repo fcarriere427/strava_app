@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -10,12 +10,14 @@ class TargetBar extends Component {
 
   render(){
     return(
-      <Row className="bg-light border py-2">
-        <TargetRange value={this.props.target} updateHandler={this.props.updateHandler} />
-      </Row>
-      <Row className="bg-light border py-2">
-        <TargetReset resetHandler={this.props.resetHandler}/>
-      </Row>
+      <Container fluid className='bg-grey text-black text-center'>
+        <Row className="bg-light border py-2">
+          <TargetRange value={this.props.target} updateHandler={this.props.updateHandler} />
+        </Row>
+        <Row className="bg-light border py-2">
+          <TargetReset resetHandler={this.props.resetHandler}/>
+        </Row>
+      </Container>
     )
   }
 }
