@@ -128,7 +128,7 @@ class GaugeChart extends Component {
 
           <div style={{
             marginTop: "0.4em",
-            fontSize: "1em",
+            fontSize: "2em", // taille de l'indicateur principal 
             lineHeight: "1em",
             fontWeight: "900",
             fontFeatureSettings: "'zero', 'tnum' 1",
