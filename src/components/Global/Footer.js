@@ -11,9 +11,9 @@ class Footer extends Component {
       <Container fluid className = "bg-dark text-white text-center">
         <footer>
           <p>Current date : {date_str} </p>
-          <p className="fw-light"><a href="strava_old_app">Ancienne appli Strava</a></p>
         </footer>
       </Container>
+      <p className="fw-light text-black"><a href="strava_old_app">Ancienne appli Strava</a></p>
     );
   }
 }
