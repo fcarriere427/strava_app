@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap'
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-class TargetBar extends Component {
+class TargetBlock extends Component {
   render(){
     return(
       <Container fluid className='text-black text-center'>
@@ -24,5 +24,5 @@ class TargetBar extends Component {
 }
 
 export {
-  TargetBar
+  TargetBlock
 }

@@ -46,17 +46,23 @@ class UpdateBar extends Component {
   render(){
     return(
       <Row className="bg-light text-black border py-2">
-        <Col xs="3">
+        <Col xs="4">
           <LastActivityDate />
         </Col>
-        <Col xs="3">
-          <UpdateButton color="primary" updateActivities={() => this.updateActivities()} />
-        </Col>
-        <Col xs="3">
-          <UpdateDisplay count={this.state.count} />
-        </Col>
-        <Col xs="3">
-          <ReloadButton color="danger"  reloadActivities={() => this.reloadActivities()} />
+        <Col xs="8">
+          <Row>
+            <Col xs="4">
+              <UpdateButton color="primary" updateActivities={() => this.updateActivities()} />
+            </Col>
+            <Col xs="4">
+              <ReloadButton color="danger"  reloadActivities={() => this.reloadActivities()} />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="8">
+              <UpdateDisplay count={this.state.count} />
+            </Col>
+          </Row>
         </Col>
       </Row>
     )

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col, Button} from 'reactstrap'
 import { GaugeChart } from './Gauge'
 import { StatsBar } from './StatsBar'
-import { TargetBar } from './TargetBar'
+import { TargetBlock } from './TargetBlock'
 import { UpdateBar } from './UpdateBar'
 
 const axios = require('axios').default;
@@ -54,7 +54,7 @@ class Tracker extends Component {
             <GaugeChart current={this.state.yearDistance} target={this.state.target}/>
           </Col>
           <Col xs="6">
-            <TargetBar value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} resetHandler={(evt) => this.resetTarget()} />
+            <TargetBlock value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} resetHandler={(evt) => this.resetTarget()} />
           </Col>
         </Row>
 
