@@ -34,8 +34,9 @@ class Deltas extends Component {
     let delta_days = Math.round(delta_km / this.props.target * daysInYear(year)*10)/10;
     return (
       <div>
-        <p>Delta in km: {delta_km} km</p>
-        <p>Delta in days: {delta_days} days</p>
+        <p className="fw-light">Gaps: </p>
+        <p>{delta_km} km</p>
+        <p>{delta_days} days</p>
       </div>
     );
   }
@@ -47,9 +48,9 @@ class Distances extends Component {
     let target_date = targetToDate(this.props.target);
     return (
       <div>
-        <p className="fw-light">Distances (km): </p>
-        <p>Current: {this.props.current}</p>
-        <p>Target: {target_date}</p>
+        <p className="fw-light">Distances: </p>
+        <p>Current: {this.props.current} km</p>
+        <p>Target: {target_date} km</p>
       </div>
     );
   }
@@ -65,8 +66,9 @@ class Averages extends Component {
     let new_avg_day = Math.floor(new_avg_week/7*10)/10;
     return (
       <div>
-        <p>New avg/week: {new_avg_week} km</p>
-        <p>New avg/day: {new_avg_day} km</p>
+        <p className="fw-light">New targets: </p>
+        <p>Week: {new_avg_week} km</p>
+        <p>Day: {new_avg_day} km</p>
       </div>
     );
   }
