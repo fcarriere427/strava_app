@@ -128,11 +128,19 @@ class UpdateDisplay extends Component {
   }
 
   render(){
-    return(
-      <div>
-        Updated with {this.props.count} activities
-      </div>
-    )
+    if({this.props.count}!="xxx"){
+      return(
+        <div>
+          Updated with {this.props.count} activities
+        </div>
+      )
+    } else {
+      return(
+        <div>
+          Not updated yet!
+        </div>
+      )
+    }
   }
 }
 
