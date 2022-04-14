@@ -7,8 +7,7 @@ const axios = require('axios').default;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-class StatsBar extends Component {
-  
+class StatsBar extends Component {  
   render(){
     <Row className="bg-secondary text-white py-2">
       <Col className="my-auto border" md="4">
@@ -22,7 +21,7 @@ class StatsBar extends Component {
       </Col>
     </Row>
   }
-
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class Deltas extends Component {
