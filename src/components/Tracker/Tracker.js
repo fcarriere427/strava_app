@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Button} from 'reactstrap'
-import GaugeChart from './Gauge'
-import { Averages, Distances, Deltas } from './Stats'
+import { GaugeChart } from './Gauge'
+import { StatsBar } from './Stats'
 import { TargetBar } from './TargetBar'
 import { UpdateBar } from './UpdateBar'
 
@@ -49,20 +49,10 @@ class Tracker extends Component {
   render() {
     return (
       <Container fluid className='bg-grey text-black text-center'>
-        
+
         <GaugeChart current={this.state.yearDistance} target={this.state.target}/>
 
-        <Row className="bg-secondary text-white py-2">
-          <Col className="my-auto border" md="4">
-            <Distances current={this.state.yearDistance} target={this.state.target} />
-          </Col>
-          <Col className="my-auto border" md="4">
-            <Deltas current={this.state.yearDistance} target={this.state.target} />
-          </Col>
-          <Col className="my-auto border" md="4">
-            <Averages current={this.state.yearDistance} target={this.state.target} />
-          </Col>
-        </Row>
+        <StatsBar current={this.state.yearDistance} target={this.state.target} />
 
         <TargetBar value={this.state.target} updateHandler={(evt) => this.updateTarget(evt)} resetHandler={(evt) => this.resetTarget()} />
 

@@ -1,8 +1,28 @@
 import React, { Component } from 'react'
+import { Row, Col } from 'reactstrap'
 import targetToDate from './functions'
 import daysInYear from '../../utils/functions'
 
 const axios = require('axios').default;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+class StatsBar extends Component {
+  
+  render(){
+    <Row className="bg-secondary text-white py-2">
+      <Col className="my-auto border" md="4">
+        <Distances current={this.props.yearDistance} target={this.props.target} />
+      </Col>
+      <Col className="my-auto border" md="4">
+        <Deltas current={this.props.yearDistance} target={this.props.target} />
+      </Col>
+      <Col className="my-auto border" md="4">
+        <Averages current={this.props.yearDistance} target={this.props.target} />
+      </Col>
+    </Row>
+  }
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class Deltas extends Component {
@@ -53,7 +73,5 @@ class Averages extends Component {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 export {
-  Averages,
-  Distances,
-  Deltas
+  StatsBar
 }

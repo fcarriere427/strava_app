@@ -160,4 +160,4 @@ class GaugeChart extends Component {
     }
   }
 }
-export default GaugeChart
+export { GaugeChart }
