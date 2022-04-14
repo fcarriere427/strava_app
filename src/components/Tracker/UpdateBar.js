@@ -102,12 +102,8 @@ class LastActivityDate extends Component {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 class UpdateDisplay extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render(){
-    if(this.props.count != "xxx"){
+    if(this.props.count !== "xxx"){
       return(
         <p className="fw-light">
           Updated with {this.props.count} activities

@@ -3,9 +3,6 @@ import { Row, Col } from 'reactstrap'
 import targetToDate from './functions'
 import daysInYear from '../../utils/functions'
 
-const axios = require('axios').default;
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class StatsBar extends Component {
   render(){

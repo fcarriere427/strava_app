@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Col, Button} from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import { GaugeChart } from './Gauge'
 import { StatsBar } from './StatsBar'
 import { TargetBlock } from './TargetBlock'
