@@ -128,7 +128,7 @@ class UpdateDisplay extends Component {
   }
 
   render(){
-    if({this.props.count}!="xxx"){
+    if(this.props.count != "xxx"){
       return(
         <div>
           Updated with {this.props.count} activities
