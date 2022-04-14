@@ -21,8 +21,8 @@ class StatsBar extends Component {
           <Averages current={this.props.yearDistance} target={this.props.target} />
         </Col>
       </Row>
-    }
-  )
+    )
+  }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
