@@ -71,7 +71,7 @@ class GaugeChart extends Component {
           textAlign: "center",
         }}>
           <svg style={{overflow: "visible"}}
-            width="5em"
+            width="7em" // taille de la jauge elle-même
             viewBox={[
               -1, -1,
               2, 1,
@@ -128,7 +128,7 @@ class GaugeChart extends Component {
 
           <div style={{
             marginTop: "0.4em",
-            fontSize: "3em",
+            fontSize: "1em",
             lineHeight: "1em",
             fontWeight: "900",
             fontFeatureSettings: "'zero', 'tnum' 1",
