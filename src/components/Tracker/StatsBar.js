@@ -9,16 +9,17 @@ const axios = require('axios').default;
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class StatsBar extends Component {
   render(){
+    console.log('current = ' + this.props.current + " / target = " + this.props.target)
     return(
       <Row className="bg-secondary text-white py-2">
         <Col className="my-auto border" md="4">
-          <Distances current={this.props.yearDistance} target={this.props.target} />
+          <Distances current={this.props.current} target={this.props.target} />
         </Col>
         <Col className="my-auto border" md="4">
-          <Deltas current={this.props.yearDistance} target={this.props.target} />
+          <Deltas current={this.props.current} target={this.props.target} />
         </Col>
         <Col className="my-auto border" md="4">
-          <Averages current={this.props.yearDistance} target={this.props.target} />
+          <Averages current={this.props.current} target={this.props.target} />
         </Col>
       </Row>
     )
