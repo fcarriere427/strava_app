@@ -1,7 +1,27 @@
 import React, { Component } from 'react'
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-class Target extends Component {
+class TargetBar extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render(){
+    return(
+      <Row className="bg-light border py-2">
+        <Col md="10">
+          <TargetRange value={this.props.target} updateHandler={this.props.updateHandler} />
+        </Col>
+        <Col md="2">
+          <TargetReset resetHandler={this.props.resetHandler}/>
+        </Col>
+      </Row>
+    )
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+class TargetRange extends Component {
   constructor(props) {
     super(props);
   }
@@ -32,6 +52,5 @@ class TargetReset extends Component {
 }
 
 export {
-  Target,
-  TargetReset
+  TargetBar
 }
