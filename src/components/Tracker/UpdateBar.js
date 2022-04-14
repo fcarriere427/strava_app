@@ -52,12 +52,12 @@ class UpdateBar extends Component {
         <Col xs="8">
           <Row>
             <Col xs="6">
-              <Button color="primary" onClick={this.props.updateActivities}>
+              <Button color="primary" onClick={(evt) => this.updateActivities()}>
                 Update
               </Button>
             </Col>
             <Col xs="6">
-              <Button color="danger"  onClick={this.props.reloadActivities}>
+              <Button color="danger"  onClick={(evt) => this.reloadActivities()}>
                 Reload(!)
               </Button>
             </Col>
