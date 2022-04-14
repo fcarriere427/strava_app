@@ -7,20 +7,22 @@ const axios = require('axios').default;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-class StatsBar extends Component {  
+class StatsBar extends Component {
   render(){
-    <Row className="bg-secondary text-white py-2">
-      <Col className="my-auto border" md="4">
-        <Distances current={this.props.yearDistance} target={this.props.target} />
-      </Col>
-      <Col className="my-auto border" md="4">
-        <Deltas current={this.props.yearDistance} target={this.props.target} />
-      </Col>
-      <Col className="my-auto border" md="4">
-        <Averages current={this.props.yearDistance} target={this.props.target} />
-      </Col>
-    </Row>
-  }
+    return(
+      <Row className="bg-secondary text-white py-2">
+        <Col className="my-auto border" md="4">
+          <Distances current={this.props.yearDistance} target={this.props.target} />
+        </Col>
+        <Col className="my-auto border" md="4">
+          <Deltas current={this.props.yearDistance} target={this.props.target} />
+        </Col>
+        <Col className="my-auto border" md="4">
+          <Averages current={this.props.yearDistance} target={this.props.target} />
+        </Col>
+      </Row>
+    }
+  )
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
