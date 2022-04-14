@@ -13,7 +13,9 @@ class Footer extends Component {
           <p>Current date : {date_str} </p>
         </footer>
       </Container>
-      <p className="fw-light text-black"><a href="strava_old_app">Ancienne appli Strava</a></p>
+      <div>
+        <p className="fw-light text-black"><a href="strava_old_app">Ancienne appli Strava</a></p>
+      </div>
     );
   }
 }
