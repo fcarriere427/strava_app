@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button} from 'reactstrap'
+import { Button, Col } from 'reactstrap'
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,8 +47,26 @@ class UpdateDisplay extends Component {
   }
 }
 
-export {
-  UpdateButton,
-  ReloadButton,
-  UpdateDisplay
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+class UpdateBar extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render(){
+    return(
+      <Col md="4">
+        <UpdateButton color="primary" updateActivities={() => this.updateActivities()} />
+      </Col>
+      <Col md="4">
+        <UpdateDisplay count={this.props.count}/>
+      </Col>
+      <Col md="4">
+        <ReloadButton color="danger"  reloadActivities={() => this.reloadActivities()} />
+      </Col>
+    )
+  }
 }
+
+export default UpdateBar
