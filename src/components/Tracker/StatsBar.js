@@ -48,7 +48,7 @@ class Distances extends Component {
     let target_date = targetToDate(this.props.target);
     return (
       <div>
-        <p className="fw-light text-grey"><i>Distances</i></p>
+        <p className="fw-light text-black"><i>Distances</i></p>
         <p>Current: {this.props.current} km</p>
         <p>Target: {target_date} km</p>
       </div>
@@ -66,7 +66,7 @@ class Averages extends Component {
     let new_avg_day = Math.floor(new_avg_week/7*10)/10;
     return (
       <div>
-        <p className="fw-light text-grey"><i>New targets</i></p>
+        <p className="fw-light text-black"><i>New targets</i></p>
         <p>Week: {new_avg_week} km</p>
         <p>Day: {new_avg_day} km</p>
       </div>
