@@ -11,13 +11,13 @@ class Header extends Component {
           color="primary"
           expand="xs"
         >
-          <NavbarBrand
-            href="/"
-            img src="./logo.png" 
-            alt=""
-            width="30"
-            height="24"
-          >
+          <NavbarBrand href="/">
+            <img className="Image-fluid" src="./logo.png"
+              alt=""
+              width="30"
+              height="24"
+            >
+            </img>
           </NavbarBrand>
           <NavbarToggler onClick={function noRefCheck(){}} />
           <Collapse navbar>
