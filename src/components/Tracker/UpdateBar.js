@@ -105,10 +105,11 @@ class LastActivityDate extends Component {
 //////////////////////////////////////////////////////////////////////////////////////////////
 class UpdateDisplay extends Component {
   render(){
-    <p className="fw-light">
-      {this.props.message}
-    </p>
-
+    return(
+      <p className="fw-light">
+        {this.props.message}
+      </p>
+    )
     // if(this.props.message !== "xxx"){
     //   return(
     //     <p className="fw-light">
