@@ -7,7 +7,7 @@ class UpdateBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-       message: "xxx"
+       message: "Not updated yet"
      };
   }
 
@@ -66,7 +66,7 @@ class UpdateBar extends Component {
           </Row>
           <Row>
             <Col xs="12">
-              <UpdateDisplay count={this.state.count} />
+              <UpdateDisplay count={this.state.message} />
             </Col>
           </Row>
         </Col>
