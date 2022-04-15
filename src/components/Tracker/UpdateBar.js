@@ -66,7 +66,7 @@ class UpdateBar extends Component {
           </Row>
           <Row>
             <Col xs="12">
-              <UpdateDisplay count={this.state.message} />
+              <UpdateDisplay message={this.state.message} />
             </Col>
           </Row>
         </Col>
@@ -98,9 +98,9 @@ class LastActivityDate extends Component {
   render() {
     return (
       <p className="fw-light">Last activity:<br/> {this.state.lastActivityDate}</p>
-        );
-      }
-    }
+    );
+  }
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 class UpdateDisplay extends Component {
