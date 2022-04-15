@@ -7,62 +7,61 @@ class TargetBlock extends Component {
   render(){
     return(
       <div>
-        <div>
-          <Navbar
-            color="light"
-            expand="md"
-          >
-            <NavbarBrand href="/">
-              reactstrap
-            </NavbarBrand>
-            <NavbarToggler onClick={function noRefCheck(){}} />
-            <Collapse navbar>
-              <Nav
-                className="me-auto"
-                navbar
+        <Navbar
+          color="light"
+          expand="md"
+        >
+          <NavbarBrand href="/">
+            reactstrap
+          </NavbarBrand>
+          <NavbarToggler onClick={function noRefCheck(){}} />
+          <Collapse navbar>
+            <Nav
+              className="me-auto"
+              navbar
+            >
+              <NavItem>
+                <NavLink href="/components/">
+                  Components
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://github.com/reactstrap/reactstrap">
+                  GitHub
+                </NavLink>
+              </NavItem>
+              <UncontrolledDropdown
+                inNavbar
+                nav
               >
-                <NavItem>
-                  <NavLink href="/components/">
-                    Components
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">
-                    GitHub
-                  </NavLink>
-                </NavItem>
-                <UncontrolledDropdown
-                  inNavbar
+                <DropdownToggle
+                  caret
                   nav
                 >
-                  <DropdownToggle
-                    caret
-                    nav
-                  >
-                    Options
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem>
-                      Option 1
-                    </DropdownItem>
-                    <DropdownItem>
-                      Option 2
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                      Reset
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
-              </Nav>
-              <NavbarText>
-                Simple Text
-              </NavbarText>
-            </Collapse>
-          </Navbar>
-        </div>
+                  Options
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem>
+                    Option 1
+                  </DropdownItem>
+                  <DropdownItem>
+                    Option 2
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                    Reset
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
+            <NavbarText>
+              Simple Text
+            </NavbarText>
+          </Collapse>
+        </Navbar>
+      </div>
 
-        {/*
+        /*
             <Container fluid className='text-black text-center'>
             <Row className="py-2">
             <div>
@@ -75,12 +74,12 @@ class TargetBlock extends Component {
             <input type="button" value="reset" onClick={this.props.resetHandler}/>
             </div>
             </Row>
-        </Container> */}
+        </Container> */
 
-    )
+      )
+    }
   }
-}
 
-export {
-  TargetBlock
-}
+        export {
+          TargetBlock
+        }
