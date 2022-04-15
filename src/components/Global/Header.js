@@ -19,48 +19,25 @@ class Header extends Component {
             >
             </img>
           </NavbarBrand>
-          <NavbarToggler onClick={function noRefCheck(){}} />
+          {/* <NavbarToggler onClick={function noRefCheck(){}} /> */}
           <Collapse navbar>
             <Nav
               className="me-auto"
               navbar
             >
               <NavItem>
-                <NavLink href="/components/">
-                  Components
+                <NavLink href="/tracker/">
+                  Tracker
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
+                <NavLink href="/list?year=2022">
+                  List
                 </NavLink>
               </NavItem>
-              <UncontrolledDropdown
-                inNavbar
-                nav
-              >
-                <DropdownToggle
-                  caret
-                  nav
-                >
-                  Options
-                </DropdownToggle>
-                <DropdownMenu end>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
             </Nav>
             <NavbarText>
-              Welcome {this.props.name}
+              Welcome <br/> {this.props.name}!
             </NavbarText>
           </Collapse>
         </Navbar>
@@ -68,14 +45,5 @@ class Header extends Component {
     );
   }
 }
-
-// <Container fluid className = "bg-primary text-white text-center my-auto ">
-//   <div>
-//     <header>
-//       {/* <img src={logo} className="App-logo" alt="logo" /> */}
-//       <p className="fw-bold py-3">{this.props.name}'s Strava App</p>
-//     </header>
-//   </div>
-// </Container>
 
 export default Header;
