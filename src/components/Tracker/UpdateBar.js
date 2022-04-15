@@ -105,6 +105,7 @@ class LastActivityDate extends Component {
 //////////////////////////////////////////////////////////////////////////////////////////////
 class UpdateDisplay extends Component {
   render(){
+    console.log("typeof(message) = " + typeof(this.props.message))
     return(
       <p className="fw-light">
         {this.props.message}
