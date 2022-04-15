@@ -12,7 +12,7 @@ class Header extends Component {
           expand="xs"
         >
           <NavbarBrand href="/">
-            <img className="Image-fluid" src="./logo.png"
+            <img className="Image-fluid" src="./Global/logo.png"
               alt=""
               width="30"
               height="24"
