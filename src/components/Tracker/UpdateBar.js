@@ -7,7 +7,7 @@ class UpdateBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-       count: "xxx"
+       message: "xxx"
      };
   }
 
@@ -15,11 +15,12 @@ class UpdateBar extends Component {
   updateActivities() {
     console.log("on va lancer updateActivities");
     let url = 'https://letsq.xyz/strava/update';
+    this.setState({ message : "fetching activities..." });
     axios.get(url)
     .then(
       (response) => {
-        this.setState({ count : response.data });
-        console.log(this.state.count + " activité(s) récupérée(s) !");
+        this.setState({ message : response.data });
+        console.log(this.state.message + " activities fetched!");
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -30,11 +31,12 @@ class UpdateBar extends Component {
   reloadActivities() {
     console.log("on va lancer reloadActivities, c'est long !!!")
     let url = 'https://letsq.xyz/strava/reload';
+    this.setState({ message : "fetching activities..." });
     axios.get(url)
     .then(
       (response) => {
-        this.setState({ count : response.data });
-        console.log(this.state.count + " activité(s) récupérée(s) !");
+        this.setState({ message : response.data });
+        console.log(this.state.message + " activities fetched!");
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
