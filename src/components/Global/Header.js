@@ -31,8 +31,13 @@ class Header extends Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/list?year=2022">
+                <NavLink href="/list/">
                   List
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/reports/">
+                  Reports
                 </NavLink>
               </NavItem>
             </Nav>
