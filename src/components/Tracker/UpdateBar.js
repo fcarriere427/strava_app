@@ -105,19 +105,23 @@ class LastActivityDate extends Component {
 //////////////////////////////////////////////////////////////////////////////////////////////
 class UpdateDisplay extends Component {
   render(){
-    if(this.props.count !== "xxx"){
-      return(
-        <p className="fw-light">
-          Updated with {this.props.count} activities
-        </p>
-      )
-    } else {
-      return(
-        <p className="fw-light">
-          Not updated yet!
-        </p>
-      )
-    }
+    <p className="fw-light">
+      {this.props.message}
+    </p>
+
+    // if(this.props.message !== "xxx"){
+    //   return(
+    //     <p className="fw-light">
+    //       Updated with {this.props.message} activities
+    //     </p>
+    //   )
+    // } else {
+    //   return(
+    //     <p className="fw-light">
+    //       Not updated yet!
+    //     </p>
+    //   )
+    // }
   }
 }
 
