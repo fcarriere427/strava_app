@@ -8,11 +8,11 @@ class Header extends Component {
     return (
       <div>
         <Navbar
-          color="primary"
+          color="warning"
           expand="xs"
         >
           <NavbarBrand href="/">
-            <img className="Image-fluid" src="../logo512.png"
+            <img className="Image-fluid" src="/logo512.png"
               alt=""
               width="30"
               height="24"
