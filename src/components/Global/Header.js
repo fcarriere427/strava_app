@@ -8,11 +8,16 @@ class Header extends Component {
     return (
       <div>
         <Navbar
-          color="light"
-          expand="md"
+          color="primary"
+          expand="xs"
         >
-          <NavbarBrand href="/">
-            reactstrap
+          <NavbarBrand
+            href="/"
+            img src="./logo.png" 
+            alt=""
+            width="30"
+            height="24"
+          >
           </NavbarBrand>
           <NavbarToggler onClick={function noRefCheck(){}} />
           <Collapse navbar>
@@ -55,7 +60,7 @@ class Header extends Component {
               </UncontrolledDropdown>
             </Nav>
             <NavbarText>
-              Simple Text
+              Welcome {this.props.name}
             </NavbarText>
           </Collapse>
         </Navbar>
