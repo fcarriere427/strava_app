@@ -9,9 +9,20 @@ import { Header, Footer, Tracker } from './components';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header name = "Florian" />
-    <Tracker />
-    <Footer />
+    <Router>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/tracker" element={<Tracker />} />
+        <Route path="/list" element={<List />} />
+        <Route path="/report" element={<Blog />} />
+        <Route path="/strava_old_app" />
+      </Routes>
+      <Footer />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
+{/* <Header name = "Florian" /> */}
