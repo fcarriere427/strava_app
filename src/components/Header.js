@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Nav, Navbar, NavItem, NavLink, NavbarText, NavbarBrand  } from 'reactstrap'
-import { Tracker } from './Tracker'
+import Tracker from './Tracker'
 
 // import logo from './logo.png';
 
