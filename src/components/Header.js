@@ -15,7 +15,7 @@ class Header extends Component {
           expand="xs"
         >
           <NavbarBrand href="/">
-            <img className="Image-fluid" src="/logo512.png"
+            <img className="Image-fluid" src={require("../assets/logo512.png")}
               alt="atom logo"
               width="40"
               height="40"
