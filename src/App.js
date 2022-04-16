@@ -1,7 +1,7 @@
 import React from "react";
-import Header from './components/Global/Header';
-import Footer from './components/Global/Footer';
-import Tracker from './components/Tracker/Tracker';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Tracker from './components/Tracker';
 
 
 class App extends React.Component {
@@ -11,7 +11,6 @@ class App extends React.Component {
         <Header name = "Florian" />
         <Tracker />
         <Footer />
-        <p className="fw-light text-black text-center"><a href="strava_old_app">Ancienne appli Strava</a></p>
       </div>
     );
   }
