@@ -17,8 +17,8 @@ class Header extends Component {
           <NavbarBrand href="/">
             <img className="Image-fluid" src="/logo512.png"
               alt=""
-              width="50"
-              height="50"
+              width="40"
+              height="40"
             >
             </img>
           </NavbarBrand>
