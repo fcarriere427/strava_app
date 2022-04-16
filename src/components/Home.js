@@ -10,10 +10,9 @@ class Home extends Component {
   render() {
     return (
       <div
-        style={{
-          // display: "flex",
-          justifyContent: "center",
-        }}
+        // style={{
+        //   justifyContent: "center",
+        // }}
       >
         <h2> Welcome on my running app! </h2>
         <p>
