@@ -40,6 +40,11 @@ class Header extends Component {
                   Reports
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/strava_old_app/">
+                  Old app
+                </NavLink>
+              </NavItem>
             </Nav>
             <NavbarText>
               {this.props.name}
