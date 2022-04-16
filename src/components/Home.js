@@ -11,7 +11,7 @@ class Home extends Component {
     return (
       <div>
         <h2 className="text-center"> Welcome on my running app! </h2>
-        <img src={"../assets/Homer-Simpson-Running.jpg"} />
+        <img src={require("../assets/Homer-Simpson-Running.jpg"}) />
       </div>
     );
   }
