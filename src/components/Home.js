@@ -10,6 +10,7 @@ class Home extends Component {
   render() {
     return (
       <h2 className="text-center"> Welcome on my running app! </h2>
+      <img src={"../assets/Homer-Simpson-Running.jpg"} />
     );
   }
 }
