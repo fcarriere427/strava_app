@@ -15,7 +15,7 @@ class List extends Component {
     let today = new Date();
     let year = today.getFullYear();
     // Récupération des activités
-    let url = 'https://letsq.xyz/strava/activities_list?year=' + year;
+    let url = 'https://letsq.xyz/api/strava/activities_list?year=' + year;
     axios.get(url)
     .then(
       (response) => { this.setState({ activitiesList: response.data }) },
