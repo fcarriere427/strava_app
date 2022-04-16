@@ -12,7 +12,7 @@ class Home extends Component {
       <div
         style={{
           display: "flex",
-          justifyContent: "center",
+          // justifyContent: "center",
         }}
       >
         <h2> Welcome on my running app! </h2>
