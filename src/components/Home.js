@@ -12,7 +12,6 @@ class Home extends Component {
       <div
         style={{
           display: block,
-          margin: 0px auto;
         }}
       >
         <h2> Welcome on my running app! </h2>
