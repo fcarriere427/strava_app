@@ -71,4 +71,4 @@ class Tracker extends Component {
   }
 }
 
-export { Tracker }
+export default Tracker;
