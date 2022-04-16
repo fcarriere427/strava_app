@@ -9,9 +9,15 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <h2 className="text-center"> Welcome on my running app! </h2>
-        <img src={require("../assets/Homer-Simpson-Running.jpg")} style={'center'}} />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <h2> Welcome on my running app! </h2>
+        <img src={require("../assets/Homer-Simpson-Running.jpg")} } />
       </div>
     );
   }
