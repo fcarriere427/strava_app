@@ -42,7 +42,7 @@ class Header extends Component {
               </NavItem>
             </Nav>
             <NavbarText>
-              Welcome <br/> {this.props.name}!
+              {this.props.name}
             </NavbarText>
           </Collapse>
         </Navbar>
