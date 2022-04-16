@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Nav, Navbar, NavItem, NavLink, NavbarText, NavbarBrand  } from 'reactstrap'
 import Tracker from './Tracker'
+import List from './List'
+
 
 // import logo from './logo.png';
 
@@ -30,7 +32,7 @@ class Header extends Component {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/list/">
+              <NavLink href="/list/" element={<List />}>
                 List
               </NavLink>
             </NavItem>
