@@ -11,8 +11,8 @@ class Home extends Component {
     return (
       <div
         style={{
-          display: "flex",
-          // justifyContent: "center",
+          // display: "flex",
+          justifyContent: "center",
         }}
       >
         <h2> Welcome on my running app! </h2>
