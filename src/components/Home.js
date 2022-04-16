@@ -16,7 +16,9 @@ class Home extends Component {
         }}
       >
         <h2> Welcome on my running app! </h2>
-        <img src={require("../assets/Homer-Simpson-Running.jpg")} />
+        <p>
+          <img src={require("../assets/Homer-Simpson-Running.jpg")} />
+        </p>
       </div>
     );
   }
