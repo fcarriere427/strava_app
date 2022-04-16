@@ -10,7 +10,7 @@ import { Home, Header, Footer, Tracker, List } from './components';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Header />
+      <Header name="Florian"/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tracker" element={<Tracker />} />
