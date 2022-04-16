@@ -9,7 +9,7 @@ class Home extends Component {
 
   render() {
     return (
-      <h2 className="center"> Welcome on my running app! </h2>
+      <h2 className="text-center"> Welcome on my running app! </h2>
     );
   }
 }
