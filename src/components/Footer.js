@@ -8,7 +8,7 @@ class Footer extends Component {
     let date_str = today.toLocaleDateString('fr-FR');
 
     return (
-      <Container fluid className = "bg-light fw-light text-dark text-center">
+      <Container fluid className = "bg-light fw-light text-dark text-center text-italic">
         <footer>
           <p>Current date : {date_str} </p>
         </footer>

@@ -16,7 +16,7 @@ class Header extends Component {
         >
           <NavbarBrand href="/">
             <img className="Image-fluid" src="/logo512.png"
-              alt=""
+              alt="atom logo"
               width="40"
               height="40"
             >
@@ -27,22 +27,36 @@ class Header extends Component {
             navbar
           >
             <NavItem>
-              <NavLink href="/tracker/" className="active" element={<Tracker />}>
+              <NavLink
+                href="/tracker/"
+                className="{isActive => 'nav-link' + (!isActive ? 'unselected' : '')"
+                element={<Tracker />}
+              >
                 Tracker
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/list/" element={<List />}>
+              <NavLink
+                href="/list/"
+                className="{isActive => 'nav-link' + (!isActive ? 'unselected' : '')"
+                element={<List />}
+              >
                 List
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/reports/">
+              <NavLink
+                href="/reports/"
+                className="{isActive => 'nav-link' + (!isActive ? 'unselected' : '')"
+              >
                 Reports
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/strava_old_app/">
+              <NavLink
+                href="/strava_old_app/"
+                className="{isActive => 'nav-link' + (!isActive ? 'unselected' : '')"
+              >
                 Old app
               </NavLink>
             </NavItem>
