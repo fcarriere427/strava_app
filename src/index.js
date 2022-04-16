@@ -12,7 +12,7 @@ ReactDOM.render(
     <Router>
       <Header />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/tracker" element={<Tracker />} />
         <Route path="/list" element={<List />} />
         <Route path="/report" className="disabled" />
