@@ -13,7 +13,6 @@ class Home extends Component {
         style={{
           display: "flex",
           justifyContent: "center",
-          text-align: "center"
         }}
       >
         <h2> Welcome on my running app! </h2>
