@@ -12,8 +12,7 @@ class Home extends Component {
       <div
         style={{
           textAlign: "center",
-          display: flex,
-          justify-content: center
+          display: "flex"
         }}
       >
         <h2> Welcome on my running app! </h2>
