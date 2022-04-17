@@ -9,14 +9,9 @@ class Home extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          textAlign: "center"
-          // , display: "flex" // pour aligner les éléments sur la même ligne
-        }}
-      >
+      <div>
         <h2> Welcome on my running app! </h2>
-        <p>
+        <p style={{ textAlign: "center" }}>
           <img src={require("../assets/Homer-Simpson-Running.jpg")} />
         </p>
       </div>
