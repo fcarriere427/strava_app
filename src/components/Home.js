@@ -11,8 +11,8 @@ class Home extends Component {
     return (
       <div
         style={{
-          textAlign: "center",
-          display: "flex"
+          textAlign: "center"
+          // , display: "flex" // pour aligner les éléments sur la même ligne
         }}
       >
         <h2> Welcome on my running app! </h2>
