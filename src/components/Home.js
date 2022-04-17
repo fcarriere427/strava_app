@@ -11,6 +11,7 @@ class Home extends Component {
     return (
       <div
         style={{
+          textAlign: "center",
           display: flex,
           justify-content: center
         }}
