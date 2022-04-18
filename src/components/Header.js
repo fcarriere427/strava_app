@@ -9,7 +9,7 @@ class Header extends Component {
     return (
       <div className="sticky-top">
 
-        <Navbar bg="warning" expand="xs">
+        <Navbar color="warning" expand="xs">
 
           <NavbarBrand href="/">
             <img className="Image-fluid" src={require("../assets/logo.png")}
