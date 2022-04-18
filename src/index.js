@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Home, Header, Footer, Tracker, List } from './components';
+import { Home, Header, Footer, Tracker, List, Reports } from './components';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +15,7 @@ ReactDOM.render(
         <Route path="/" element={<Home />} />
         <Route path="/tracker" element={<Tracker />} />
         <Route path="/list" element={<List />} />
-        <Route path="/report" className="disabled" />
+        <Route path="/reports" element={<Reports />} />
         <Route path="/strava_old_app" />
       </Routes>
       <Footer />
