@@ -19,7 +19,7 @@ class Tracker extends Component {
    }
 
   componentDidMount(){
-    updateYearDistance();
+    this.updateYearDistance();
   }
 
   // Mise à jour du cumul de l'année
@@ -67,7 +67,7 @@ class Tracker extends Component {
         </Row>
 
         <Row>
-          <UpdateBar onChange={() => updateYearDistance()} />
+          <UpdateBar onChange={() => this.updateYearDistance()} />
         </Row>
 
       </Container>
