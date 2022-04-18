@@ -24,6 +24,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href ="/tracker"
+                className="active"
               >
                 Tracker
               </NavLink>
