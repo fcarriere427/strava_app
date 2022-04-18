@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Nav, Navbar, NavItem, NavLink, NavbarText, NavbarBrand  } from 'reactstrap'
-import { NavLink as RRNavLink } from 'react-router-dom'
 import Tracker from './Tracker'
 import List from './List'
 
@@ -18,7 +17,7 @@ class Header extends Component {
         >
           <NavbarBrand href="/">
             <img className="Image-fluid" src={require("../assets/logo.png")}
-              alt="atom logo"
+              alt="logo"
               width="40"
               height="40"
             >
@@ -30,27 +29,24 @@ class Header extends Component {
           >
             <NavItem>
               <NavLink
-                activeClassName="active"
-                tag={RRNavLink}
-                exact to ="/tracker"
+                style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
+                end to ="/tracker"
               >
                 Tracker
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                activeClassName="active"
-                tag={RRNavLink}
-                exact to ="/list"
+                style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
+                end to ="/list"
               >
                 List
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                activeClassName="active"
-                tag={RRNavLink}
-                exact to ="/reports"
+                style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
+                end to ="/reports"
               >
                 Reports
               </NavLink>
