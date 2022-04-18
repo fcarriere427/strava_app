@@ -24,7 +24,7 @@ class Header extends Component {
           <Nav className="ml-auto" pills>
             <NavItem>
               <NavLink
-                href="/tracker"
+                to="/tracker"
                 tag={RRNavLink} activeClassName="active">
                 >
                 Tracker
@@ -32,7 +32,7 @@ class Header extends Component {
             </NavItem>
             <NavItem>
               <NavLink  // className="active" // ça fonctionne :-) :-) :-)
-                href ="/list"
+                to ="/list"
                 tag={RRNavLink} activeClassName="active">
                 >
                 List
@@ -40,7 +40,7 @@ class Header extends Component {
             </NavItem>
             <NavItem>
               <NavLink
-                href ="/reports"
+                to ="/reports"
                 tag={RRNavLink} activeClassName="active">
                 >
                 Reports
