@@ -29,8 +29,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/tracker/"
-                className="{isActive => 'nav-link' + (!isActive ? 'unselected' : '')"
-                element={<Tracker />}
+                className="nav-link"
               >
                 Tracker
               </NavLink>
@@ -38,8 +37,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/list/"
-                className="{isActive => 'nav-link' + (!isActive ? 'unselected' : '')"
-                element={<List />}
+                className="nav-link"
               >
                 List
               </NavLink>
@@ -47,7 +45,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/reports/"
-                className="{isActive => 'nav-link' + (!isActive ? 'unselected' : '')"
+                className="nav-link"
               >
                 Reports
               </NavLink>
@@ -55,7 +53,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/strava_old_app/"
-                className="{isActive => 'nav-link' + (!isActive ? 'unselected' : '')"
+                className="nav-link"
               >
                 Old app
               </NavLink>
