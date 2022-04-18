@@ -23,6 +23,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-
-{/* <Header name = "Florian" /> */}

@@ -20,12 +20,10 @@ class Header extends Component {
             </img>
           </NavbarBrand>
 
-          <Nav>
+          <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink
                 href ="/tracker"
-                //style={ ({isActive}) => ({ color: isActive ? 'green' : 'blue' })}
-                //style={{color: "green"}}
               >
                 Tracker
               </NavLink>
@@ -49,15 +47,15 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/strava_old_app"
-                // className="nav-link"
+                style={{color: "grey"}}
               >
                 Old app
               </NavLink>
             </NavItem>
-            <NavbarText>
+            {/* <NavbarText>
               {this.props.name}
-            </NavbarText>
-
+              </NavbarText>
+            */}
           </Nav>
 
         </Navbar>
