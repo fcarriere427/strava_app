@@ -37,7 +37,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/list"
-                active={window.location === '/list'}
+                activeClassName={window.location === '/list'}
               >
                 List
               </NavLink>
