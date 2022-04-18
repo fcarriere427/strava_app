@@ -37,7 +37,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/list"
-                active="true"
+                active=true
               >
                 List
               </NavLink>
