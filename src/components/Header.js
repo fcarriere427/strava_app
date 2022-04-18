@@ -8,7 +8,7 @@ import List from './List'
 
 class Header extends Component {
   render() {
-    console.log("window.location = " + window.location)
+    // console.log("window.location = " + window.location)
     return (
       <div className="sticky-top">
         <Navbar
@@ -29,7 +29,7 @@ class Header extends Component {
           >
             <NavItem>
               <NavLink
-                style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
+                style={ isActive => ({ color: isActive ? 'green' : 'blue' })}
                 to ="/tracker"
               >
                 Tracker
@@ -37,7 +37,7 @@ class Header extends Component {
             </NavItem>
             <NavItem>
               <NavLink
-                style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
+                // style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
                 to ="/list"
               >
                 List
@@ -45,7 +45,7 @@ class Header extends Component {
             </NavItem>
             <NavItem>
               <NavLink
-                style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
+                // style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
                 to ="/reports"
               >
                 Reports
