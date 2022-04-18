@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Nav, Navbar, NavItem, NavLink, NavbarText, NavbarBrand  } from 'reactstrap'
+import { NavLink as RRNavLink } from 'react-router-dom'
 import Tracker from './Tracker'
 import List from './List'
 
@@ -10,7 +11,7 @@ class Header extends Component {
   render() {
     console.log("window.location = " + window.location)
     return (
-      <div>
+      <div className="sticky-top">
         <Navbar
           color="warning"
           expand="xs"
@@ -29,24 +30,27 @@ class Header extends Component {
           >
             <NavItem>
               <NavLink
-                href="/tracker"
-                active={window.location === '/tracker'}
+                activeClassName="active"
+                tag={RRNAvLink}
+                exact to ="/tracker"
               >
                 Tracker
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                href="/list"
-                tag={window.location === '/tracker'}
+                activeClassName="active"
+                tag={RRNAvLink}
+                exact to ="/list"
               >
                 List
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                href="/reports"
-                active={window.location === '/reports'}
+                activeClassName="active"
+                tag={RRNAvLink}
+                exact to ="/reports"
               >
                 Reports
               </NavLink>
