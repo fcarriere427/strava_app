@@ -29,7 +29,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/tracker/"
-                className="nav-link"
+                active={window.location === '/tracker'}
               >
                 Tracker
               </NavLink>
@@ -37,7 +37,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/list/"
-                className="nav-link"
+                active={window.location === '/list'}
               >
                 List
               </NavLink>
@@ -45,7 +45,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/reports/"
-                className="nav-link"
+                active={window.location === '/reports'}
               >
                 Reports
               </NavLink>
