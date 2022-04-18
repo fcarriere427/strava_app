@@ -29,7 +29,7 @@ class Header extends Component {
           >
             <NavItem>
               <NavLink
-                to ="/tracker"
+                href ="/tracker"
                 // style={ isActive => ({ color: isActive ? 'green' : 'blue' })}
                 style={{color: "green"}}
               >
@@ -38,7 +38,7 @@ class Header extends Component {
             </NavItem>
             <NavItem>
               <NavLink
-                to ="/list"
+                href ="/list"
                 // style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
               >
                 List
