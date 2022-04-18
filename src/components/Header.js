@@ -55,7 +55,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/strava_old_app"
-                className="nav-link"
+                // className="nav-link"
               >
                 Old app
               </NavLink>
