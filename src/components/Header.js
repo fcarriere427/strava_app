@@ -21,12 +21,11 @@ class Header extends Component {
             </img>
           </NavbarBrand>
 
-          <Nav className="ml-auto" pills >
+          <Nav className="ml-auto" pills>
             <NavItem>
               <NavLink
-                exact to="/tracker"
-                className="active"
                 tag={RRNavLink}
+                exact to="/tracker"
               activeClassName="active">
                 >
                 Tracker
@@ -34,6 +33,7 @@ class Header extends Component {
             </NavItem>
             <NavItem>
               <NavLink
+                className="active" // ça fonctionne :-) :-) :-)
                 href ="/list"
                 // style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
               >
