@@ -21,6 +21,7 @@ class UpdateBar extends Component {
       (response) => {
         this.setState({ message : response.data });
         console.log(this.state.message + " activities fetched!");
+        this.props.onChange();
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -37,6 +38,7 @@ class UpdateBar extends Component {
       (response) => {
         this.setState({ message : response.data });
         console.log(this.state.message + " activities fetched!");
+        this.props.onChange();
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);

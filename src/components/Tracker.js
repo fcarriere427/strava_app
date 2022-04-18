@@ -19,7 +19,11 @@ class Tracker extends Component {
    }
 
   componentDidMount(){
-    // Récupération du cumul de l'année
+    updateYearDistance();
+  }
+
+  // Mise à jour du cumul de l'année
+  updateYearDistance() {
     let url = 'https://letsq.xyz/api/strava/year_distances';
     let year = new Date().getFullYear().toString();
     axios.get(url)
@@ -63,7 +67,7 @@ class Tracker extends Component {
         </Row>
 
         <Row>
-          <UpdateBar />
+          <UpdateBar onChange={() => updateYearDistance()} />
         </Row>
 
       </Container>
