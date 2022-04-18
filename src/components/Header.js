@@ -28,7 +28,7 @@ class Header extends Component {
           >
             <NavItem>
               <NavLink
-                href="/tracker/"
+                href="/tracker"
                 active={window.location === '/tracker'}
               >
                 Tracker
@@ -36,7 +36,7 @@ class Header extends Component {
             </NavItem>
             <NavItem>
               <NavLink
-                href="/list/"
+                href="/list"
                 active={window.location === '/list'}
               >
                 List
@@ -44,7 +44,7 @@ class Header extends Component {
             </NavItem>
             <NavItem>
               <NavLink
-                href="/reports/"
+                href="/reports"
                 active={window.location === '/reports'}
               >
                 Reports
@@ -52,7 +52,7 @@ class Header extends Component {
             </NavItem>
             <NavItem>
               <NavLink
-                href="/strava_old_app/"
+                href="/strava_old_app"
                 className="nav-link"
               >
                 Old app
