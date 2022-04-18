@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Nav, Navbar, NavItem, NavLink, NavbarText, NavbarBrand  } from 'reactstrap'
+import { NavLink as RRNavLink } from 'react-router-dom';
 import Tracker from './Tracker'
 import List from './List'
 
@@ -23,10 +24,11 @@ class Header extends Component {
           <Nav className="ml-auto" pills >
             <NavItem>
               <NavLink
-                href ="/tracker"
-                // className="active"
-                className ={({ isActive  }) => ({ isActive ? 'active' : 'default' })}
-              >
+                exact to="/tracker"
+                className="active"
+                tag={RRNavLink}
+              activeClassName="active">
+                >
                 Tracker
               </NavLink>
             </NavItem>
