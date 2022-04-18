@@ -46,14 +46,6 @@ class Header extends Component {
                 Reports
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink
-                href="/strava_old_app"
-                style={{color: "grey"}}
-              >
-                <i>Old app</i>
-              </NavLink>
-            </NavItem>
             {/* <NavbarText>
               {this.props.name}
               </NavbarText>

@@ -23,6 +23,7 @@ ReactDOM.render(
     <p
       href="/strava_old_app"
       style={{color: "grey"}}
+      className="text-center"
     >
       <i>Old app</i>
     </p>
