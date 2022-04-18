@@ -1,79 +1,69 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Nav, Navbar, NavItem, NavLink, NavbarText, NavbarBrand  } from 'reactstrap'
-import { withRouter } from 'react-router'
 import Tracker from './Tracker'
 import List from './List'
 
-const Head = props => { // Header sans router
-  const { location } = props;
-  return (
-    <div className="sticky-top">
-
-<<<<<<< HEAD
 class Header extends Component {
 
-render() {
-  return (
-    <div className="sticky-top">
+  render() {
+    return (
+      <div className="sticky-top">
 
-=======
->>>>>>> bb0a30e8f27caeb5a478b47283122d25733d3788
-      <Navbar bg="warning" expand="xs">
+        <Navbar bg="warning" expand="xs">
 
-        <NavbarBrand href="/">
-          <img className="Image-fluid" src={require("../assets/logo.png")}
-            alt="logo"
-            width="40"
-            height="40"
-          >
-          </img>
-        </NavbarBrand>
-
-        <Nav activeKey={location.pathname}>
-          <NavItem>
-            <NavLink
-              href ="/tracker"
-              // style={ isActive => ({ color: isActive ? 'green' : 'blue' })}
-              style={{color: "green"}}
+          <NavbarBrand href="/">
+            <img className="Image-fluid" src={require("../assets/logo.png")}
+              alt="logo"
+              width="40"
+              height="40"
             >
-              Tracker
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              href ="/list"
-              // style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
-            >
-              List
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              href ="/reports"
-              // style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
-            >
-              Reports
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              href="/strava_old_app"
-              // className="nav-link"
-            >
-              Old app
-            </NavLink>
-          </NavItem>
-          <NavbarText>
-            {this.props.name}
-          </NavbarText>
+            </img>
+          </NavbarBrand>
 
-        </Nav>
+          <Nav activeKey={location.pathname}>
+            <NavItem>
+              <NavLink
+                href ="/tracker"
+                // style={ isActive => ({ color: isActive ? 'green' : 'blue' })}
+                style={{color: "green"}}
+              >
+                Tracker
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                href ="/list"
+                // style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
+              >
+                List
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                href ="/reports"
+                // style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
+              >
+                Reports
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                href="/strava_old_app"
+                // className="nav-link"
+              >
+                Old app
+              </NavLink>
+            </NavItem>
+            <NavbarText>
+              {this.props.name}
+            </NavbarText>
 
-      </Navbar>
-    </div>
-  );
+          </Nav>
+
+        </Navbar>
+      </div>
+    );
+  }
 }
-
-const Header = withRouter(Head);
 
 export default Header;
