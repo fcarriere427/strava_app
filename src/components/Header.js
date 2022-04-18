@@ -20,7 +20,7 @@ class Header extends Component {
             </img>
           </NavbarBrand>
 
-          <Nav className="ml-auto" navbar>
+          <Nav className="ml-auto" pills tabs>
             <NavItem>
               <NavLink
                 href ="/tracker"
@@ -49,7 +49,7 @@ class Header extends Component {
                 href="/strava_old_app"
                 style={{color: "grey"}}
               >
-                Old app
+                <i>Old app</i>
               </NavLink>
             </NavItem>
             {/* <NavbarText>
