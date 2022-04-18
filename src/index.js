@@ -20,6 +20,12 @@ ReactDOM.render(
       </Routes>
       <Footer />
     </Router>
+    <p
+      href="/strava_old_app"
+      style={{color: "grey"}}
+    >
+      <i>Old app</i>
+    </p>
   </React.StrictMode>,
   document.getElementById('root')
 );
