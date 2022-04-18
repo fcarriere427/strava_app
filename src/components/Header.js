@@ -8,6 +8,7 @@ import List from './List'
 
 class Header extends Component {
   render() {
+    console.log("window.location = " + window.location)
     return (
       <div>
         <Navbar
@@ -37,7 +38,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href="/list"
-                active=true
+                tag={window.location === '/tracker'}
               >
                 List
               </NavLink>
