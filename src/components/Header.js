@@ -20,7 +20,7 @@ class Header extends Component {
             </img>
           </NavbarBrand>
 
-          <Nav className="ml-auto" pills tabs>
+          <Nav className="ml-auto" pills >
             <NavItem>
               <NavLink
                 href ="/tracker"
