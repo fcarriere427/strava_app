@@ -25,7 +25,7 @@ class Header extends Component {
               <NavLink
                 href ="/tracker"
                 // className="active"
-                className ={({ isActive ? 'active' : 'inactive' })}
+                className ={({ isActive  }) => ({ isActive ? 'active' : 'default' })}
               >
                 Tracker
               </NavLink>
