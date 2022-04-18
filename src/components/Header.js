@@ -31,7 +31,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 activeClassName="active"
-                tag={RRNAvLink}
+                tag={RRNavLink}
                 exact to ="/tracker"
               >
                 Tracker
@@ -40,7 +40,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 activeClassName="active"
-                tag={RRNAvLink}
+                tag={RRNavLink}
                 exact to ="/list"
               >
                 List
@@ -49,7 +49,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 activeClassName="active"
-                tag={RRNAvLink}
+                tag={RRNavLink}
                 exact to ="/reports"
               >
                 Reports
