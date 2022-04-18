@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Nav, Navbar, NavItem, NavLink, NavbarText, NavbarBrand  } from 'reactstrap'
+import { withRouter } from 'react-router'
 import Tracker from './Tracker'
 import List from './List'
 
+const Head = props => { // Header sans router
+  const { location } = props;
+  return (
+    <div className="sticky-top">
 
+<<<<<<< HEAD
 class Header extends Component {
 
 render() {
   return (
     <div className="sticky-top">
 
+=======
+>>>>>>> bb0a30e8f27caeb5a478b47283122d25733d3788
       <Navbar bg="warning" expand="xs">
 
         <NavbarBrand href="/">
@@ -65,5 +73,7 @@ render() {
     </div>
   );
 }
+
+const Header = withRouter(Head);
 
 export default Header;
