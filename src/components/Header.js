@@ -24,27 +24,25 @@ class Header extends Component {
           <Nav className="ml-auto" pills>
             <NavItem>
               <NavLink
-                tag={RRNavLink}
-                exact to="/tracker"
-              activeClassName="active">
+                href="/tracker"
+                tag={RRNavLink} activeClassName="active">
                 >
                 Tracker
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                className="active" // ça fonctionne :-) :-) :-)
+              <NavLink  // className="active" // ça fonctionne :-) :-) :-)
                 href ="/list"
-                // style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
-              >
+                tag={RRNavLink} activeClassName="active">
+                >
                 List
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
                 href ="/reports"
-                // style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
-              >
+                tag={RRNavLink} activeClassName="active">
+                >
                 Reports
               </NavLink>
             </NavItem>
