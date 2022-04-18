@@ -24,7 +24,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 href ="/tracker"
-                style={ ({isActive}) => ({ color: isActive ? 'green' : 'blue' })}
+                //style={ ({isActive}) => ({ color: isActive ? 'green' : 'blue' })}
                 //style={{color: "green"}}
               >
                 Tracker
