@@ -25,7 +25,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 to="/tracker"
-                tag={RRNavLink} activeClassName="active">
+                tag={RRNavLink} activeclassname="active">
                 >
                 Tracker
               </NavLink>
@@ -33,7 +33,7 @@ class Header extends Component {
             <NavItem>
               <NavLink  // className="active" // ça fonctionne :-) :-) :-)
                 to ="/list"
-                tag={RRNavLink} activeClassName="active">
+                tag={RRNavLink} activeclassname="active">
                 >
                 List
               </NavLink>
@@ -41,7 +41,7 @@ class Header extends Component {
             <NavItem>
               <NavLink
                 to ="/reports"
-                tag={RRNavLink} activeClassName="active">
+                tag={RRNavLink} activeclassname="active">
                 >
                 Reports
               </NavLink>
