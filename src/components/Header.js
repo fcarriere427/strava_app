@@ -20,7 +20,7 @@ class Header extends Component {
             </img>
           </NavbarBrand>
 
-          <Nav activeKey={location.pathname}>
+          <Nav>
             <NavItem>
               <NavLink
                 href ="/tracker"
