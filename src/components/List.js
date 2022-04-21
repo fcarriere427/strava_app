@@ -18,22 +18,33 @@ class List extends Component {
     let today = new Date();
     let current_year = today.getFullYear();
     this.setState({ currentYear: current_year }, () => {
-      console.log("after setState: " + this.state.currentYear);
-      let url = 'https://letsq.xyz/api/strava/activities_list?year=' + this.state.currentYear;
-      axios.get(url)
-      .then(
-        (response) => { this.setState({ activitiesList: response.data }) },
-        (error) => { console.log("ERREUR de l'API  : " + error) }
-      )
+      getActivities(this.state.currentYear)
     })
+  }
+
+  // Actions quand on modifie la cible
+  updateYear(evt) {
+    this.setState({ currentYear: evt.target.value }, () => {
+      getActivities(this.state.currentYear)
+    })
+  }
+
+  // Récupération des activités pour l'année donnée
+  getActivities(year) {
+    let url = 'https://letsq.xyz/api/strava/activities_list?year=' + year;
+    axios.get(url)
+    .then(
+      (response) => { this.setState({ activitiesList: response.data }) },
+      (error) => { console.log("ERREUR de l'API  : " + error) }
+    )
   }
 
   render() {
     return(
       <Container fluid className='bg-grey text-black text-center'>
-        {/* <Row>
-          <p> Year: {this.state.year}</p>
-        </Row> */}
+        <Row className="py-2">
+          <SelectYear currentYear={this.state.currentYear} updateHandler={(evt) => this.updateYear(evt)} />
+        </Row>
         {this.state.activitiesList.map((d, index) =>
           <ActivitySummary data={d} key={index} />)
         }
