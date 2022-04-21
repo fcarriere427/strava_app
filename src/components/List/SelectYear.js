@@ -25,7 +25,10 @@ class SelectYear extends Component {
   render(){
     return(
       <div>
-        <p> log tableau années = {this.state.annees} </p>
+        <ul> log tableau années = {this.state.annees.map(annee => (
+          <li key={annee}>{annee}</li>
+        ))}
+        </ul>
 
         <form>
           <label>
