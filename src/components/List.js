@@ -31,9 +31,9 @@ class List extends Component {
   render() {
     return(
       <Container fluid className='bg-grey text-black text-center'>
-        <Row>
+        {/* <Row>
           <p> Year: {this.state.year}</p>
-        </Row>
+        </Row> */}
         {this.state.activitiesList.map((d, index) =>
           <ActivitySummary data={d} index={index} />)
         }
