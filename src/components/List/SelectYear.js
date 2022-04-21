@@ -21,7 +21,7 @@ class SelectYear extends Component {
   render(){
     return(
       <div>
-        <p> log tableau années = {this.annees} </p>
+        <p> log tableau années = {this.annees[0]} </p>
 
         <form>
           <label>
