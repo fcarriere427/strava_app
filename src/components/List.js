@@ -23,7 +23,7 @@ class List extends Component {
     let bis_current_year = current_year.toString();
     console.log(bis_current_year);
     console.log(typeof(bis_current_year));
-    this.setState({ currentYear: "2022" }, () => console.log(this.state.currentYear));
+    this.setState({ currentYear: "2022" }, () => console.log("after setState: " + this.state.currentYear));
     // Récupération des activités
     let url = 'https://letsq.xyz/api/strava/activities_list?year=' + this.state.currentYear;
     axios.get(url)
