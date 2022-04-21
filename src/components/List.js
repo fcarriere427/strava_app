@@ -30,19 +30,9 @@ class List extends Component {
   render() {
     return(
       <Container fluid className='bg-grey text-black text-center'>
-        {this.state.activitiesList.map((d, index) => (
-          <Row key={index}>
-            <Col xs="2">
-              <p>{d.doc.id}</p>
-            </Col>
-            <Col xs="5">
-              <p>{d.doc.start_date_local}</p>
-            </Col>
-            <Col xs="5">
-              <p>{d.doc.distance}</p>
-            </Col>
-          </Row>
-        ))}
+        {this.state.activitiesList.map((d, index) =>
+          <ActivitySummary data={d} index={index} />
+          }
       </Container>
     );
   }
