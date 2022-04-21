@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { ActivitySummary } from './List/ActivitySummary'
+import { SelectYear } from './List/SelectYear'
 
 const axios = require('axios').default;
 
@@ -18,14 +19,14 @@ class List extends Component {
     let today = new Date();
     let current_year = today.getFullYear();
     this.setState({ currentYear: current_year }, () => {
-      getActivities(this.state.currentYear)
+      this.getActivities(this.state.currentYear)
     })
   }
 
   // Actions quand on modifie la cible
   updateYear(evt) {
     this.setState({ currentYear: evt.target.value }, () => {
-      getActivities(this.state.currentYear)
+      this.getActivities(this.state.currentYear)
     })
   }
 
