@@ -5,7 +5,7 @@ import { Row, Col } from 'reactstrap'
 class ActivitySummary extends Component {
   render(){
     return(
-      <Row key={this.props.key}>
+      <Row key={this.props.index}>
         <Col xs="2">
           <p>{this.props.data.doc.id}</p>
         </Col>
