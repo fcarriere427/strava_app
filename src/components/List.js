@@ -17,6 +17,7 @@ class List extends Component {
     // pour l'instant, on fixe l'année à celle en cours, ensuite il faudra en faire un "state"
     let today = new Date();
     let year = today.getFullYear();
+    console.log(year);
     this.setState({year: year});
     console.log(this.state.year);
     // Récupération des activités
