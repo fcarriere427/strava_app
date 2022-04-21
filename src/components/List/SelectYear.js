@@ -32,7 +32,7 @@ class SelectYear extends Component {
       <form>
         <label>
           Select year:
-          <select multiple={true} value={annees} onChange={this.handleChange}>
+          <select multiple={true} value={this.annees} onChange={this.handleChange}>
           </select>
         </label>
       </form>
