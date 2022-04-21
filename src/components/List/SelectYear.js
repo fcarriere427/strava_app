@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 
-
-let start_year = 2015 // début des activités Strava
-let annees = [];
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class SelectYear extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+       annees: []
+     };
+   }
+
   componentDidMount(){
     // Remplissage du tableau annees
+    let start_year = 2015 // début des activités Strava
     let last_year = new Date().getFullYear();
     let i = last_year - start_year;
     for (let year = start_year; year <= last_year; year++){
-      annees[i]=year;
+      this.setState({annees[i]: year})
       i = i-1;
     }
   }
@@ -21,8 +25,8 @@ class SelectYear extends Component {
   render(){
     return(
       <div>
-        <p> log tableau années = {this.annees} </p>
-        
+        <p> log tableau années = {this.state.annees} </p>
+
         <form>
           <label>
             Select year:
