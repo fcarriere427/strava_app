@@ -19,7 +19,10 @@ class List extends Component {
     let current_year = today.getFullYear();
     console.log(current_year);
     console.log(typeof(current_year));
-    this.setState({ year : current_year});
+    let bis_current_year = current_year.toString();
+    console.log(bis_current_year);
+    console.log(typeof(bis_current_year));
+    this.setState({ year : bis_current_year});
     console.log(this.state.year);
     // Récupération des activités
     let url = 'https://letsq.xyz/api/strava/activities_list?year=' + this.state.year;
