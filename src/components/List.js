@@ -16,7 +16,8 @@ class List extends Component {
   componentDidMount(){
     // pour l'instant, on fixe l'année à celle en cours, ensuite il faudra en faire un "state"
     let today = new Date();
-    this.setState({year: today.getFullYear() });
+    let year = today.getFullYear();
+    this.setState({year: year});
     console.log(this.state.year);
     // Récupération des activités
     let url = 'https://letsq.xyz/api/strava/activities_list?year=' + this.state.year;
