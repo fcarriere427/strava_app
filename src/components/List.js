@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
+import { ActivitySummary } from './List/ActivitySummary'
+
 
 
 const axios = require('axios').default;
