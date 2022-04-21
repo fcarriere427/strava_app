@@ -9,11 +9,12 @@ class List extends Component {
     super(props);
     this.state = {
       activitiesList: [],
-      year:"0"
+      year:"2020"
     };
   }
 
   componentDidMount(){
+    console.log(this.state.year);
     // pour l'instant, on fixe l'année à celle en cours, ensuite il faudra en faire un "state"
     let today = new Date();
     let current_year = today.getFullYear();
