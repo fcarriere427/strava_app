@@ -31,8 +31,8 @@ class List extends Component {
     return(
       <Container fluid className='bg-grey text-black text-center'>
         {this.state.activitiesList.map((d, index) =>
-          <ActivitySummary data={d} index={index} />
-          }
+          <ActivitySummary data={d} index={index} />)
+        }
       </Container>
     );
   }
