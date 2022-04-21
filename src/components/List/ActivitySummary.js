@@ -20,7 +20,26 @@ class ActivitySummary extends Component {
   }
 }
 
+class ActivitySummaryHeader extends Component {
+  render(){
+    return(
+      <Row>
+        <Col xs="2">
+          <p>ID</p>
+        </Col>
+        <Col xs="5">
+          <p>Date</p>
+        </Col>
+        <Col xs="5">
+          <p>Distance</p>
+        </Col>
+      </Row>
+    )
+  }
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 export {
-  ActivitySummary
+  ActivitySummary,
+  ActivitySummaryHeader
 }

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
-import { ActivitySummary } from './List/ActivitySummary'
-
-
+import { ActivitySummary, ActivitySummaryHeader } from './List/ActivitySummary'
 
 const axios = require('axios').default;
 
@@ -32,6 +30,7 @@ class List extends Component {
   render() {
     return(
       <Container fluid className='bg-grey text-black text-center'>
+        <ActivitySummaryHeader />
         {this.state.activitiesList.map((d, index) =>
           <ActivitySummary data={d} index={index} />)
         }
@@ -39,8 +38,5 @@ class List extends Component {
     );
   }
 }
-
-// (<p key={index}>id: {d.doc.id}, date: {d.doc.start_date_local}, distance: {d.doc.distance}</p>)
-
 
 export default List;
