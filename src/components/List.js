@@ -14,7 +14,7 @@ class List extends Component {
   }
 
   componentDidMount(){
-    console.log(this.state.year);
+    console.log(this.state.currentYear);
     // pour l'instant, on fixe l'année à celle en cours, ensuite il faudra en faire un "state"
     let today = new Date();
     let current_year = today.getFullYear();
