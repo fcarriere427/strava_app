@@ -9,7 +9,7 @@ class List extends Component {
     super(props);
     this.state = {
       activitiesList: [],
-      year:0
+      year:""
     };
   }
 
