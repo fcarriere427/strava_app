@@ -18,17 +18,14 @@ class List extends Component {
     let today = new Date();
     let current_year = today.getFullYear();
     this.setState({ currentYear: current_year }, () => {
-      console.log("after setState: " + this.state.currentYear));
+      console.log("after setState: " + this.state.currentYear);
       let url = 'https://letsq.xyz/api/strava/activities_list?year=' + this.state.currentYear;
       axios.get(url)
       .then(
-        (response) => {
-          this.setState({ activitiesList: response.data });
-          console.log(this.state.activitiesList);
-        },
+        (response) => { this.setState({ activitiesList: response.data }) },
         (error) => { console.log("ERREUR de l'API  : " + error) }
       )
-    }
+    })
   }
 
   render() {
