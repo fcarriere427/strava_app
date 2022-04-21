@@ -23,7 +23,10 @@ class SelectYear extends Component {
       <form>
         <label>
           Select year:
-          <select multiple={true} value={this.annees} onChange={this.props.updateHandler}>
+          <select multiple={true} value={this.props.currentYear} onChange={this.props.updateHandler}>{
+            this.annees.map( (x,y) => 
+              <option key={y}>{x}</option> )
+          }
           </select>
         </label>
       </form>
