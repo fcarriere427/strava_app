@@ -14,26 +14,21 @@ class List extends Component {
   }
 
   componentDidMount(){
-    console.log(this.state.currentYear);
     // pour l'instant, on fixe l'année à celle en cours, ensuite il faudra en faire un "state"
     let today = new Date();
     let current_year = today.getFullYear();
-    console.log(current_year);
-    console.log(typeof(current_year));
-    let bis_current_year = current_year.toString();
-    console.log(bis_current_year);
-    console.log(typeof(bis_current_year));
-    this.setState({ currentYear: "2022" }, () => console.log("after setState: " + this.state.currentYear));
-    // Récupération des activités
-    let url = 'https://letsq.xyz/api/strava/activities_list?year=' + this.state.currentYear;
-    axios.get(url)
-    .then(
-      (response) => {
-        this.setState({ activitiesList: response.data });
-        console.log(this.state.activitiesList);
-      },
-      (error) => { console.log("ERREUR de l'API  : " + error) }
-    )
+    this.setState({ currentYear: current_year }, () => {
+      console.log("after setState: " + this.state.currentYear));
+      let url = 'https://letsq.xyz/api/strava/activities_list?year=' + this.state.currentYear;
+      axios.get(url)
+      .then(
+        (response) => {
+          this.setState({ activitiesList: response.data });
+          console.log(this.state.activitiesList);
+        },
+        (error) => { console.log("ERREUR de l'API  : " + error) }
+      )
+    }
   }
 
   render() {
