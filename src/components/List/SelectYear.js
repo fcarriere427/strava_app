@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 
 
+let start_year = 2015 // début des activités Strava
+let annees = [];
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class SelectYear extends Component {
-
-  let start_year = 2015 // début des activités Strava
-  let annees = [];
 
   componentDidMount(){
     // Remplissage du tableau annees
