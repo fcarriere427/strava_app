@@ -16,14 +16,13 @@ class SelectYear extends Component {
       annees[i]=year;
       i = i-1;
     }
-    console.log("annees[] = " + annees);
   }
 
   render(){
     return(
       <div>
-        <p> log tableau années = {annees} </p>
-
+        <p> log tableau années = {this.annees} </p>
+        
         <form>
           <label>
             Select year:
