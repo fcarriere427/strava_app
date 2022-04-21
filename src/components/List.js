@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
-import { ActivitySummary, ActivitySummaryHeader } from './List/ActivitySummary'
+import { ActivitySummary } from './List/ActivitySummary'
 
 const axios = require('axios').default;
 
@@ -8,16 +8,17 @@ class List extends Component {
   constructor(props){
     super(props);
     this.state = {
-      activitiesList: []
+      activitiesList: [],
+      year:0
     };
   }
 
   componentDidMount(){
     // pour l'instant, on fixe l'année à celle en cours, ensuite il faudra en faire un "state"
     let today = new Date();
-    let year = today.getFullYear();
+    this.setState({year: today.getFullYear() });
     // Récupération des activités
-    let url = 'https://letsq.xyz/api/strava/activities_list?year=' + year;
+    let url = 'https://letsq.xyz/api/strava/activities_list?year=' + this.state.year;
     axios.get(url)
     .then(
       (response) => { this.setState({ activitiesList: response.data }) },
@@ -30,7 +31,9 @@ class List extends Component {
   render() {
     return(
       <Container fluid className='bg-grey text-black text-center'>
-        <ActivitySummaryHeader />
+        <Row>
+          <p> Year: {this.state.year}</p>
+        </Row>
         {this.state.activitiesList.map((d, index) =>
           <ActivitySummary data={d} index={index} />)
         }
