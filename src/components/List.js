@@ -17,13 +17,14 @@ class List extends Component {
     // pour l'instant, on fixe l'année à celle en cours, ensuite il faudra en faire un "state"
     let today = new Date();
     this.setState({year: today.getFullYear() });
+    console.log(this.state.year);
     // Récupération des activités
     let url = 'https://letsq.xyz/api/strava/activities_list?year=' + this.state.year;
     axios.get(url)
     .then(
       (response) => {
         this.setState({ activitiesList: response.data });
-        console.log(this.state.activitiesList); 
+        console.log(this.state.activitiesList);
       },
       (error) => { console.log("ERREUR de l'API  : " + error) }
     )
