@@ -20,16 +20,22 @@ class SelectYear extends Component {
 
   render(){
     return(
-      <form>
-        <label>
-          Select year:
-          <select multiple={true} value={this.props.currentYear} onChange={this.props.updateHandler}>{
-            this.annees.map( (x,y) => 
-              <option key={y}>{x}</option> )
-          }
-          </select>
-        </label>
-      </form>
+      <div>
+        <p> log tableau années = {this.annees} </p>
+
+        <form>
+          <label>
+            Select year:
+            <select multiple={true} value={this.props.currentYear} onChange={this.props.updateHandler}>
+              {/* {
+                this.annees.map( (x,y) =>
+                  <option key={y}>{x}</option> )
+              } */}
+            </select>
+          </label>
+        </form>
+
+      </div>
     )
   }
 }
