@@ -5,12 +5,6 @@ import { Container, Row, Col } from 'reactstrap'
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class SelectYear extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {value: 2015};
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
   componentDidMount(){
     // Remplissage du tableau annees
     let start_year = 2015 // début des activités Strava
@@ -23,16 +17,12 @@ class SelectYear extends Component {
     }
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
   render(){
     return(
       <form>
         <label>
           Select year:
-          <select multiple={true} value={this.annees} onChange={this.handleChange}>
+          <select multiple={true} value={this.annees} onChange={this.props.updateHandler}>
           </select>
         </label>
       </form>
