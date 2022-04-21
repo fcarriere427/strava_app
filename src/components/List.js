@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'reactstrap'
+
 
 const axios = require('axios').default;
 
