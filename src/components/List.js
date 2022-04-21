@@ -21,10 +21,11 @@ class List extends Component {
     let url = 'https://letsq.xyz/api/strava/activities_list?year=' + this.state.year;
     axios.get(url)
     .then(
-      (response) => { this.setState({ activitiesList: response.data }) },
-      (error) => {
-        console.log("ERREUR de l'API  : " + error);
-      }
+      (response) => {
+        this.setState({ activitiesList: response.data });
+        console.log(this.state.activitiesList); 
+      },
+      (error) => { console.log("ERREUR de l'API  : " + error) }
     )
   }
 
