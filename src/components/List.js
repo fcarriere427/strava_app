@@ -11,7 +11,7 @@ class List extends Component {
   }
 
   componentDidMount(){
-    // pour l'instant, on fixe l'année, ensuite il faudra en faire un "state"
+    // pour l'instant, on fixe l'année à celle en cours, ensuite il faudra en faire un "state"
     let today = new Date();
     let year = today.getFullYear();
     // Récupération des activités
@@ -27,13 +27,26 @@ class List extends Component {
 
   render() {
     return(
-      <div>
+      <Container fluid className='bg-grey text-black text-center'>
         {this.state.activitiesList.map((d, index) => (
-          (<p key={index}>id: {d.doc.id}, date: {d.doc.start_date_local}, distance: {d.doc.distance}</p>)
+          <Row key={index}>
+            <Col xs="2">
+              <p>{d.doc.id}</p>
+            </Col>
+            <Col xs="5">
+              <p>{d.doc.start_date_local}</p>
+            </Col>
+            <Col xs="5">
+              <p>{d.doc.distance}</p>
+            </Col>
+          </Row>
         ))}
-      </div>
+      </Container>
     );
   }
 }
+
+// (<p key={index}>id: {d.doc.id}, date: {d.doc.start_date_local}, distance: {d.doc.distance}</p>)
+
 
 export default List;
