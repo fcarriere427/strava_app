@@ -15,6 +15,7 @@ class SelectYear extends Component {
       annees[i]=year;
       i = i-1;
     }
+    console.log("annees[] = " + annees);
   }
 
   render(){
