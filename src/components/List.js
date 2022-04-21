@@ -44,7 +44,7 @@ class List extends Component {
           <p> Year: {this.state.year}</p>
         </Row> */}
         {this.state.activitiesList.map((d, index) =>
-          <ActivitySummary data={d} index={index} />)
+          <ActivitySummary data={d} key={index} />)
         }
       </Container>
     );
