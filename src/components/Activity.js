@@ -7,9 +7,8 @@ const axios = require('axios').default;
 function Activity() {
   const [activity, setActivity] = useState("");
   const { id } = useParams();
-  console.log("id = " + id);
-  activity = getActivity(id);
-  
+  setActivity(getActivity(id));
+
   return(
     <Container fluid className='bg-grey text-black text-center'>
       <p> {this.state.activity._id} </p>
@@ -20,7 +19,6 @@ function Activity() {
 // Récupération des activités pour l'année donnée
 function getActivity(id) {
   let url = 'https://letsq.xyz/api/strava/activities?id=' + id;
-  console.log("url = " + url)
   axios.get(url)
   .then(
     (response) => { return response.data },
