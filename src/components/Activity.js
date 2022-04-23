@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'reactstrap'
 import { useParams } from "react-router-dom"
 import { strTime, strDate, strSpeed } from "./functions"
 import { MapContainer, TileLayer } from "react-leaflet";
-import { LatLngExpression } from "leaflet";
 
 const axios = require('axios').default;
 
@@ -27,7 +26,6 @@ export default function Activity() {
 
   const Map = (activity) => {
     const defaultPosition: LatLngExpression = [48, 2];
-    console.log("log = " + defaultPosition);
     return (
       <div className="map__container">
 
