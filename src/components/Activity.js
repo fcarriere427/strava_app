@@ -6,7 +6,7 @@ const axios = require('axios').default;
 
 function Activity() {
   const [activity, setActivity] = useState("");
-  const { id } = useParams;
+  const { id } = useParams();
   activity = getActivity(id);
 
   return(
