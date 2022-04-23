@@ -6,22 +6,16 @@ const axios = require('axios').default;
 
 function Activity() {
 
-  const { id } = this.props.match.params;
+  const [activity, setActivity] = useState("");
+  const { id } = useParams;
   const activity = this.getActivity(id);
-
-  constructor(props){
-    super(props);
-    this.state = {
-      activity: ""
-    };
-  }
 
   // Récupération des activités pour l'année donnée
   getActivity(id) {
-    let url = 'https://letsq.xyz/api/strava/activities?id=' + this.props.id;
+    let url = 'https://letsq.xyz/api/strava/activities?id=' + {id};
     axios.get(url)
     .then(
-      (response) => { this.setState({ activity: response.data }) },
+      (response) => { activity = response.data },
       (error) => { console.log("ERREUR de l'API  : " + error) }
     )
   }
