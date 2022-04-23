@@ -11,7 +11,7 @@ function Activity() {
 
   return(
     <Container fluid className='bg-grey text-black text-center'>
-      <p> {this.state.activity._id} </p>
+      <p> {activity._id} </p>
     </Container>
   );
 }
