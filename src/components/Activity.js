@@ -29,48 +29,32 @@ export default function Activity() {
 
     return (
       <div className="map__container">
+        
         <MapContainer
           center={defaultPosition}
-          zoom={18}
+          zoom={13}
         >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          {/* <Polyline
-              coordinates,
-              {
-            color: 'red',
-            weight: 3,
-            opacity: .7,
-            lineJoin: 'round'
-              }
-              }
-
-          </Polyline> */}
         </MapContainer>
+
+
+        {/* <MapContainer
+          center={defaultPosition}
+          zoom={18}
+          >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+        </MapContainer> */}
       </div>
     );
   }
 
-  //
-  //   let encodedRoute = [];
-  //   const polyline = activity.map.summary_polyline;
-  //   encodedRoute = polyline.split(); // pour convertir en array...
-  //
-  //   // Ajout de la trace
-  //   for (let encoded of encodedRoute) { // mais en fait on ne va en récupérer qu'une !
-  //     var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
-  //
-  //     // Auto-centrage et autp-zoom
-  //     const bounds = L.latLngBounds(coordinates);
-  //     map.fitBounds(bounds);
-  //
-  //
-
-
-  // pour référence, ce qu'on récupère dans Activity : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
-
+  // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
   return(
     <Container fluid className='bg-light border text-black'>
       <Row className="fw-light">Id: {activity.id} </Row>
@@ -81,7 +65,7 @@ export default function Activity() {
       <Row className="fw-light">Average speed: {strSpeed(activity)}</Row>
       <Row className="fw-light">Average cadence: {activity.average_cadence ? activity.average_cadence : "N/A"}</Row>
       <Row className="fw-light">Average heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Row>
-      <Row>map:{displayMap(activity)}</Row>
+      <Row className="fw-light">Map:{displayMap(activity)}</Row>
     </Container>
   );
 
