@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
-import { useParams } from "react-router-dom"
+//import { useParams } from "react-router-dom"
 
 const axios = require('axios').default;
 
@@ -26,8 +26,8 @@ class Activity extends Component {
 
   render() {
 
-    const { id } = useParams();
-    const activity = getActivity(id);
+    const { id } = this.props.match.params;
+    const activity = this.getActivity(id);
 
     return(
       <Container fluid className='bg-grey text-black text-center'>
