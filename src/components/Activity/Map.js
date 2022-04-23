@@ -12,7 +12,7 @@ class Map extends Component {
         center={[51.505, -0.09]}
         zoom={13}
         scrollWheelZoom={false}
-        style={{height:"300px"}}
+        style={{width: "80%"; height: "80%"}}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
