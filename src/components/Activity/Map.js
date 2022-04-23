@@ -26,7 +26,7 @@ class Map extends Component {
 
         </MapContainer>
 
-        {/* <MapContainer
+        /* <MapContainer
           center={defaultPosition}
           zoom={18}
           >
@@ -34,7 +34,7 @@ class Map extends Component {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-        </MapContainer> */}
+        </MapContainer> */
 
     );
   }
