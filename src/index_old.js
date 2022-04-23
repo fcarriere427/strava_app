@@ -7,9 +7,7 @@ import './index.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home, Header, Footer, Tracker, List, Reports, Activity } from './components';
 
-const container = document.getElementById('app');
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Header name="Florian"/>
@@ -30,5 +28,6 @@ root.render(
     >
       <i>Old app</i>
     </a>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
