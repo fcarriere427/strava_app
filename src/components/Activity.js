@@ -27,7 +27,7 @@ export default function Activity() {
 
   return(
     <Container fluid className='bg-grey text-black text-center'>
-      <p> {addInfo("id:",activity)} </p>
+      <p> {addInfo("id",activity)} </p>
       <p> {addInfo('name', activity)} </p>
       <p> {addInfo('moving_time', activity)} </p>
       <p> {addInfo('total_elevation_gain', activity)}</p>
