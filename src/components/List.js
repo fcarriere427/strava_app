@@ -10,14 +10,14 @@ class List extends Component {
     super(props);
     this.state = {
       activitiesList: [],
-      currentYear:"2020"
+      currentYear:"2020" // pour test, on n'initialise pas à l'année en cours --> permet de vérifier que "componentDidMount" fait son job
     };
   }
 
   componentDidMount(){
-    // pour l'instant, on fixe l'année à celle en cours, ensuite il faudra en faire un "state"
     let today = new Date();
     let current_year = today.getFullYear();
+    // bien penser à l'asynchrone...
     this.setState({ currentYear: current_year }, () => {
       this.getActivities(this.state.currentYear)
     })
@@ -25,6 +25,7 @@ class List extends Component {
 
   // Actions quand on modifie la cible
   updateYear(evt) {
+    // bien penser à l'asynchrone...
     this.setState({ currentYear: evt.target.value }, () => {
       this.getActivities(this.state.currentYear)
     })

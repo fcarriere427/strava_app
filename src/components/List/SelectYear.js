@@ -20,16 +20,17 @@ class SelectYear extends Component {
         annees.push(year);
     };
     this.setState({annees: annees});
-    console.log("this.state.annees = " + this.state.annees);
   }
 
   render(){
     return(
       <div>
-        <ul> log tableau années = {this.state.annees.map(annee => (
+        {/* <ul> log tableau années = {this.state.annees.map(annee => (
           <li key={annee}>{annee}</li>
-        ))}
-        </ul>
+          ))}
+        </ul> */}
+
+        <p> this.props.currentYear = {this.props.currentYear}</p>
 
         <form>
           <label>
