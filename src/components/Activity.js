@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
-import { withRouter } from "react-router-dom";
-
-//import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 const axios = require('axios').default;
 
-class Activity extends Component {
+function Activity() {
+
+  const { id } = this.props.match.params;
+  const activity = this.getActivity(id);
 
   constructor(props){
     super(props);
@@ -25,21 +26,15 @@ class Activity extends Component {
     )
   }
 
+  return(
+    <Container fluid className='bg-grey text-black text-center'>
+      <p> {this.state.activity._id} </p>
+    </Container>
+  );
 
-  render() {
-
-    const { id } = this.props.match.params;
-    const activity = this.getActivity(id);
-
-    return(
-      <Container fluid className='bg-grey text-black text-center'>
-        <p> {this.state.activity._id} </p>
-      </Container>
-    );
-  }
 }
 
-export default withRouter(Activity);
+export Activity;
 
 
 
