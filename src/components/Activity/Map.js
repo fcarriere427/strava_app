@@ -5,20 +5,25 @@ import { MapContainer, TileLayer } from "react-leaflet";
 class Map extends Component {
 
   render() {
-    const defaultPosition: LatLngExpression = [48, 2];
+    const defaultPosition = [48.87, 2.24];
 
     return (
 
-      <div className="map__container">
-        
         <MapContainer
           center={defaultPosition}
           zoom={13}
         >
+
           <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
+          <Marker position={position}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+
         </MapContainer>
 
         {/* <MapContainer
@@ -30,7 +35,7 @@ class Map extends Component {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
         </MapContainer> */}
-      </div>
+
     );
   }
 }
