@@ -29,7 +29,7 @@ class ActivitySummary extends Component {
             <p>{Math.round(this.props.data.doc.distance / 1000 * 100) / 100}km</p>
           </Col>
           <Col xs="5">
-            <p>{strTime(this.props.data.doc)}</p>
+            <p>{strSpeed(this.props.data.doc)}</p>
           </Col>
 
         </Row>
@@ -38,10 +38,10 @@ class ActivitySummary extends Component {
           <Col className="fw-light" xs="3">
             <p>{time_str}</p>
           </Col>
-          <Col xs="4">
-            <p>{strSpeed(this.props.data.doc)}</p>
-          </Col>
           <Col xs="5">
+            <p>{strTime(this.props.data.doc)}</p>
+          </Col>
+          <Col className="fw-light" xs="5">
             <p>{this.props.data.doc.name}</p>
           </Col>
 
