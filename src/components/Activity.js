@@ -30,7 +30,7 @@ function Activity() {
 }
 
 
-export Activity;
+export default Activity;
 
 ///////////////////////
 // import { addInfo } from './functions.js';
