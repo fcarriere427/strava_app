@@ -8,7 +8,7 @@ class ActivitySummary extends Component {
   componentDidMount(){
     let newDate = new Date(this.props.data.doc.start_date_local);
     let date_str = newDate.toLocaleDateString('fr-FR') + ' at ' + newDate.toLocaleTimeString('fr-FR');
-    this.props.final = date_str.substring(0, date_str.length - 3); // on enlève les secondes
+    let final = date_str.substring(0, date_str.length - 3); // on enlève les secondes
   }
 
   render(){
@@ -41,7 +41,7 @@ class ActivitySummary extends Component {
           </Col>
           <Col className="fw-bold" xs="5">
             <p>
-              {this.props.final}
+              {this.final}
             </p>
           </Col>
         </Row>
