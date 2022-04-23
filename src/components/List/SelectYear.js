@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Form, FormGroup, Label, Input } from 'reactstrap'
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class SelectYear extends Component {
@@ -24,21 +24,19 @@ class SelectYear extends Component {
 
   render(){
     return(
-      <div>
-
-        <form className="form">
-          <label>
-            Select year:
-            <select value={this.props.currentYear} onChange={this.props.updateHandler}>
+      <Form className="form">
+        <FormGroup row>
+          <Label for="select" xs={2}> Select year: </Label>
+          <Col xs={10}>
+            <Input type="select" name="select" id="select" value={this.props.currentYear} onChange={this.props.updateHandler}>
               {
                 this.state.annees.map( (x,y) =>
                   <option key={y}>{x}</option> )
               }
-            </select>
-          </label>
-        </form>
-
-      </div>
+            </Input>
+          </Col>
+        </FormGroup>
+      </Form>
     )
   }
 }
