@@ -27,7 +27,7 @@ export default function Activity() {
 
   const Map = (activity) => {
     const defaultPosition: LatLngExpression = [48, 2];
-
+    console.log("log = " + defaultPosition);
     return (
       <div className="map__container">
 
@@ -73,9 +73,3 @@ export default function Activity() {
   );
 
 }
-
-///////////////////////
-//
-//
-//   ////// MAP //////
-//  )
