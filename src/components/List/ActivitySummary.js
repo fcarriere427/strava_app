@@ -5,13 +5,12 @@ import { strTime, strSpeed } from './functions'
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class ActivitySummary extends Component {
 
-  componentDidMount(){
+  render(){
+
     let newDate = new Date(this.props.data.doc.start_date_local);
     let date_str = newDate.toLocaleDateString('fr-FR') + ' at ' + newDate.toLocaleTimeString('fr-FR');
     let final = date_str.substring(0, date_str.length - 3); // on enlève les secondes
-  }
-
-  render(){
+        
     return(
       <Container className="bg-light text-black border py-2">
 
@@ -20,7 +19,7 @@ class ActivitySummary extends Component {
             <p>
               <a href="https://www.letsq.xyz/api/strava/activity?id=+`{this.props.data.doc.id}`" rel="noreferrer">
                 {/* {this.props.data.doc.start_date_local.substring(0,10)} */}
-                {final}
+                {this.final}
               </a>
             </p>
           </Col>
