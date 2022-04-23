@@ -7,7 +7,9 @@ const axios = require('axios').default;
 function Activity() {
   const [activity, setActivity] = useState("");
   const { id } = useParams();
-  setActivity(getActivity(id));
+  let act = getActivity(id);
+  console.log("act = " + act);
+  setActivity(act);
   console.log("activity = " + activity);
 
   return(
@@ -17,7 +19,7 @@ function Activity() {
   );
 }
 
-// Récupération des activités pour l'année donnée
+// Récupération de l'activité définie par son id (strava)
 function getActivity(id) {
   let url = 'https://letsq.xyz/api/strava/activity?id=' + id;
   console.log("url = " + url);
