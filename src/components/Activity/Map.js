@@ -4,7 +4,6 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 class Map extends Component {
 
-
   render() {
 
     //const position = [48.87, 2.24];
