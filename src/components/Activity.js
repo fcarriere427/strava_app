@@ -1,10 +1,12 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { useParams } from "react-router-dom"
+import { addInfo } from "./Activity/function"
 
 const axios = require('axios').default;
 
 export default function Activity() {
+
   const [activity, setActivity] = useState("");
   const { id } = useParams();
 
@@ -21,37 +23,26 @@ export default function Activity() {
     )
   }
 
+  // pour référence, ce qu'on récupère dans Activity : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
+
   return(
     <Container fluid className='bg-grey text-black text-center'>
-      <p> {activity._id} </p>
+      <p> {addInfo("id:",activity)} </p>
+      <p> {addInfo('name', data)} </p>
+      <p> {addInfo('moving_time', data)} </p>
+      <p> {addInfo('total_elevation_gain', data)}</p>
+      <p> {addInfo('start_date_local', data)} </p>
+      <p> {addInfo('average_speed', data)} </p>
+      <p> {addInfo('average_cadence', data)} </p>
+      <p> {addInfo('average_heartrate', data)} </p>
     </Container>
   );
-}
 
+}
+  
 ///////////////////////
-// import { addInfo } from './functions.js';
-//
-// // Récupérer les paramètres de la requete URL
-// const queryString = window.location.search; // du type "?id=345"
-// const urlParams = new URLSearchParams(queryString);
-// const id = urlParams.get('id');
 //
 // var encodedRoute = [];
-//
-// fetch(`/api/strava/activity?id=${id}`)
-// .then(response => response.json())
-// .then(data => {
-//   //console.log('Ici on a récupéré l\'activité, par ex data.distance = ' + data.distance)
-//   ////// DETAILS DES INFOS //////
-//   // pour référence : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
-//   addInfo('id', data);
-//   addInfo('name', data);
-//   addInfo('moving_time', data);
-//   addInfo('total_elevation_gain', data);
-//   addInfo('start_date_local', data);
-//   addInfo('average_speed', data);
-//   addInfo('average_cadence', data);
-//   addInfo('average_heartrate', data);
 //
 //   ////// MAP //////
 //   let polyline = data.map.summary_polyline;
