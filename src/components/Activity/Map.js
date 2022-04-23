@@ -37,4 +37,6 @@ class Map extends Component {
   }
 }
 
-export default Map;
+export {
+  Map
+}
