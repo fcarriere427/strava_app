@@ -28,7 +28,7 @@ class SelectYear extends Component {
       <Form className="form">
         <FormGroup row>
           <Label for="select" xs={2} className="fw-light"> Select year: </Label>
-          <Col xs={2}>
+          <Col xs={4}>
             <Input type="select" name="select" id="select" value={this.props.currentYear} onChange={this.props.updateHandler}>
               {
                 this.state.annees.map( (x,y) =>
