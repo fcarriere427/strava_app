@@ -12,7 +12,7 @@ class ActivitySummary extends Component {
     let time = newDate.toLocaleTimeString('fr-FR')
     let time_str = ' at ' + time.substring(0, time.length - 3); // on enlève les secondes
 
-    let url = "https://www.letsq.xyz/activity?id=" + this.props.data.doc.id;
+    let url = "/activity?id=" + this.props.data.doc.id;
 
     return(
       <Container className="bg-light text-black border py-2">
