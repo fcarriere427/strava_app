@@ -7,7 +7,7 @@ const axios = require('axios').default;
 function Activity() {
   const [activity, setActivity] = useState("");
   const { id } = useParams;
-  activity = this.getActivity(id);
+  activity = getActivity(id);
 
   return(
     <Container fluid className='bg-grey text-black text-center'>
