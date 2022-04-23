@@ -21,7 +21,7 @@ function addInfo(info, data) {
         str_info = data[info] + 'bpm';
         break;
       default:
-        str_info = data[info];
+        str_info = data.info;
     }
   } else {
     str_info ='N/A';
