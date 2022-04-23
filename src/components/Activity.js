@@ -7,10 +7,20 @@ const axios = require('axios').default;
 function Activity() {
   const [activity, setActivity] = useState("");
   const { id } = useParams();
-  let act = getActivity(id);
-  console.log("act = " + act);
-  setActivity(act);
-  console.log("activity = " + activity);
+
+  let url = 'https://letsq.xyz/api/strava/activity?id=' + id;
+  console.log("url = " + url);
+  axios.get(url)
+  .then(
+    (response) => {
+      setActivity(response.data);
+      let data = response.data;
+      console.log("data = " + data);
+      console.log("data._id = " + data._id);
+      return data;
+    },
+    (error) => { console.log("ERREUR de l'API  : " + error) }
+  )
 
   return(
     <Container fluid className='bg-grey text-black text-center'>
@@ -19,25 +29,8 @@ function Activity() {
   );
 }
 
-// Récupération de l'activité définie par son id (strava)
-function getActivity(id) {
-  let url = 'https://letsq.xyz/api/strava/activity?id=' + id;
-  console.log("url = " + url);
-  axios.get(url)
-  .then(
-    (response) => {
-      let data = response.data;
-      console.log("data = " + data);
-      console.log("data._id = " + data._id);
-      return data;
-    },
-    (error) => { console.log("ERREUR de l'API  : " + error) }
-  )
-}
 
-export default Activity;
-
-
+export Activity;
 
 ///////////////////////
 // import { addInfo } from './functions.js';
