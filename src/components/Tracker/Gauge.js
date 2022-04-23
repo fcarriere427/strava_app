@@ -5,7 +5,7 @@ import { arc } from "d3-shape"
 import { scaleLinear } from "d3-scale"
 import { format } from "d3-format"
 
-import targetToDate from '../functions'
+import { targetToDate } from '../functions'
 
 class GaugeChart extends Component {
 
