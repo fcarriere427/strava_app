@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { MapContainer, TileLayer } from "react-leaflet";
 
-const Map = (activity) => {
+export default const Map = (activity) => {
   const defaultPosition: LatLngExpression = [48, 2];
   return (
     <div className="map__container">
