@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 
 const axios = require('axios').default;
 
-function Activity() {
+export default function Activity() {
   const [activity, setActivity] = useState("");
   const { id } = useParams();
 
@@ -12,7 +12,7 @@ function Activity() {
     getActivity(id);
   }, []);
 
-  const getActivity(id) {
+  const getActivity(id) = () => {
     let url = 'https://letsq.xyz/api/strava/activity?id=' + id;
     axios.get(url)
     .then(
@@ -27,8 +27,6 @@ function Activity() {
     </Container>
   );
 }
-
-export default Activity;
 
 ///////////////////////
 // import { addInfo } from './functions.js';
