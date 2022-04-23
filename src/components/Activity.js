@@ -24,9 +24,12 @@ export default function Activity() {
     )
   }
 
-  // const displayMap = (activity) => {
+  const displayMap = (activity) => {
+    const defaultPosition: LatLngExpression = [48, 2];
+
+   }
+
   //
-  //   const defaultPosition: LatLngExpression = [48, 2];
   //   let encodedRoute = [];
   //   const polyline = activity.map.summary_polyline;
   //   encodedRoute = polyline.split(); // pour convertir en array...
@@ -40,35 +43,35 @@ export default function Activity() {
   //     map.fitBounds(bounds);
   //
   //
-  //   return (
-  //       <div className="map__container">
-  //         <MapContainer
-  //           center={defaultPosition}
-  //           zoom={18}
-  //         >
-  //           <TileLayer
-  //             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  //             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  //           />
-  //           <Polyline
-  //             coordinates,
-  //             {
-  //               color: 'red',
-  //               weight: 3,
-  //               opacity: .7,
-  //               lineJoin: 'round'
-  //             }
-  //             }
-  //
-  //           </Polyline>
-  //         </MapContainer>
-  //       </div>
-  //     );
+    return (
+        <div className="map__container">
+          <MapContainer
+            center={defaultPosition}
+            zoom={18}
+          >
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {/* <Polyline
+              coordinates,
+              {
+                color: 'red',
+                weight: 3,
+                opacity: .7,
+                lineJoin: 'round'
+              }
+              }
+
+            </Polyline> */}
+            </MapContainer>
+          </div>
+      );
 
   // pour référence, ce qu'on récupère dans Activity : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
 
   return(
-    <Container fluid className='bg-light border text-black text-center'>
+    <Container fluid className='bg-light border text-black'>
       <Row className="fw-light">Id: {activity.id} </Row>
       <Row className="fw-light">Name: {activity.name} </Row>
       <Row className="fw-light">Moving time: {strTime(activity)} </Row>
@@ -77,7 +80,7 @@ export default function Activity() {
       <Row className="fw-light">Average speed: {strSpeed(activity)}</Row>
       <Row className="fw-light">Average cadence: {activity.average_cadence ? activity.average_cadence : "N/A"}</Row>
       <Row className="fw-light">Average heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Row>
-      {/* <Row>map:{displayMap(activity)}</Row> */}
+      <Row>map:{displayMap(activity)}</Row>
     </Container>
   );
 
