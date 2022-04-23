@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { useParams } from "react-router-dom"
-import { addInfo } from "./Activity/functions"
+import { strTime, strDate, strSpeed } from "./functions"
 
 const axios = require('axios').default;
 
@@ -27,15 +27,14 @@ export default function Activity() {
 
   return(
     <Container fluid className='bg-grey text-black text-center'>
-      {/* <p> {addInfo("id",activity)} </p> */}
-      <p> "id:" + {activity.id} </p>
-      <p> {addInfo('name', activity)} </p>
-      <p> {addInfo('moving_time', activity)} </p>
-      <p> {addInfo('total_elevation_gain', activity)}</p>
-      <p> {addInfo('start_date_local', activity)} </p>
-      <p> {addInfo('average_speed', activity)} </p>
-      <p> {addInfo('average_cadence', activity)} </p>
-      <p> {addInfo('average_heartrate', activity)} </p>
+      <p>id: {activity.id} </p>
+      <p>name: {activity.name)} </p>
+      <p>moving_time: {strTime(activity.moving_time)} </p>
+      <p>total_elevation_gain: {activity.total_elevation_gain}</p>
+      <p>start_date_local: {strDate(activity.start_date_local)} </p>
+      <p>average_speed: {strSpeed(activity.average_speed)} </p>
+      <p>average_cadence: {activity.average_cadence} </p>
+      <p>average_heartrate: {activity.average_heartrate} </p>
     </Container>
   );
 

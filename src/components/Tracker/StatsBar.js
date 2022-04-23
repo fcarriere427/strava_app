@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'reactstrap'
-import targetToDate from './functions'
-import daysInYear from '../../utils/functions'
+import { targetToDate, daysInYear } from '../functions'
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class StatsBar extends Component {

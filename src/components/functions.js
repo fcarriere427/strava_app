@@ -34,8 +34,40 @@ function strDate(data) {
   return date_str;
 }
 
+function daysInYear(year) {
+  var days = 0;
+  for(var month = 1; month <= 12; month++) {
+    days += daysInMonth(month, year);
+  }
+  return days;
+}
+
+// Month in JavaScript is 0-indexed (January is 0, February is 1, etc),
+// but by using 0 as the day it will give us the last day of the prior
+// month. So passing in 1 as the month number will return the last day
+// of January, not February
+function daysInMonth (month, year) {
+    return new Date(year, month, 0).getDate();
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// renvoie la distance cible pour la date du jour / prend la cible annuelle en entrée
+function targetToDate(target){
+  // calculs locaux pour initier
+  let today = new Date();
+  let start = new Date(today.getFullYear(), 0, 0);
+  let diff = today - start;
+  let year = today.getFullYear().toString();
+  let day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
+  let percentOfYear = day / daysInYear(year);
+  return Math.round(percentOfYear * target *10)/10; //target to date
+}
+
 export {
    strTime,
    strSpeed,
-   strDate
+   strDate,
+   daysInYear,
+   daysInMonth,
+   targetToDate
 };

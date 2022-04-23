@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import { strTime, strSpeed } from './functions'
+import { strTime, strSpeed } from '../functions'
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class ActivitySummary extends Component {
