@@ -23,9 +23,7 @@ export default function Activity() {
     )
   }
 
-  console.log("activity = " + activity);
-  console.log("activity.moving_time = " + activity.moving_time);
-  console.log("strTime(activity.moving_time) = " + strTime(activity.moving_time));
+  // console.log("activity.moving_time = " + activity.moving_time);
 
   // pour référence, ce qu'on récupère dans Activity : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
 
@@ -33,10 +31,10 @@ export default function Activity() {
     <Container fluid className='bg-grey text-black text-center'>
       <Row className="fw-light">id: {activity.id} </Row>
       <Row className="fw-light">name: {activity.name} </Row>
-      <Row className="fw-light">moving_time: {strTime(activity.moving_time)} </Row>
+      <Row className="fw-light">moving_time: {strTime(activity)} </Row>
       <Row className="fw-light">total_elevation_gain: {activity.total_elevation_gain}m</Row>
-      <Row className="fw-light">start_date_local: {strDate(activity.start_date_local)} </Row>
-      <Row className="fw-light">average_speed: {strSpeed(activity.average_speed)} </Row>
+      <Row className="fw-light">start_date_local: {strDate(activity)} </Row>
+      <Row className="fw-light">average_speed: {strSpeed(activity)} </Row>
       <Row className="fw-light">average_cadence: {activity.average_cadence} </Row>
       <Row className="fw-light">average_heartrate: {activity.average_heartrate} </Row>
     </Container>
