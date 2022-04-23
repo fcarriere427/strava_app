@@ -6,7 +6,7 @@ class Map extends Component {
 
   render() {
 
-    let start_position = [48.87, 2.24];
+    //let start_position = [48.87, 2.24];
     start_position = this.props.activity.start_latlng;
     //let polyline = this.props.activity.map.summary_polyline;
 
