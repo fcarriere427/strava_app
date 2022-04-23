@@ -37,7 +37,7 @@ class SelectYear extends Component {
             Select year:
             <select value={this.props.currentYear} onChange={this.props.updateHandler}>
               {
-                this.annees.map( (x,y) =>
+                this.state.annees.map( (x,y) =>
                   <option key={y}>{x}</option> )
               }
             </select>
