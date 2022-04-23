@@ -68,7 +68,7 @@ export default function Activity() {
   // pour référence, ce qu'on récupère dans Activity : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
 
   return(
-    <Container fluid className='bg-grey text-black text-center'>
+    <Container fluid className='bg-light border text-black text-center'>
       <Row className="fw-light">Id: {activity.id} </Row>
       <Row className="fw-light">Name: {activity.name} </Row>
       <Row className="fw-light">Moving time: {strTime(activity)} </Row>
