@@ -8,19 +8,19 @@ class ActivitySummary extends Component {
     return(
       <Container className="bg-light text-black border py-2">
         <Row>
-          <Col xs="4">
+          <Col className="fw-bold" xs="4">
             <p>{this.props.data.doc.start_date_local.substring(0,10)}</p>
-          </Col>
-          <Col xs="4">
-            <p>{Math.round(this.props.data.doc.distance / 1000 * 100) / 100}km</p>
           </Col>
           <Col xs="4">
             <p>{strTime(this.props.data.doc)}</p>
           </Col>
-        </Row>
-        <Row>
           <Col xs="4">
             <p>{strSpeed(this.props.data.doc)}</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col  className="fw-bold" xs="4">
+            <p>{Math.round(this.props.data.doc.distance / 1000 * 100) / 100}km</p>
           </Col>
           <Col xs="4">
             <p>{this.props.data.doc.id}</p>
