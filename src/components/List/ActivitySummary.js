@@ -10,7 +10,7 @@ class ActivitySummary extends Component {
         <Row>
           <Col className="fw-light" xs="2">
             <p>
-              <a href="https://www.letsq.xyz/api/strava/activity?id="+{this.props.data.doc.id} rel="noreferrer">
+              <a href="https://www.letsq.xyz/api/strava/activity?id=+`{this.props.data.doc.id}`" rel="noreferrer">
                 {this.props.data.doc.start_date_local.substring(0,10)}
               </a>
             </p>
