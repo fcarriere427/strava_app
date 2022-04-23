@@ -28,18 +28,18 @@ export default function Activity() {
   return(
     <Container fluid className='bg-grey text-black text-center'>
       <p> {addInfo("id:",activity)} </p>
-      <p> {addInfo('name', data)} </p>
-      <p> {addInfo('moving_time', data)} </p>
-      <p> {addInfo('total_elevation_gain', data)}</p>
-      <p> {addInfo('start_date_local', data)} </p>
-      <p> {addInfo('average_speed', data)} </p>
-      <p> {addInfo('average_cadence', data)} </p>
-      <p> {addInfo('average_heartrate', data)} </p>
+      <p> {addInfo('name', activity)} </p>
+      <p> {addInfo('moving_time', activity)} </p>
+      <p> {addInfo('total_elevation_gain', activity)}</p>
+      <p> {addInfo('start_date_local', activity)} </p>
+      <p> {addInfo('average_speed', activity)} </p>
+      <p> {addInfo('average_cadence', activity)} </p>
+      <p> {addInfo('average_heartrate', activity)} </p>
     </Container>
   );
 
 }
-  
+
 ///////////////////////
 //
 // var encodedRoute = [];
