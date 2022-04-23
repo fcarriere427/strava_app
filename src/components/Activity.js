@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
+import { withRouter } from "react-router-dom";
+
 //import { useParams } from "react-router-dom"
 
 const axios = require('axios').default;
@@ -37,7 +39,7 @@ class Activity extends Component {
   }
 }
 
-export default Activity;
+export default withRouter(Activity);
 
 
 
