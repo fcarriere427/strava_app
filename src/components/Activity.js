@@ -11,7 +11,7 @@ export default function Activity() {
   const [activity, setActivity] = useState("");
   const { id } = useParams();
 
-  useEffect(() => {
+  useEffect((id) => {
     getActivity(id);
   }, []);
 
