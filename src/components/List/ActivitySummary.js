@@ -14,37 +14,38 @@ class ActivitySummary extends Component {
   render(){
     return(
       <Container className="bg-light text-black border py-2">
+
         <Row>
-          <Col className="fw-light" xs="2">
+          <Col className="fw-light" xs="3">
             <p>
               <a href="https://www.letsq.xyz/api/strava/activity?id=+`{this.props.data.doc.id}`" rel="noreferrer">
-                {this.props.data.doc.start_date_local.substring(0,10)}
+                {/* {this.props.data.doc.start_date_local.substring(0,10)} */}
+                {final}
               </a>
             </p>
           </Col>
-          <Col  className="fw-bold" xs="3">
+          <Col  className="fw-bold" xs="4">
             <p>{Math.round(this.props.data.doc.distance / 1000 * 100) / 100}km</p>
           </Col>
-          <Col xs="3">
+          <Col xs="5">
             <p>{strTime(this.props.data.doc)}</p>
           </Col>
-          <Col xs="3">
-            <p>{strSpeed(this.props.data.doc)}</p>
-          </Col>
+
         </Row>
+
         <Row>
-          <Col xs="2">
+          <Col xs="3">
             <p></p>
+          </Col>
+          <Col xs="4">
+            <p>{strSpeed(this.props.data.doc)}</p>
           </Col>
           <Col xs="5">
             <p>{this.props.data.doc.name}</p>
           </Col>
-          <Col className="fw-bold" xs="5">
-            <p>
-              {this.final}
-            </p>
-          </Col>
+
         </Row>
+
       </Container>
     )
   }
