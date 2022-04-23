@@ -8,19 +8,17 @@ class ActivitySummary extends Component {
   render(){
 
     let newDate = new Date(this.props.data.doc.start_date_local);
-    let date_str = newDate.toLocaleDateString('fr-FR') + ' at ' + newDate.toLocaleTimeString('fr-FR');
-    let final = date_str.substring(0, date_str.length - 3); // on enlève les secondes
-    console.log("final = " + final);
+    let date_str = newDate.toLocaleDateString('fr-FR')
+    let time_str = ' at ' + newDate.toLocaleTimeString('fr-FR').substring(0, date_str.length - 3); // on enlève les secondes
 
     return(
       <Container className="bg-light text-black border py-2">
 
         <Row>
-          <Col className="fw-light" xs="3">
+          <Col xs="3">
             <p>
               <a href="https://www.letsq.xyz/api/strava/activity?id=+`{this.props.data.doc.id}`" rel="noreferrer">
-                {/* {this.props.data.doc.start_date_local.substring(0,10)} */}
-                {final}
+                {date_str}
               </a>
             </p>
           </Col>
@@ -34,8 +32,8 @@ class ActivitySummary extends Component {
         </Row>
 
         <Row>
-          <Col xs="3">
-            <p></p>
+          <Col className="fw-light" xs="3">
+            <p>{time_str}</p>
           </Col>
           <Col xs="4">
             <p>{strSpeed(this.props.data.doc)}</p>
