@@ -11,7 +11,7 @@ function Activity() {
   activity = this.getActivity(id);
 
   // Récupération des activités pour l'année donnée
-  getActivity(id) {
+  function getActivity(id) {
     let url = 'https://letsq.xyz/api/strava/activities?id=' + {id};
     axios.get(url)
     .then(
