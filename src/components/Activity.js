@@ -24,8 +24,9 @@ export default function Activity() {
     )
     .then(
       // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
-      return(
-        <Map activity = {activity}/>
+      () => {
+        return(
+          <Map activity = {activity}/>
 
         // <Container fluid className='bg-light border text-black'>
         //   <Row className="fw-light">Id: {activity.id} </Row>
@@ -38,7 +39,8 @@ export default function Activity() {
         //   <Row className="fw-light">Average heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Row>
         //   {/* <Row className="fw-light">Map:{displayMap(activity)}</Row> */}
         // </Container>
-      );
+        );
+      }
     )
   }
 }
