@@ -12,7 +12,7 @@ class Map extends Component {
 
     return (
       <MapContainer
-        center={start_position}
+        // center={start_position}
         zoom={13}
         scrollWheelZoom={false}
         style={{height: '500px'}}
