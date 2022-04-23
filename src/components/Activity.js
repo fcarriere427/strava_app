@@ -26,7 +26,7 @@ export default function Activity() {
 
   // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
   return(
-    <Map />
+    <Map activity = {activity}/>
 
     // <Container fluid className='bg-light border text-black'>
     //   <Row className="fw-light">Id: {activity.id} </Row>
