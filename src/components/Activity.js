@@ -22,13 +22,11 @@ export default function Activity() {
       (response) => { setActivity(response.data) },
       (error) => { console.log("ERREUR de l'API  : " + error) }
     )
-    .then(
-      // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
-      () => {
-        console.log("activity.id dans Activity.js = " + activity.id);
-        return(
-          <Map activity = {activity}/>
-
+    .then(() => {
+      console.log("activity.id dans Activity.js = " + activity.id);
+      return(
+        <Map activity = {activity}/>
+        // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
         // <Container fluid className='bg-light border text-black'>
         //   <Row className="fw-light">Id: {activity.id} </Row>
         //   <Row className="fw-light">Name: {activity.name} </Row>
@@ -40,8 +38,8 @@ export default function Activity() {
         //   <Row className="fw-light">Average heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Row>
         //   {/* <Row className="fw-light">Map:{displayMap(activity)}</Row> */}
         // </Container>
-        );
-      }
-    )
+      );
+    })
   }
+
 }
