@@ -69,14 +69,14 @@ export default function Activity() {
 
   return(
     <Container fluid className='bg-grey text-black text-center'>
-      <Row className="fw-light">id: {activity.id} </Row>
-      <Row className="fw-light">name: {activity.name} </Row>
-      <Row className="fw-light">moving_time: {strTime(activity)} </Row>
-      <Row className="fw-light">total_elevation_gain: {activity.total_elevation_gain}m</Row>
-      <Row className="fw-light">start_date_local: {strDate(activity)}</Row>
-      <Row className="fw-light">average_speed: {strSpeed(activity)}</Row>
-      <Row className="fw-light">average_cadence: {activity.average_cadence ? activity.average_cadence : "N/A"}</Row>
-      <Row className="fw-light">average_heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Row>
+      <Row className="fw-light">Id: {activity.id} </Row>
+      <Row className="fw-light">Name: {activity.name} </Row>
+      <Row className="fw-light">Moving time: {strTime(activity)} </Row>
+      <Row className="fw-light">Elevation gain: {activity.total_elevation_gain}m</Row>
+      <Row className="fw-light">Start date: {strDate(activity)}</Row>
+      <Row className="fw-light">Average speed: {strSpeed(activity)}</Row>
+      <Row className="fw-light">Average cadence: {activity.average_cadence ? activity.average_cadence : "N/A"}</Row>
+      <Row className="fw-light">Average heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Row>
       {/* <Row>map:{displayMap(activity)}</Row> */}
     </Container>
   );
