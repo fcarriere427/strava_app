@@ -20,7 +20,7 @@ class ActivitySummary extends Component {
             <p>
               <a href="https://www.letsq.xyz/api/strava/activity?id=+`{this.props.data.doc.id}`" rel="noreferrer">
                 {/* {this.props.data.doc.start_date_local.substring(0,10)} */}
-                {this.final}
+                {final}
               </a>
             </p>
           </Col>
