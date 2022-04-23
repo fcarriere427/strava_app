@@ -10,7 +10,7 @@ class Map extends Component {
     let start_position = this.props.activity.start_latlng;
     let polyline = this.props.activity.map.summary_polyline;
 
-    console.log("start_position = " + start_position);
+    console.log("polyline = " + polyline);
 
     return (
       <MapContainer
@@ -23,7 +23,9 @@ class Map extends Component {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-
+        <Polyline
+          positions={polyline}
+        />
       </MapContainer>
 
 
