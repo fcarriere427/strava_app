@@ -14,12 +14,13 @@ class SelectYear extends Component {
   componentDidMount(){
     // Remplissage du tableau annees
     let start_year = 2015 // début des activités Strava
-    let last_year = new Date().getFullYear();
-    let i = last_year - start_year;
+    let last_year = new Date().getFullYear()
+    let annees = []
     for (let year = start_year; year <= last_year; year++){
-      this.setState({annees[i]: year})
-      i = i-1;
-    }
+        annees.push(year);
+    };
+    this.setState({annees: annees});
+    console.log("this.state.annees = " + this.state.annees);
   }
 
   render(){
