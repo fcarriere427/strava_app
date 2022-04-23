@@ -29,7 +29,7 @@ function getActivity(id) {
     (error) => { console.log("ERREUR de l'API  : " + error) }
   )
   .then(
-    console.log("data = " + data)
+    console.log("data = " + data);
     return data;
   )
 }
