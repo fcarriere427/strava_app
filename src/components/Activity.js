@@ -25,6 +25,7 @@ export default function Activity() {
     .then(
       // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
       () => {
+        console.log("activity.id dans Activity.js = " + activity.id);
         return(
           <Map activity = {activity}/>
 
