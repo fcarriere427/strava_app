@@ -16,7 +16,7 @@ ReactDOM.render(
         <Route path="/tracker" element={<Tracker />} />
         <Route path="/list" element={<List />} />
         <Route path="/reports" element={<Reports />} />
-        <Route path="/activity" element={<Activity />} />
+        <Route path="/activity/:id" element={<Activity />} />
         <Route path="/strava_old_app" />
       </Routes>
       <Footer />
