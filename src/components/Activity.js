@@ -35,7 +35,7 @@ export default function Activity() {
       <Row className="fw-light">total_elevation_gain: {activity.total_elevation_gain}m</Row>
       <Row className="fw-light">start_date_local: {strDate(activity)} </Row>
       <Row className="fw-light">average_speed: {strSpeed(activity)} </Row>
-      <Row className="fw-light">average_cadence: {activity.average_cadence} </Row>
+      <Row className="fw-light">average_cadence: {activity.average_cadence ? activity.average_cadence : "N/A"} </Row>
       <Row className="fw-light">average_heartrate: {activity.average_heartrate} </Row>
     </Container>
   );
