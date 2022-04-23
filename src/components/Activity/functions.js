@@ -26,7 +26,7 @@ function addInfo(info, data) {
   } else {
     str_info ='N/A';
   }
-  return ('<b>' + info + '</b>' + ' : ' + str_info);
+  return (info +': ' + str_info);
 }
 
 // prend un time en absolu en entrée, renvoie une chaine "xh ymn z"
