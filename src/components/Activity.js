@@ -2,6 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { useParams } from "react-router-dom"
 import { strTime, strDate, strSpeed } from "./functions"
+import { MapContainer, TileLayer } from "react-leaflet";
 
 const axios = require('axios').default;
 
@@ -23,7 +24,46 @@ export default function Activity() {
     )
   }
 
-  // console.log("activity.moving_time = " + activity.moving_time);
+  const displayMap = (activity) => {
+
+    const defaultPosition: LatLngExpression = [48, 2];
+    let encodedRoute = [];
+    const polyline = activity.map.summary_polyline;
+    encodedRoute = polyline.split(); // pour convertir en array...
+
+    // Ajout de la trace
+    for (let encoded of encodedRoute) { // mais en fait on ne va en récupérer qu'une !
+      var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
+
+      // Auto-centrage et autp-zoom
+      const bounds = L.latLngBounds(coordinates);
+      map.fitBounds(bounds);
+
+
+    return (
+        <div className="map__container">
+          <MapContainer
+            center={defaultPosition}
+            zoom={18}
+          >
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Polyline
+              coordinates,
+              {
+                color: 'red',
+                weight: 3,
+                opacity: .7,
+                lineJoin: 'round'
+              }
+              }
+
+            </Polyline>
+          </MapContainer>
+        </div>
+      );
 
   // pour référence, ce qu'on récupère dans Activity : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
 
@@ -33,10 +73,11 @@ export default function Activity() {
       <Row className="fw-light">name: {activity.name} </Row>
       <Row className="fw-light">moving_time: {strTime(activity)} </Row>
       <Row className="fw-light">total_elevation_gain: {activity.total_elevation_gain}m</Row>
-      <Row className="fw-light">start_date_local: {strDate(activity)} </Row>
-      <Row className="fw-light">average_speed: {strSpeed(activity)} </Row>
-      <Row className="fw-light">average_cadence: {activity.average_cadence ? activity.average_cadence : "N/A"} </Row>
-      <Row className="fw-light">average_heartrate: {activity.average_heartrate} </Row>
+      <Row className="fw-light">start_date_local: {strDate(activity)}</Row>
+      <Row className="fw-light">average_speed: {strSpeed(activity)}</Row>
+      <Row className="fw-light">average_cadence: {activity.average_cadence ? activity.average_cadence : "N/A"}</Row>
+      <Row className="fw-light">average_heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Row>
+      <Row>map:{displayMap(activity)}</Row>
     </Container>
   );
 
@@ -44,31 +85,6 @@ export default function Activity() {
 
 ///////////////////////
 //
-// var encodedRoute = [];
 //
 //   ////// MAP //////
-//   let polyline = data.map.summary_polyline;
-//   encodedRoute = polyline.split(); // pour convertir en array...
-//   // On centre par défaut sur le bois de Boulogne : 48.86427818167459, 2.245533745325779, avec zoom 13 ?
-//   var map = L.map('map').setView([48, 2], 13);
-//   L.tileLayer(
-//     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//         maxZoom: 18,
-//     }).addTo(map);
-//   // Ajout de la trace
-//   for (let encoded of encodedRoute) { // mais en fait on ne va en récupérer qu'une !
-//     var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
-//     L.polyline(
-//       coordinates,
-//       {
-//           color: 'red',
-//           weight: 3,
-//           opacity: .7,
-//           lineJoin: 'round'
-//       }
-//     ).addTo(map);
-//   }
-//   // Auto-centrage et autp-zoom
-//   const bounds = L.latLngBounds(coordinates);
-//   map.fitBounds(bounds);
-// })
+//  )
