@@ -38,7 +38,7 @@ class ActivitySummary extends Component {
           <Col className="fw-light" xs="3">
             <p>{time_str}</p>
           </Col>
-          <Col xs="5">
+          <Col xs="4">
             <p>{strTime(this.props.data.doc)}</p>
           </Col>
           <Col className="fw-light" xs="5">
