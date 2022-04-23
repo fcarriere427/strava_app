@@ -5,7 +5,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 class Map extends Component {
 
   return (
-    const defaultPosition: LatLngExpression = [48, 2];
+    // const defaultPosition: LatLngExpression = [48, 2];
     render(
       <p>Activity.id={this.props.activity.id}
 
