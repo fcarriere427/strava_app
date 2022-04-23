@@ -26,7 +26,7 @@ function getActivity(id) {
   )
 }
 
-export { Activity };
+export default Activity;
 
 
 
