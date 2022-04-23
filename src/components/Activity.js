@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { useParams } from "react-router-dom"
 
@@ -8,12 +8,18 @@ function Activity() {
   const [activity, setActivity] = useState("");
   const { id } = useParams();
 
-  let url = 'https://letsq.xyz/api/strava/activity?id=' + id;
-  axios.get(url)
-  .then(
-    (response) => { setActivity(response.data) },
-    (error) => { console.log("ERREUR de l'API  : " + error) }
-  )
+  useEffect(() => {
+    getActivity(id);
+  }, []);
+
+  const getActivity(id) {
+    let url = 'https://letsq.xyz/api/strava/activity?id=' + id;
+    axios.get(url)
+    .then(
+      (response) => { setActivity(response.data) },
+      (error) => { console.log("ERREUR de l'API  : " + error) }
+    )
+  }
 
   return(
     <Container fluid className='bg-grey text-black text-center'>
