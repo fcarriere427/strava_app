@@ -25,8 +25,12 @@ function getActivity(id) {
   console.log("url = " + url);
   axios.get(url)
   .then(
-    (response) => { return response.data },
+    (response) => { let data =  response.data },
     (error) => { console.log("ERREUR de l'API  : " + error) }
+  )
+  .then(
+    console.log("data = " + data)
+    return data;
   )
 }
 
