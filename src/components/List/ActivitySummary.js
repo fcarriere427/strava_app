@@ -17,10 +17,10 @@ class ActivitySummary extends Component {
           <p>{this.props.data.doc.start_date_local.substring(0,10)}</p>
         </Col>
         <Col xs="2">
-          <p>{strTime(this.props.data.doc}</p>
+          <p>{strTime(this.props.data.doc)}</p>
         </Col>
         <Col xs="2">
-          <p>{strSpeed(this.props.data.doc}</p>
+          <p>{strSpeed(this.props.data.doc)}</p>
         </Col>
         <Col xs="2">
           <p>{Math.round(this.props.data.doc.distance / 1000 * 100) / 100}km</p>
