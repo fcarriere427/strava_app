@@ -22,10 +22,10 @@ export default function Activity() {
       (response) => { setActivity(response.data) },
       (error) => { console.log("ERREUR de l'API  : " + error) }
     )
-    .then(() => {
-      console.log("activity.id dans Activity.js = " + activity.id);
+    .then((data) => {
+      console.log("activity.id dans Activity.js = " + data.id);
       return(
-        <Map activity = {activity}/>
+        <Map activity = {data}/>
         // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
         // <Container fluid className='bg-light border text-black'>
         //   <Row className="fw-light">Id: {activity.id} </Row>
