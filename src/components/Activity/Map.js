@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, MArker, Popup } from "react-leaflet";
 
 class Map extends Component {
 
@@ -18,7 +18,7 @@ class Map extends Component {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={position}>
+          <Marker position={defaultPosition}>
             <Popup>
               A pretty CSS3 popup. <br /> Easily customizable.
             </Popup>
