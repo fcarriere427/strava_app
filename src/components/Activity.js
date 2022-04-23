@@ -28,6 +28,7 @@ function getActivity(id) {
     (response) => {
       let data = response.data;
       console.log("data = " + data);
+      console.log("data._id = " + data._id);
       return data;
     },
     (error) => { console.log("ERREUR de l'API  : " + error) }
