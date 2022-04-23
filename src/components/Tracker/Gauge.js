@@ -5,7 +5,7 @@ import { arc } from "d3-shape"
 import { scaleLinear } from "d3-scale"
 import { format } from "d3-format"
 
-import targetToDate from './functions'
+import targetToDate from '../functions'
 
 class GaugeChart extends Component {
 
@@ -128,7 +128,7 @@ class GaugeChart extends Component {
 
           <div style={{
             marginTop: "0.4em",
-            fontSize: "2em", // taille de l'indicateur principal 
+            fontSize: "2em", // taille de l'indicateur principal
             lineHeight: "1em",
             fontWeight: "900",
             fontFeatureSettings: "'zero', 'tnum' 1",
