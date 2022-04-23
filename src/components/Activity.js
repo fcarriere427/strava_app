@@ -5,30 +5,28 @@ import { useParams } from "react-router-dom"
 const axios = require('axios').default;
 
 function Activity() {
-
   const [activity, setActivity] = useState("");
   const { id } = useParams;
   activity = this.getActivity(id);
-
-  // Récupération des activités pour l'année donnée
-  function getActivity(id) {
-    let url = 'https://letsq.xyz/api/strava/activities?id=' + {id};
-    axios.get(url)
-    .then(
-      (response) => { return response.data },
-      (error) => { console.log("ERREUR de l'API  : " + error) }
-    )
-  }
 
   return(
     <Container fluid className='bg-grey text-black text-center'>
       <p> {this.state.activity._id} </p>
     </Container>
   );
-
 }
 
-export Activity;
+// Récupération des activités pour l'année donnée
+function getActivity(id) {
+  let url = 'https://letsq.xyz/api/strava/activities?id=' + {id};
+  axios.get(url)
+  .then(
+    (response) => { return response.data },
+    (error) => { console.log("ERREUR de l'API  : " + error) }
+  )
+}
+
+export { Activity };
 
 
 
