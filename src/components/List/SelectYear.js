@@ -25,14 +25,8 @@ class SelectYear extends Component {
   render(){
     return(
       <div>
-        {/* <ul> log tableau années = {this.state.annees.map(annee => (
-          <li key={annee}>{annee}</li>
-          ))}
-        </ul> */}
 
-        <p> this.props.currentYear = {this.props.currentYear}</p>
-
-        <form>
+        <form className="form">
           <label>
             Select year:
             <select value={this.props.currentYear} onChange={this.props.updateHandler}>
