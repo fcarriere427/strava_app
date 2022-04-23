@@ -27,7 +27,31 @@ export default function Activity() {
   const displayMap = (activity) => {
     const defaultPosition: LatLngExpression = [48, 2];
 
-   }
+    return (
+      <div className="map__container">
+        <MapContainer
+          center={defaultPosition}
+          zoom={18}
+        >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          {/* <Polyline
+              coordinates,
+              {
+            color: 'red',
+            weight: 3,
+            opacity: .7,
+            lineJoin: 'round'
+              }
+              }
+
+          </Polyline> */}
+        </MapContainer>
+      </div>
+    );
+  }
 
   //
   //   let encodedRoute = [];
@@ -43,30 +67,7 @@ export default function Activity() {
   //     map.fitBounds(bounds);
   //
   //
-    return (
-        <div className="map__container">
-          <MapContainer
-            center={defaultPosition}
-            zoom={18}
-          >
-            <TileLayer
-              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            {/* <Polyline
-              coordinates,
-              {
-                color: 'red',
-                weight: 3,
-                opacity: .7,
-                lineJoin: 'round'
-              }
-              }
 
-            </Polyline> */}
-            </MapContainer>
-          </div>
-      );
 
   // pour référence, ce qu'on récupère dans Activity : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
 
