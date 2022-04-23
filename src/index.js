@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Home, Header, Footer, Tracker, List, Reports } from './components';
+import { Home, Header, Footer, Tracker, List, Reports, Activity } from './components';
 
 ReactDOM.render(
   <React.StrictMode>
