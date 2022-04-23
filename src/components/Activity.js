@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { useParams } from "react-router-dom"
 import { strTime, strDate, strSpeed } from "./functions"
-import { MapContainer, TileLayer } from "react-leaflet";
+import { Map } from "./Activity/Map";
 
 const axios = require('axios').default;
 
@@ -22,35 +22,6 @@ export default function Activity() {
       (response) => { setActivity(response.data) },
       (error) => { console.log("ERREUR de l'API  : " + error) }
     )
-  }
-
-  const Map = (activity) => {
-    const defaultPosition: LatLngExpression = [48, 2];
-    return (
-      <div className="map__container">
-
-        <MapContainer
-          center={defaultPosition}
-          zoom={13}
-        >
-          <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-        </MapContainer>
-
-
-        {/* <MapContainer
-          center={defaultPosition}
-          zoom={18}
-          >
-          <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-        </MapContainer> */}
-      </div>
-    );
   }
 
   // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
