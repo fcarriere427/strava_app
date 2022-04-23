@@ -8,14 +8,14 @@ function Activity() {
 
   const [activity, setActivity] = useState("");
   const { id } = useParams;
-  const activity = this.getActivity(id);
+  activity = this.getActivity(id);
 
   // Récupération des activités pour l'année donnée
   getActivity(id) {
     let url = 'https://letsq.xyz/api/strava/activities?id=' + {id};
     axios.get(url)
     .then(
-      (response) => { activity = response.data },
+      (response) => { return response.data },
       (error) => { console.log("ERREUR de l'API  : " + error) }
     )
   }
