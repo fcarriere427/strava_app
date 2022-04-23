@@ -28,7 +28,7 @@ export default function Activity() {
   return(
     <Container fluid className='bg-grey text-black text-center'>
       <p>id: {activity.id} </p>
-      <p>name: {activity.name)} </p>
+      <p>name: {activity.name} </p>
       <p>moving_time: {strTime(activity.moving_time)} </p>
       <p>total_elevation_gain: {activity.total_elevation_gain}</p>
       <p>start_date_local: {strDate(activity.start_date_local)} </p>
