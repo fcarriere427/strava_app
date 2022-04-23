@@ -4,11 +4,16 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 class Map extends Component {
 
-  render() {
+  componentDidMount(){
     //const position = [48.87, 2.24];
     // const start_position = this.props.activity.start_latlng;
     // let polyline = this.props.activity.map.summary_polyline;
+
     console.log("activity.id = " + this.props.activity.id)
+
+  }
+
+  render() {
 
     return (
       <MapContainer
