@@ -1,5 +1,3 @@
-import L from 'leaflet';
-
 var defaultOptions = function (options) {
     if (typeof options === 'number') {
         // Legacy
