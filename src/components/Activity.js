@@ -39,7 +39,7 @@ export default function Activity() {
           </Row>
 
           <Row>
-            <Col className="border">Distance: {Math.round(activity.doc.distance / 1000 * 100) / 100}km</Col>
+            <Col className="border">Distance: {Math.round(activity.distance / 1000 * 100) / 100}km</Col>
             <Col className="border">Moving time: {strTime(activity)}</Col>
             <Col className="border">Average speed: {strSpeed(activity)}</Col>
           </Row>
