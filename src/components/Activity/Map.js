@@ -36,7 +36,7 @@ function RunTrace(props) {
   for (let encoded of encodedRoute) { // mais en fait on ne va en récupérer qu'une !
     var coordinates = polyUtil.decode(encoded);
     // Auto-centrage et autp-zoom
-    const bounds = L.latLngBounds(coordinates);
+    const bounds = Leaflet.latLngBounds(coordinates);
     parentMap.fitBounds(bounds);
 
     return(
