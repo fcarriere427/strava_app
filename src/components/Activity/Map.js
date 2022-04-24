@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 
-let position = [48.85928529158136, 2.2934747009596705];
-
 class Map extends Component {
 
-    componentDidMount(){
-    position = this.props.activity.start_latlng;
+  constructor(props){
+    super(props);
+    this.state = {
+       position: "[48.85928529158136, 2.2934747009596705]"
+     };
+   }
+
+  componentDidMount(){
+    setState({position: this.props.activity.start_latlng };
   }
 
   render() {
@@ -21,7 +26,7 @@ class Map extends Component {
 
     return (
       <MapContainer
-        center={position}
+        center={this.state.position}
         zoom={13}
         scrollWheelZoom={false}
         style={{height: '600px'}}
