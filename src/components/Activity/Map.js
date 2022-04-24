@@ -35,6 +35,10 @@ function RunTrace(props) {
 
   for (let encoded of encodedRoute) { // mais en fait on ne va en récupérer qu'une !
     var coordinates = polyUtil.decode(encoded);
+    // Auto-centrage et autp-zoom
+    const bounds = L.latLngBounds(coordinates);
+    parentMap.fitBounds(bounds);
+
     return(
       <Polyline
         pathOptions={traceColor}
@@ -42,11 +46,6 @@ function RunTrace(props) {
       />
     )
   }
-
-  // Auto-centrage et autp-zoom
-  const bounds = L.latLngBounds(coordinates);
-  parentMap.fitBounds(bounds);
-
 }
 
 export {
