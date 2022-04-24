@@ -27,10 +27,10 @@ export default function Activity() {
     )
   }
 
+  console.log("activity.id dans Activity.js = " + activity.id);
+
   return(
-    console.log("activity.id dans Activity.js = " + activity.id);
-    return(
-      <Map activity = {activity}/>
+    <Map activity = {activity}/>
       // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
       // <Container fluid className='bg-light border text-black'>
       //   <Row className="fw-light">Id: {activity.id} </Row>
