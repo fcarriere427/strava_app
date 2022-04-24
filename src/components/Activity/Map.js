@@ -17,7 +17,7 @@ class Map extends Component {
       <MapContainer
         center={start_position}
         zoom={13}
-        scrollWheelZoom={false}
+        // scrollWheelZoom={false}
         style={{height: '500px'}}
       >
         <TileLayer
