@@ -16,7 +16,7 @@ class Map extends Component {
     console.log("this.props.activity.id = " + this.props.activity.id);
     console.log("this.props.activity.start_latlng = " + this.props.activity.start_latlng);
     this.setState({ position: this.props.activity.start_latlng }, () => {
-      console.log("this.state.position = " + this.state.position);
+      console.log("DIDMOUNT // this.state.position = " + this.state.position);
     });
   }
 
