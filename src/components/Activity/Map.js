@@ -7,9 +7,10 @@ class Map extends Component {
   constructor(props){
     super(props);
     this.state = {
-       position: "[48.85928529158136, 2.2934747009596705]"
+       // position: "[48.85928529158136, 2.2934747009596705]"
+       position: "[48, 2]"
      };
-   }
+  }
 
   componentDidMount(){
     console.log("this.props.activity.id = " + this.props.activity.id);
