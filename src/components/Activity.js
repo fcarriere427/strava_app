@@ -43,6 +43,5 @@ export default function Activity() {
       //   <Row className="fw-light">Average heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Row>
       //   {/* <Row className="fw-light">Map:{displayMap(activity)}</Row> */}
       // </Container>
-    );
-  )
+  );
 }
