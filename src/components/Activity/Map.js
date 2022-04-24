@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 import { useMap } from 'react-leaflet/hooks'
 
 function Map(activity) {
+  console.log("MAP // activity.id = " + activity.id);
   return (
     <MapContainer
       center={[47.585505245113346, -2.9980409668985826]} //centré sur St Phi ;-)
@@ -22,6 +23,7 @@ function Map(activity) {
 
 function RunTrace(activity) {
 
+  console.log("RUNTRACE // activity.id = " + activity.id);
   const parentMap = useMap();
   console.log("activity.start_latlng = " + activity.start_latlng);
   parentMap.setView(activity.start_latlng, parentMap.getZoom());
