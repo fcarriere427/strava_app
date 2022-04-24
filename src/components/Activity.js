@@ -1,6 +1,5 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
-import { useParams } from "react-router-dom"
 import { strTime, strDate, strSpeed } from "./functions"
 import { Map } from "./Activity/Map";
 
@@ -43,7 +42,7 @@ class Activity extends Component {
   render() {
 
     return (
-      <Map activity = {activity}/>
+      <Map activity = {this.state.activity}/>
       // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
       // <Container fluid className='bg-light border text-black'>
       //   <Row className="fw-light">Id: {activity.id} </Row>
@@ -60,6 +59,4 @@ class Activity extends Component {
   }
 }
 
-export {
-  Activity
-}
+export default Activity;
