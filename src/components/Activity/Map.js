@@ -11,7 +11,7 @@ function Map(props) {
       center={[47.585505245113346, -2.9980409668985826]} //centré sur St Phi ;-)
       zoom={13}
       // scrollWheelZoom={false}
-      style={{height: '80%'}}
+      style={{height: '60%'}}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
