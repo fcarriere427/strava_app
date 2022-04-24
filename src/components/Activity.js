@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { useParams } from "react-router-dom"
-import { strTime, strTimeElapsed, strDate, strSpeed } from "./functions"
+import { strTime, strTimeElapsed, strDate, strSpeed, strSpeedMax } from "./functions"
 import { Map } from "./Activity/Map";
 
 const axios = require('axios').default;
@@ -49,7 +49,7 @@ export default function Activity() {
             <Col className="border">Max elevation: {activity.elev_high}m</Col>
             <Col className="border">Min elevation: {activity.elev_low}m</Col>
           </Row>
-          
+
           <Row className="fw-light">
             <Col className="border">Elapsed time: {strTimeElapsed(activity)}</Col>
             <Col className="border">Max speed: {strSpeedMax(activity)}</Col>
