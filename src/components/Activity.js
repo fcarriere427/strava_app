@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { useParams } from "react-router-dom"
-import { strTime, strDate, strSpeed } from "./functions"
+import { strTime, strTimeElapsed, strDate, strSpeed } from "./functions"
 import { Map } from "./Activity/Map";
 
 const axios = require('axios').default;
@@ -31,18 +31,32 @@ export default function Activity() {
       <div>
         <Map activity = {activity}/>
         <Container fluid className='bg-light border text-black'>
+
           <Row className="fw-light">
-            <Col>Id: {activity.id}</Col>
-            <Col>Name: {activity.name}</Col>
-            <Col>Moving time: {strTime(activity)}</Col>
-            <Col>Elevation gain: {activity.total_elevation_gain}m</Col>
+            <Col className="border">Id: {activity.id}</Col>
+            <Col className="border">Name: {activity.name}</Col>
+            <Col className="border">Start date: {strDate(activity)}</Col>
           </Row>
+
+          <Row>
+            <Col className="border">Distance: {Math.round(activity.doc.distance / 1000 * 100) / 100}km</Col>
+            <Col className="border">Moving time: {strTime(activity)}</Col>
+            <Col className="border">Average speed: {strSpeed(activity)}</Col>
+          </Row>
+
           <Row className="fw-light">
-            <Col>Start date: {strDate(activity)}</Col>
-            <Col>Average speed: {strSpeed(activity)}</Col>
-            <Col>Average cadence: {activity.average_cadence ? activity.average_cadence : "N/A"}</Col>
-            <Col>Average heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Col>
+            <Col className="border">Elevation gain: {activity.total_elevation_gain}m</Col>
+            <Col className="border">Max elevation: {activity.elev_high}m</Col>
+            <Col className="border">Min elevation: {activity.elev_low}m</Col>
           </Row>
+          
+          <Row className="fw-light">
+            <Col className="border">Elapsed time: {strTimeElapsed(activity)}</Col>
+            <Col className="border">Max speed: {strSpeedMax(activity)}</Col>
+            <Col className="border">Average cadence: {activity.average_cadence ? activity.average_cadence : "N/A"}</Col>
+            <Col className="border">Average heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Col>
+          </Row>
+
         </Container>
       </div>
     );

@@ -15,9 +15,35 @@ function strTime(data) {
   return time_str;
 }
 
+function strTimeElapsed(data) {
+  let moving_time = data.elapsed_time; // en secondes
+  let time_str = '';
+  if (moving_time > 3600) {
+    let h_moving_time = Math.trunc(moving_time/3600);
+    let mn_moving_time = Math.trunc((moving_time - h_moving_time * 3600) / 60);
+    let sec_moving_time = Math.round(moving_time - h_moving_time * 3600 - mn_moving_time * 60);
+    time_str = h_moving_time + 'h ' + mn_moving_time + 'mn ' + sec_moving_time + 's';
+  } else {
+    let mn_moving_time = Math.trunc((moving_time) / 60);
+    let sec_moving_time = Math.trunc(moving_time - mn_moving_time * 60);
+    time_str = mn_moving_time + 'mn ' + sec_moving_time + 's';
+  }
+  return time_str;
+}
+
 // prend une vitesse en m/s, renvoie une chaine "x mn y / km"
 function strSpeed(data) {
   let avg_speed = data.average_speed; // en mètres/secondes
+  let pace = 1 / avg_speed * 1000; // en secondes par km
+  let mn_avg_speed = Math.trunc(pace / 60);
+  let sec_avg_speed = Math.round(pace - 60 * mn_avg_speed);
+  let speed_str = mn_avg_speed + 'mn' + sec_avg_speed + '/km'
+  return speed_str;
+}
+
+// prend une vitesse en m/s, renvoie une chaine "x mn y / km"
+function strSpeedMax(data) {
+  let avg_speed = data.max_speed; // en mètres/secondes
   let pace = 1 / avg_speed * 1000; // en secondes par km
   let mn_avg_speed = Math.trunc(pace / 60);
   let sec_avg_speed = Math.round(pace - 60 * mn_avg_speed);
@@ -65,7 +91,9 @@ function targetToDate(target){
 
 export {
    strTime,
+   strTimeElapsed,
    strSpeed,
+   strSpeedMax,
    strDate,
    daysInYear,
    daysInMonth,
