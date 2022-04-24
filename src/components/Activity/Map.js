@@ -17,8 +17,8 @@ class Map extends Component {
       <MapContainer
         center={start_position}
         zoom={13}
-        // scrollWheelZoom={false}
-        style={{height: '500px'}}
+        scrollWheelZoom={false}
+        style={{height: '800px'}}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
