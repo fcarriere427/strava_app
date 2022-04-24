@@ -32,7 +32,8 @@ class Map extends Component {
 
     return (
       <MapContainer
-        center={this.state.position}
+        // center={this.state.position}
+        center={[48,2]}
         zoom={13}
         scrollWheelZoom={false}
         style={{height: '600px'}}
