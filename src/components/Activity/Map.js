@@ -10,7 +10,7 @@ class Map extends Component {
     //start_position = this.props.activity.start_latlng;
     //let polyline = this.props.activity.map.summary_polyline;
 
-    console.log("start_position = " + start_position);
+    //console.log("start_position = " + start_position);
     //console.log("polyline = " + polyline);
 
     return (
