@@ -1,65 +1,47 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap'
+import { useParams } from "react-router-dom"
 import { strTime, strDate, strSpeed } from "./functions"
 import { Map } from "./Activity/Map";
-import { withRouter } from 'react-router-dom';
 
 const axios = require('axios').default;
 
-class Activity extends Component {
+export default function Activity() {
 
-  constructor(props){
-    super(props);
-    this.state = {
-       activity: ""
-     };
-   }
+  const [activity, setActivity] = useState("");
+  const { id } = useParams();
 
-  componentDidMount(){
-    this.getActivity();
-  }
+  useEffect(() => {
+    getActivity(id);
+  }, []);
 
-  // Mise à jour du cumul de l'année
-  getActivity() {
-
-    console.log("this.props.match = " + this.props.match);
-
-    const { id } = this.props.match.params;
-    console.log("id = " + id);
-
+  const getActivity = (id) => {
     let url = 'https://letsq.xyz/api/strava/activity?id=' + id;
-    console.log("url = " + url);
-
     axios.get(url)
     .then(
       (response) => {
-        this.setState({ activity : response.data });
+        setActivity(response.data)
+        .then(() => {
+          console.log("activity.id dans Activity.js = " + activity.id);
+          return(
+            <Map activity = {activity}/>
+            // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
+            // <Container fluid className='bg-light border text-black'>
+            //   <Row className="fw-light">Id: {activity.id} </Row>
+            //   <Row className="fw-light">Name: {activity.name} </Row>
+            //   <Row className="fw-light">Moving time: {strTime(activity)} </Row>
+            //   <Row className="fw-light">Elevation gain: {activity.total_elevation_gain}m</Row>
+            //   <Row className="fw-light">Start date: {strDate(activity)}</Row>
+            //   <Row className="fw-light">Average speed: {strSpeed(activity)}</Row>
+            //   <Row className="fw-light">Average cadence: {activity.average_cadence ? activity.average_cadence : "N/A"}</Row>
+            //   <Row className="fw-light">Average heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Row>
+            //   {/* <Row className="fw-light">Map:{displayMap(activity)}</Row> */}
+            // </Container>
+          );
+        })
       },
-      (error) => {
-        console.log("ERREUR de l'API  : " + error);
-      }
+      (error) => { console.log("ERREUR de l'API  : " + error) }
     )
   }
 
-  render() {
-
-    return (
-      <p>ID = {this.state.activity.id}</p>
-      // <Map activity = {this.state.activity}/>
-      // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
-      // <Container fluid className='bg-light border text-black'>
-      //   <Row className="fw-light">Id: {activity.id} </Row>
-      //   <Row className="fw-light">Name: {activity.name} </Row>
-      //   <Row className="fw-light">Moving time: {strTime(activity)} </Row>
-      //   <Row className="fw-light">Elevation gain: {activity.total_elevation_gain}m</Row>
-      //   <Row className="fw-light">Start date: {strDate(activity)}</Row>
-      //   <Row className="fw-light">Average speed: {strSpeed(activity)}</Row>
-      //   <Row className="fw-light">Average cadence: {activity.average_cadence ? activity.average_cadence : "N/A"}</Row>
-      //   <Row className="fw-light">Average heartrate: {activity.average_heartrate ? activity.average_heartrate : "N/A"}</Row>
-      //   {/* <Row className="fw-light">Map:{displayMap(activity)}</Row> */}
-      // </Container>
-    );
-  }
 }
-
-export default withRouter(Activity);
