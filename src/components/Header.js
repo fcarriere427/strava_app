@@ -15,8 +15,8 @@ class Header extends Component {
           <NavbarBrand href="/">
             <img className="Image-fluid" src={require("../assets/logo.png")}
               alt="logo"
-              width="40"
-              height="40"
+              width="30"
+              height="30"
             >
             </img>
           </NavbarBrand>
