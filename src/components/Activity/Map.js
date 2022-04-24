@@ -25,14 +25,19 @@ function RunTrace(props) {
   parentMap.setView(props.activity.start_latlng, parentMap.getZoom());
 
   const polyline = props.activity.map.summary_polyline;
+  const encodedRoute = polyline.split(); // pour convertir en array
+
   const traceColor = { color: 'red' }
 
-  return(
-    <Polyline
-      pathOptions={traceColor}
-      positions={polyline}
-    />
-  )
+  for (let encoded of encodedRoute) { // mais en fait on ne va en récupérer qu'une !
+    var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
+    return(
+      <Polyline
+        pathOptions={traceColor}
+        positions={coordinates}
+      />
+    )
+
 }
 
 export {
