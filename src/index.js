@@ -1,12 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Home, Header, Footer, Tracker, List, Reports, Activity } from './components';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Home, Header, Footer, Tracker, List, Reports, Activity } from './components';
 
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
