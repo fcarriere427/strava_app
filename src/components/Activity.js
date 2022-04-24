@@ -27,12 +27,15 @@ export default function Activity() {
 
   if(activity.id) {
     return(
-         <p> activity.id = {activity.id} </p>
-       )
+      <div>
+        <p> activity.id = {activity.id} </p>
+        <Map activity = {activity}/>
+      </div>
+    )
   } else {
     return(
-         <p> Pas d'activité !</p>
-       )
+      <p> Pas d'activité !</p>
+    )
   }
 
   // return(
