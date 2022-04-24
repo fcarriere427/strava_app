@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap'
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 import { useMap } from 'react-leaflet/hooks'
 
+const Leaflet = window.L;
 const polyUtil = require ('./polylineFunctions.js');
 
 function Map(props) {
@@ -42,8 +43,8 @@ function RunTrace(props) {
   }
 
   // Auto-centrage et autp-zoom
-  //const bounds = L.latLngBounds(coordinates);
-  parentMap.fitBounds(coordinates.getBounds());
+  const bounds = L.latLngBounds(coordinates);
+  parentMap.fitBounds(bounds);
 
 }
 
