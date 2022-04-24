@@ -25,6 +25,7 @@ export default function Activity() {
   }
 
   if(activity.id) {
+    console.log("ACTIVITY // activity.id = " + activity.id);
     return(
       <div>
         <Map activity = {activity}/>
