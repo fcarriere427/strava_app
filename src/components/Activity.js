@@ -32,7 +32,7 @@ export default function Activity() {
         <Map activity = {activity}/>
         <Container fluid className='bg-light border text-black'>
 
-          <Row classname="bg-dark text-white">
+          <Row className="bg-dark text-white">
             <Col className="border">Distance: {Math.round(activity.distance / 1000 * 100) / 100}km</Col>
             <Col className="border">Moving time: {strTime(activity)}</Col>
             <Col className="border">Average speed: {strSpeed(activity)}</Col>
