@@ -37,12 +37,12 @@ class RunTrace extends Component {
   //start_position = this.props.activity.start_latlng;
   //let polyline = this.props.activity.map.summary_polyline;
 
-  {/* <Polyline
+  /* <Polyline
     positions={polyline}
-  /> */}
+  /> */
 
 
-  setView(e.latlng, parentMap.getZoom()
+  //setView(e.latlng, parentMap.getZoom()
 
 
 }
