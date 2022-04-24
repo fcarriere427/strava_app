@@ -19,7 +19,7 @@ var defaultOptions = function (options) {
 function decode(encoded, options) {
     options = defaultOptions(options);
 
-    var flatPoints = this.decodeDeltas(encoded, options);
+    var flatPoints = decodeDeltas(encoded, options);
 
     var points = [];
     for (var i = 0, len = flatPoints.length; i + (options.dimension - 1) < len;) {
@@ -40,7 +40,7 @@ function decodeDeltas(encoded, options) {
 
     var lastNumbers = [];
 
-    var numbers = this.decodeFloats(encoded, options);
+    var numbers = decodeFloats(encoded, options);
     for (var i = 0, len = numbers.length; i < len;) {
         for (var d = 0; d < options.dimension; ++d, ++i) {
             numbers[i] = Math.round((lastNumbers[d] = numbers[i] + (lastNumbers[d] || 0)) * options.factor) / options.factor;
@@ -53,7 +53,7 @@ function decodeDeltas(encoded, options) {
 function decodeFloats(encoded, options) {
     options = defaultOptions(options);
 
-    var numbers = this.decodeSignedIntegers(encoded);
+    var numbers = decodeSignedIntegers(encoded);
     for (var i = 0, len = numbers.length; i < len; ++i) {
         numbers[i] /= options.factor;
     }
@@ -62,7 +62,7 @@ function decodeFloats(encoded, options) {
 }
 
 function decodeSignedIntegers(encoded) {
-    var numbers = this.decodeUnsignedIntegers(encoded);
+    var numbers = decodeUnsignedIntegers(encoded);
 
     for (var i = 0, len = numbers.length; i < len; ++i) {
         var num = numbers[i];
