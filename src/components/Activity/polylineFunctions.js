@@ -15,7 +15,7 @@
 import L from 'leaflet';
 
 (function () {
-    'use strict';
+    // 'use strict';
 
     var defaultOptions = function (options) {
         if (typeof options === 'number') {
