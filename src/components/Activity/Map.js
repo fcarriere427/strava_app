@@ -16,17 +16,17 @@ function Map(props) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <RunTrace activity={activity} />
+      <RunTrace activity={props.activity} />
     </MapContainer>
   );
 }
 
-function RunTrace(activity) {
+function RunTrace(props) {
 
-  console.log("RUNTRACE // activity.id = " + activity.id);
+  console.log("RUNTRACE // activity.id = " + props.activity.id);
   const parentMap = useMap();
-  console.log("activity.start_latlng = " + activity.start_latlng);
-  parentMap.setView(activity.start_latlng, parentMap.getZoom());
+  console.log("activity.start_latlng = " + props.activity.start_latlng);
+  parentMap.setView(props.activity.start_latlng, parentMap.getZoom());
 
   return(
     null
