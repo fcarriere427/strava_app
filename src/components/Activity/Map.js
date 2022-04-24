@@ -4,7 +4,6 @@ import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 import { useMap } from 'react-leaflet/hooks'
 
 function Map(props) {
-  console.log("MAP // activity.id = " + props.activity.id);
   return (
     <MapContainer
       center={[47.585505245113346, -2.9980409668985826]} //centré sur St Phi ;-)
@@ -22,30 +21,18 @@ function Map(props) {
 }
 
 function RunTrace(props) {
-
-  console.log("RUNTRACE // activity.id = " + props.activity.id);
   const parentMap = useMap();
-  console.log("activity.start_latlng = " + props.activity.start_latlng);
   parentMap.setView(props.activity.start_latlng, parentMap.getZoom());
 
+  const polyline = props.activity.map.summary_polyline;
+  const traceColor = { color: 'red' }
+
   return(
-    null
+    <Polyline
+      pathOptions={traceColor}
+      positions={polyline}
+    />
   )
-
-  //
-  // this.setState({ position: this.props.activity.start_latlng });
-
-
-  //start_position = this.props.activity.start_latlng;
-  //let polyline = this.props.activity.map.summary_polyline;
-
-  /* <Polyline
-    positions={polyline}
-  /> */
-
-
-  //setView(e.latlng, parentMap.getZoom()
-
 }
 
 export {
