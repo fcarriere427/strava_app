@@ -21,7 +21,7 @@ class Activity extends Component {
   // Mise à jour du cumul de l'année
   getActivity() {
 
-    console.log("this.props = " + this.props);
+    console.log("this.props.match = " + this.props.match);
 
     const { id } = this.props.match.params;
     console.log("id = " + id);
