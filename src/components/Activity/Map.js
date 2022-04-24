@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
+import { useMap } from 'react-leaflet/hooks'
 
 function Map(activity) {
   return (
@@ -19,7 +20,7 @@ function Map(activity) {
   );
 }
 
-function RunTrace() {
+function RunTrace(activity) {
 
   const parentMap = useMap();
   console.log("activity.start_latlng = " + activity.start_latlng);
