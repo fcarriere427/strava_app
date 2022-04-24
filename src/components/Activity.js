@@ -41,7 +41,8 @@ class Activity extends Component {
   render() {
 
     return (
-      <Map activity = {this.state.activity}/>
+      <p>ID = {activity.id}</p>
+      // <Map activity = {this.state.activity}/>
       // Référence, ce qu'on peut afficher (= récupéré dans Activity) : https://developers.strava.com/docs/reference/#api-models-SummaryActivity
       // <Container fluid className='bg-light border text-black'>
       //   <Row className="fw-light">Id: {activity.id} </Row>
