@@ -6,7 +6,13 @@ class Map extends Component {
 
   render() {
 
-    let start_position = [48.87, 2.24];
+    let position = [0, 0];
+
+    componentDidMount(){
+      position = this.props.activity.start_latlng;
+    }
+
+    //let start_position = [48.87, 2.24];
     //start_position = this.props.activity.start_latlng;
     //let polyline = this.props.activity.map.summary_polyline;
 
@@ -15,7 +21,7 @@ class Map extends Component {
 
     return (
       <MapContainer
-        center={start_position}
+        center={position}
         zoom={13}
         scrollWheelZoom={false}
         style={{height: '600px'}}
