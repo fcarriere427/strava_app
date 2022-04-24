@@ -12,7 +12,9 @@ class Map extends Component {
    }
 
   componentDidMount(){
+    console.log("this.props.activity.start_latlng = " + this.props.activity.start_latlng);
     this.setState({position: this.props.activity.start_latlng });
+    console.log("this.state.position = " + this.state.position);
   }
 
   render() {
