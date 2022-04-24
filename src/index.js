@@ -1,5 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { Switch } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
