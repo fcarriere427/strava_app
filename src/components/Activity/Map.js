@@ -15,12 +15,13 @@ class Map extends Component {
   componentDidMount(){
     console.log("this.props.activity.id = " + this.props.activity.id);
     console.log("this.props.activity.start_latlng = " + this.props.activity.start_latlng);
-    this.setState({position: this.props.activity.start_latlng }, () => {
+    this.setState({ position: this.props.activity.start_latlng }, () => {
       console.log("this.state.position = " + this.state.position);
     });
   }
 
   render() {
+    console.log("RENDER // this.state.position = " + this.state.position);
 
     //let start_position = [48.87, 2.24];
     //start_position = this.props.activity.start_latlng;
