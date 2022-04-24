@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 
-function Map() {
+function Map(activity) {
   return (
     <MapContainer
       center={[47.585505245113346, -2.9980409668985826]} //centré sur St Phi ;-)
