@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { strTime, strDate, strSpeed } from "./functions"
 import { Map } from "./Activity/Map";
+import { withRouter } from 'react-router-dom';
 
 const axios = require('axios').default;
 
@@ -61,4 +62,4 @@ class Activity extends Component {
   }
 }
 
-export default Activity;
+export default withRouter(Activity);
