@@ -40,6 +40,11 @@ function RunTrace(props) {
       />
     )
   }
+
+  // Auto-centrage et autp-zoom
+  //const bounds = L.latLngBounds(coordinates);
+  parentMap.fitBounds(coordinates.getBounds());
+
 }
 
 export {
