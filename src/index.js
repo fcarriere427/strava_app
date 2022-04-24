@@ -13,14 +13,16 @@ root.render(
   <React.StrictMode>
     <Router>
       <Header name="Florian"/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/tracker" element={<Tracker />} />
-        <Route path="/list" element={<List />} />
-        <Route path="/reports" element={<Reports />} />
-        <Route exact path="/activity/:id" component={<Activity />} />
-        <Route path="/strava_old_app" />
-      </Routes>
+      <Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/tracker" element={<Tracker />} />
+          <Route path="/list" element={<List />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route exact path="/activity/:id" element={<Activity />} />
+          <Route path="/strava_old_app" />
+        </Routes>
+      </Switch>
       <Footer />
     </Router>
     <a
