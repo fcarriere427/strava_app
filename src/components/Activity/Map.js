@@ -4,13 +4,13 @@ import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 
 class Map extends Component {
 
+  componentDidMount(){
+    position = this.props.activity.start_latlng;
+  }
+
+
   render() {
-
     let position = [0, 0];
-
-    componentDidMount(){
-      position = this.props.activity.start_latlng;
-    }
 
     //let start_position = [48.87, 2.24];
     //start_position = this.props.activity.start_latlng;
