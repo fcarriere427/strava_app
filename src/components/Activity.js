@@ -19,15 +19,10 @@ export default function Activity() {
     let url = 'https://letsq.xyz/api/strava/activity?id=' + id;
     axios.get(url)
     .then(
-      (response) => {
-        console.log("response.data.id =" + response.data.id);
-        setActivity(response.data);
-      },
+      (response) => { setActivity(response.data) },
       (error) => { console.log("ERREUR de l'API  : " + error) }
     )
   }
-
-  console.log("activity.id dans Activity.js = " + activity.id);
 
   return(
     <Map activity = {activity}/>
