@@ -20,7 +20,7 @@ export default function Activity() {
     axios.get(url)
     .then(
       (response) => {
-        console.log("response.data.id" = response.data.id);
+        console.log("response.data.id =" + response.data.id);
         setActivity(response.data)
         .then(() => {
           console.log("activity.id dans Activity.js = " + activity.id);
