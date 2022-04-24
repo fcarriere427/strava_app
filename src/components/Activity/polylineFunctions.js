@@ -12,6 +12,8 @@
  * (which is down as of december 2014)
  */
 
+import L from 'leaflet';
+
 (function () {
     'use strict';
 
