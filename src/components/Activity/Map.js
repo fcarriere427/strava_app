@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 
+let position = [0, 0];
+
 class Map extends Component {
 
-  let position = [0, 0];
-
-  componentDidMount(){
+    componentDidMount(){
     position = this.props.activity.start_latlng;
   }
 
