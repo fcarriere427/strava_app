@@ -14,17 +14,21 @@ function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <RunTrace />
+      <RunTrace activity={activity} />
     </MapContainer>
   );
 }
 
 function RunTrace() {
+
+  const parentMap = useMap();
+  console.log("activity.start_latlng = " + activity.start_latlng);
+  parentMap.setView(activity.start_latlng, parentMap.getZoom());
+
   return(
-    <p>RunTrace!</p>
+    null
   )
 
-  // const map = useMap();
   //
   // this.setState({ position: this.props.activity.start_latlng });
 
