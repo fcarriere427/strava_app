@@ -32,25 +32,26 @@ export default function Activity() {
         <Map activity = {activity}/>
         <Container fluid className='bg-light border text-black'>
 
-          <Row className="fw-light">
-            <Col className="border">Id: {activity.id}</Col>
-            <Col className="border">Name: {activity.name}</Col>
-            <Col className="border">Start date: {strDate(activity)}</Col>
-          </Row>
-
-          <Row>
+          <Row classname="bg-dark text-white">
             <Col className="border">Distance: {Math.round(activity.distance / 1000 * 100) / 100}km</Col>
             <Col className="border">Moving time: {strTime(activity)}</Col>
             <Col className="border">Average speed: {strSpeed(activity)}</Col>
           </Row>
 
           <Row className="fw-light">
+            <Col className="border">Id: {activity.id}</Col>
+            <Col className="border">Name: {activity.name}</Col>
+            <Col className="border">Start date: {strDate(activity)}</Col>
+          </Row>
+
+
+          <Row className="fw-light bg-white text-black">
             <Col className="border">Elevation gain: {activity.total_elevation_gain}m</Col>
             <Col className="border">Max elevation: {activity.elev_high}m</Col>
             <Col className="border">Min elevation: {activity.elev_low}m</Col>
           </Row>
 
-          <Row className="fw-light">
+          <Row className="fw-light bg-white text-black">
             <Col className="border">Elapsed time: {strTimeElapsed(activity)}</Col>
             <Col className="border">Max speed: {strSpeedMax(activity)}</Col>
             <Col className="border">Average cadence: {activity.average_cadence ? activity.average_cadence : "N/A"}</Col>
