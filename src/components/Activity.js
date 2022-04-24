@@ -27,7 +27,6 @@ export default function Activity() {
   if(activity.id) {
     return(
       <div>
-        <p> activity.id = {activity.id} </p>
         <Map activity = {activity}/>
       </div>
     )
