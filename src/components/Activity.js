@@ -22,13 +22,17 @@ export default function Activity() {
       (response) => { setActivity(response.data) },
       (error) => { console.log("ERREUR de l'API  : " + error) }
     )
-    .then(
-      () => {
-        return(
-          <p> activity.id = {activity.id} </p>
-        )
-      }
-    )
+  }
+
+
+  if(activity.id) {
+    return(
+         <p> activity.id = {activity.id} </p>
+       )
+  } else {
+    return(
+         <p> Pas d'activité !</p>
+       )
   }
 
   // return(
