@@ -10,7 +10,7 @@ function Map(props) {
     <MapContainer
       center={[47.585505245113346, -2.9980409668985826]} //centré sur St Phi ;-)
       zoom={13}
-      scrollWheelZoom={false}
+      // scrollWheelZoom={false}
       style={{height: '600px'}}
     >
       <TileLayer
