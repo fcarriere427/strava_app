@@ -3,6 +3,8 @@ import { Container, Row, Col } from 'reactstrap'
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 import { useMap } from 'react-leaflet/hooks'
 
+const polyUtil = require ('./polylineFunctions.js');
+
 function Map(props) {
   return (
     <MapContainer
@@ -30,7 +32,7 @@ function RunTrace(props) {
   const traceColor = { color: 'red' }
 
   for (let encoded of encodedRoute) { // mais en fait on ne va en récupérer qu'une !
-    var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
+    var coordinates = polyUtil.decode(encoded);
     return(
       <Polyline
         pathOptions={traceColor}
