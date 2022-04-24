@@ -23,9 +23,11 @@ export default function Activity() {
       (error) => { console.log("ERREUR de l'API  : " + error) }
     )
     .then(
-      () => return(
-        <p> activity.id = {activity.id} </p>
-      )
+      () => {
+        return(
+          <p> activity.id = {activity.id} </p>
+        )
+      }
     )
   }
 
