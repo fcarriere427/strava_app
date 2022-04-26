@@ -4,6 +4,28 @@ import { strTime, strSpeed } from '../functions'
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class ActivitySummary extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+       country: "",
+       city: ""
+     };
+   }
+
+   componentDidMount(){
+     let lon = this.props.data.start_latlng[0];
+     let lat = this.props.data.start_latlng[1];
+     let url = 'https://api-adresse.data.gouv.fr/reverse/?lon=' + lon +'&lat=' +lat;
+     console.log('url = ' + url);
+     axios.get(url)
+     .then(
+       (response) => {
+         console.log("response.data = " + response.data);
+         //this.setState({ activitiesList: response.data });
+       },
+       (error) => { console.log("ERREUR de l'API  : " + error) }
+     )
+  }
 
   render(){
 
