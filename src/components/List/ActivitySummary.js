@@ -15,8 +15,8 @@ class ActivitySummary extends Component {
    }
 
    componentDidMount(){
-     let lon = this.props.data.start_latlng[0];
-     let lat = this.props.data.start_latlng[1];
+     let lon = this.props.data.doc.start_latlng[0];
+     let lat = this.props.data.doc.start_latlng[1];
      let url = 'https://api-adresse.data.gouv.fr/reverse/?lon=' + lon +'&lat=' +lat;
      console.log('url = ' + url);
      axios.get(url)
