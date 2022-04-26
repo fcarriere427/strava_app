@@ -23,7 +23,7 @@ class ActivitySummary extends Component {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
       },
-      withCredentials: true,
+      withCredentials: false,
     })
     .then(
       (response) => {
