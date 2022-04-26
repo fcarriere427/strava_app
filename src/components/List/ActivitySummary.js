@@ -22,9 +22,10 @@ class ActivitySummary extends Component {
      axios.get(url)
      .then(
        (response) => {
-         console.log("response.data = " + response.data);
-         console.log("city = " + response.data.features.properties.city);
-         this.setState({ country: response.data.features.properties.city });
+         console.log("response.data = " + response.data);g
+         console.log("test = " + response.data.feature[0].properties.city);g
+         // console.log("city = " + response.data.features.properties.city);
+         // this.setState({ country: response.data.features.properties.city });
        },
        (error) => { console.log("ERREUR de l'API  : " + error) }
      )
