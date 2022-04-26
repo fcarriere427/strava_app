@@ -15,15 +15,16 @@ class ActivitySummary extends Component {
    }
 
    componentDidMount(){
-     let lon = this.props.data.doc.start_latlng[0];
-     let lat = this.props.data.doc.start_latlng[1];
+     let lat = this.props.data.doc.start_latlng[0];
+     let lon = this.props.data.doc.start_latlng[1];
      let url = 'https://api-adresse.data.gouv.fr/reverse/?lon=' + lon +'&lat=' +lat;
      console.log('url = ' + url);
      axios.get(url)
      .then(
        (response) => {
          console.log("response.data = " + response.data);
-         //this.setState({ activitiesList: response.data });
+         console.log("city = " + response.data.features.properties.city);
+         this.setState({ country: response.data.features.properties.city });
        },
        (error) => { console.log("ERREUR de l'API  : " + error) }
      )
@@ -40,22 +41,20 @@ class ActivitySummary extends Component {
 
     return(
       <Container className="bg-light text-black border py-2">
-
         <Row>
-          <Col xs="3">
-            <p>
-              <a href={url} rel="noreferrer">
-                {date_str}
-              </a>
-            </p>
-          </Col>
-          <Col  className="fw-bold" xs="4">
-            <p>{Math.round(this.props.data.doc.distance / 1000 * 100) / 100}km</p>
-          </Col>
-          <Col xs="5">
-            <p>{strSpeed(this.props.data.doc)}</p>
-          </Col>
-
+        <Col xs="3">
+          <p>
+            <a href={url} rel="noreferrer">
+              {date_str}
+            </a>
+          </p>
+        </Col>
+        <Col  className="fw-bold" xs="4">
+          <p>{Math.round(this.props.data.doc.distance / 1000 * 100) / 100}km</p>
+        </Col>
+        <Col xs="5">
+          <p>{strSpeed(this.props.data.doc)}</p>
+        </Col>
         </Row>
 
         <Row>
@@ -68,7 +67,12 @@ class ActivitySummary extends Component {
           <Col className="fw-light" xs="5">
             <p>{this.props.data.doc.name}</p>
           </Col>
+        </Row>
 
+        <Row>
+          <Col  className="fw-bold" xs="3">
+            <p>{this.state.city}</p>
+          </Col>
         </Row>
 
       </Container>
