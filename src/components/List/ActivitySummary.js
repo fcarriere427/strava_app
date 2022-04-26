@@ -18,7 +18,9 @@ class ActivitySummary extends Component {
     let lat = this.props.data.doc.start_latlng[0];
     let lon = this.props.data.doc.start_latlng[1];
     let url = 'https://api-adresse.data.gouv.fr/reverse/?lon=' + lon +'&lat=' +lat;
-    axios.get(url)
+    axios.get(url, {
+      mode: 'no-cors'
+    })
     .then(
       (response) => {
         this.setState({ country: response.data.features[0].properties.city });
