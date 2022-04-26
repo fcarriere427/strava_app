@@ -23,7 +23,8 @@ class ActivitySummary extends Component {
      .then(
        (response) => {
          console.log("response.data = " + response.data);
-         console.log("test = " + response.data.feature[0].properties.city);
+         console.log("test = " + response.data.type);
+         // console.log("test = " + response.data.feature[0].properties.city);
          // console.log("city = " + response.data.features.properties.city);
          // this.setState({ country: response.data.features.properties.city });
        },
