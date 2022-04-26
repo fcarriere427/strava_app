@@ -18,15 +18,10 @@ class ActivitySummary extends Component {
      let lat = this.props.data.doc.start_latlng[0];
      let lon = this.props.data.doc.start_latlng[1];
      let url = 'https://api-adresse.data.gouv.fr/reverse/?lon=' + lon +'&lat=' +lat;
-     console.log('url = ' + url);
      axios.get(url)
      .then(
        (response) => {
-         console.log("response.data = " + response.data);
-         console.log("test = " + response.data.features[0].properties.city);
-         // console.log("test = " + response.data.features[0].properties.city);
-         // console.log("city = " + response.data.features.properties.city);
-         // this.setState({ country: response.data.features.properties.city });
+         this.setState({ country: response.data.features[0].properties.city });
        },
        (error) => { console.log("ERREUR de l'API  : " + error) }
      )
