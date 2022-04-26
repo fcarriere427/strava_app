@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import { strTime, strSpeed } from '../functions'
 
+const axios = require('axios').default;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class ActivitySummary extends Component {
   constructor(props){
