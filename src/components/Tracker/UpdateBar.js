@@ -97,7 +97,7 @@ class UpdateBar extends Component {
 class LastActivityDate extends Component {
   render() {
     return (
-      <p className="fw-light">Last activity:<br/> {this.props.lastActivityDate}</p>
+      <p className="fw-light">Last activity:<br/> {this.props.date}</p>
     );
   }
 }
