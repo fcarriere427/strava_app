@@ -7,8 +7,23 @@ class UpdateBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-       message: "Not updated yet"
+       message: "Not updated yet",
+       lastActivityDate: ""
      };
+  }
+
+  componentDidMount(){
+    // Récupération de la date de la dernière activité (format lisible, en local time)
+    let url = 'https://letsq.xyz/api/strava/last_activity_date';
+    axios.get(url)
+    .then(
+      (response) => {
+        this.setState({ lastActivityDate : response.data.last_activity_date });
+      },
+      (error) => {
+        console.log("ERREUR de l'API  : " + error);
+      }
+    )
   }
 
   // Actions pour les boutons "update" & "reload"
@@ -51,7 +66,7 @@ class UpdateBar extends Component {
     return(
       <Row className="bg-light text-black border py-2">
         <Col xs="4">
-          <LastActivityDate />
+          <LastActivityDate date={this.state.lastActivityDate}/>
         </Col>
         <Col xs="8">
           <Row>
@@ -80,26 +95,9 @@ class UpdateBar extends Component {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 class LastActivityDate extends Component {
-  constructor(props){
-    super(props);
-    this.state = { lastActivityDate: "" };
-  }
-  componentDidMount(){
-    // Récupération de la date de la dernière activité (format lisible, en local time)
-    let url = 'https://letsq.xyz/api/strava/last_activity_date';
-    axios.get(url)
-    .then(
-      (response) => {
-        this.setState({ lastActivityDate : response.data.last_activity_date });
-      },
-      (error) => {
-        console.log("ERREUR de l'API  : " + error);
-      }
-    )
-  }
   render() {
     return (
-      <p className="fw-light">Last activity:<br/> {this.state.lastActivityDate}</p>
+      <p className="fw-light">Last activity:<br/> {this.props.lastActivityDate}</p>
     );
   }
 }
