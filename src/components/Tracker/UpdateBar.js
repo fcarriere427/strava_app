@@ -8,7 +8,7 @@ class UpdateBar extends Component {
     super(props);
     this.state = {
        message: "Not updated yet",
-       lastActivityDate: "undefined"
+       date: "undefined"
      };
   }
 
@@ -18,7 +18,7 @@ class UpdateBar extends Component {
     axios.get(url)
     .then(
       (response) => {
-        this.setState({ lastActivityDate : response.data.last_activity_date });
+        this.setState({ date : response.data.last_activity_date });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -66,7 +66,7 @@ class UpdateBar extends Component {
     return(
       <Row className="bg-light text-black border py-2">
         <Col xs="4">
-          <LastActivityDate date={this.state.lastActivityDate}/>
+          <LastActivityDate date={this.state.date}/>
         </Col>
         <Col xs="8">
           <Row>
