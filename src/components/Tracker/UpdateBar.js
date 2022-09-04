@@ -8,7 +8,7 @@ class UpdateBar extends Component {
     super(props);
     this.state = {
        message: "Not updated yet",
-       lastActivityDate: ""
+       lastActivityDate: "undefined"
      };
   }
 
