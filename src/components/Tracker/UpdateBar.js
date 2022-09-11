@@ -18,9 +18,8 @@ class UpdateBar extends Component {
     axios.get(url)
     .then(
       (response) => {
-        let date_US = response.data.last_activity_date;
-        //let date_FR = date_US.toLocaleDateString('fr-FR');
-        this.setState({ date : date_US });
+        // la date est censée arriver au format FR depuis le backend...
+        this.setState({ date : response.data.last_activity_date });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
