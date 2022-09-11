@@ -66,7 +66,7 @@ class UpdateBar extends Component {
     return(
       <Row className="bg-light text-black border py-2">
         <Col xs="4">
-          <LastActivityDate date={this.state.date}/>
+          <LastActivityDate date={this.state.date.toLocaleDateString('fr-FR')}/>
         </Col>
         <Col xs="8">
           <Row>
