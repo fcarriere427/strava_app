@@ -18,7 +18,8 @@ class UpdateBar extends Component {
     axios.get(url)
     .then(
       (response) => {
-        this.setState({ date : response.data.last_activity_date });
+        let date_FR = response.data.last_activity_date.toLocaleDateString('fr-FR')
+        this.setState({ date : date_FR });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
@@ -66,7 +67,7 @@ class UpdateBar extends Component {
     return(
       <Row className="bg-light text-black border py-2">
         <Col xs="4">
-          <LastActivityDate date={this.state.date.toLocaleDateString('fr-FR')}/>
+          <LastActivityDate date={this.state.date}/>
         </Col>
         <Col xs="8">
           <Row>
