@@ -18,7 +18,8 @@ class UpdateBar extends Component {
     axios.get(url)
     .then(
       (response) => {
-        let date_FR = response.data.last_activity_date.toLocaleDateString('fr-FR')
+        let date_US = response.data.last_activity_date;
+        let date_FR = date_US.toLocaleDateString('fr-FR');
         this.setState({ date : date_FR });
       },
       (error) => {
