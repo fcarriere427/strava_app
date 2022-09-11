@@ -14,20 +14,20 @@ class ActivitySummary extends Component {
      };
    }
 
-  componentDidMount(){
-    let lat = this.props.data.doc.start_latlng[0];
-    let lon = this.props.data.doc.start_latlng[1];
-    let url = 'https://api-adresse.data.gouv.fr/reverse/?lon=' + lon +'&lat=' +lat;
-    axios.get(url, {
-      mode: 'no-cors'
-    })
-    .then(
-      (response) => {
-        this.setState({ country: response.data.features[0].properties.city });
-      },
-      (error) => { console.log("ERREUR de l'API  : " + error) }
-    )
-  }
+  // componentDidMount(){
+  //   let lat = this.props.data.doc.start_latlng[0];
+  //   let lon = this.props.data.doc.start_latlng[1];
+  //   let url = 'https://api-adresse.data.gouv.fr/reverse/?lon=' + lon +'&lat=' +lat;
+  //   axios.get(url, {
+  //     mode: 'no-cors'
+  //   })
+  //   .then(
+  //     (response) => {
+  //       this.setState({ country: response.data.features[0].properties.city });
+  //     },
+  //     (error) => { console.log("ERREUR de l'API  : " + error) }
+  //   )
+  // }
 
   render(){
 
