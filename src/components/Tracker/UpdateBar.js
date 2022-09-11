@@ -19,8 +19,8 @@ class UpdateBar extends Component {
     .then(
       (response) => {
         let date_US = response.data.last_activity_date;
-        let date_FR = date_US.toLocaleDateString('fr-FR');
-        this.setState({ date : date_FR });
+        //let date_FR = date_US.toLocaleDateString('fr-FR');
+        this.setState({ date : date_US });
       },
       (error) => {
         console.log("ERREUR de l'API  : " + error);
