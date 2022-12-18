@@ -7,7 +7,7 @@ const axios = require('axios').default;
 
 export default function Activity() {
 
-  const getActivity {
+  const getActivity = {
     let url = 'https://letsq.xyz/api/strava/activity?id=' + id;
     axios.get(url)
     .then(
