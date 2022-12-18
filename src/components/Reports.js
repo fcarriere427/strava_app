@@ -11,11 +11,8 @@ class Reports extends Component {
   render() {
     return(
       <div>
-        <p> To do :-) You should rather see the 
-          <a href="/strava_old_app/strava_report">
-            old app reports
-          </a>
-        </p>
+        <p>To do :-) </p>
+        <p>You should rather see the <a href="/strava_old_app/strava_report"> old app reports</a></p>
       </div>
     );
   }
