@@ -11,9 +11,9 @@ export default function Activity() {
   const [activity, setActivity] = useState("");
   const { id } = useParams();
 
-  useEffect(() => {
-    getActivity(id);
-  }, []);
+  // useEffect(() => {
+  //   getActivity(id);
+  // }, []);
 
   const getActivity = (id) => {
     let url = 'https://letsq.xyz/api/strava/activity?id=' + id;
