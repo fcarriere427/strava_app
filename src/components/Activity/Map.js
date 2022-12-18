@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap'
+import React from 'react';
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 import { useMap } from 'react-leaflet/hooks'
-import { L } from 'leaflet'
+//import { L } from 'leaflet'
 
 const Leaflet = window.L;
 const polyUtil = require ('./polylineFunctions.js');
