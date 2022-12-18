@@ -55,16 +55,16 @@ class Gaps extends Component {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class Averages extends Component {
   render() {
-    let target_date = targetToDate (this.props.target);
-    let delta_km = Math.round((this.props.current - target_date)*10)/10;
+    //let target_date = targetToDate (this.props.target);
+    //let delta_km = Math.round((this.props.current - target_date)*10)/10;
 
     let today = new Date();
     let start = new Date(today.getFullYear(), 0, 0);
     let diff = today - start;
-    let year = new Date().getFullYear().toString();
-    let remain_days = 365 - year;
     let day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
-    let percentOfYear = day / daysInYear(year);
+    let remain_days = 365 - day;
+    //let year = new Date().getFullYear().toString();
+    //let percentOfYear = day / daysInYear(year);
 
     let new_avg_day = Math.floor((this.props.target - this.props.current)/remain_days*10)/10;
     let new_avg_week = Math.round(new_avg_day * 7 * 10)/10;
@@ -72,12 +72,9 @@ class Averages extends Component {
     return (
       <div>
         <p className="fw-light text-black"><i>New targets</i></p>
-        <p>Target: {this.props.target} km</p>
-        <p>Current: {this.props.curren} km</p>
-        <p>Current: {this.props.curren} km</p>
+        <p>Remain days: {remain_days} days</p>
         <p>Day: {new_avg_day} km</p>
         <p>Week: {new_avg_week} km</p>
-        <p>Day: {new_avg_day} km</p>
       </div>
     );
   }
