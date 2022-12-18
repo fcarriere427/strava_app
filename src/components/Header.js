@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-//import { Container, Row, Col, Nav, Navbar, NavItem, NavLink, NavbarText, NavbarBrand  } from 'reactstrap'
 import { Nav, Navbar, NavItem, NavLink, NavbarBrand  } from 'reactstrap'
 import { NavLink as RRNavLink } from 'react-router-dom';
-//import Tracker from './Tracker'
-//import List from './List'
 
 class Header extends Component {
 
