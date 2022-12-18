@@ -53,3 +53,5 @@ class Activity extends Component {
     }
   }
 }
+
+export default Activity;
