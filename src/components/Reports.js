@@ -11,7 +11,14 @@ class Reports extends Component {
   render() {
     return(
       <div>
-        <p> To do :-)</p>
+        <p> To do :-) You should rather see the </p>
+        <a
+          href="/strava_old_app/strava_report"
+          style={{color: "grey"}}
+          className="text-center"
+        >
+          <i>old app reports</i>
+        </a>
       </div>
     );
   }
