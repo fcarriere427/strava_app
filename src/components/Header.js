@@ -38,7 +38,7 @@ class Header extends Component {
             </NavItem>
             <NavItem>
               <NavLink
-                to ="/reports"
+                to ="/old_app/strava_report.html"
                 tag={RRNavLink} activeclassname="active">
                 >
                 Reports
