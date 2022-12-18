@@ -65,9 +65,9 @@ class Averages extends Component {
     return (
       <div>
         <p className="fw-light text-black"><i>New targets</i></p>
-        <p>Per day: {new_avg_day} km</p>
-        <p>Per week: {new_avg_week} km</p>
-        <p>Remaining days: {remain_days} days</p>
+        <p>Day: {new_avg_day} km</p>
+        <p>Week: {new_avg_week} km</p>
+        <p className="fw-light text-white">Remaining days: {remain_days} days</p>
       </div>
     );
   }
