@@ -12,7 +12,7 @@ class Reports extends Component {
     return(
       <div>
         <p>To do :-) </p>
-        <p>You should rather see the <a href="/strava_old_app/strava_report"> old app reports</a></p>
+        <p>You should rather see the <a href="/strava_old_app/strava_report.html"> old app reports</a></p>
       </div>
     );
   }
