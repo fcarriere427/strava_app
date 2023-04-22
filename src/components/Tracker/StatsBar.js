@@ -60,7 +60,7 @@ class Averages extends Component {
     let diff = today - start;
     let day = Math.floor(diff / (1000 * 60 * 60 * 24)); // calcul = secondes dans 1 jour
     let remain_days = 365 - day ; // à partir du lendemain
-    let new_avg_day = Math.floor((this.props.target - this.props.current)/remain_days*100)/100;
+    let new_avg_day = Math.round((this.props.target - this.props.current)/remain_days*100)/100;
     let new_avg_week = Math.round(new_avg_day * 7 * 10)/10;
     return (
       <div>
