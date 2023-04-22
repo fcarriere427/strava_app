@@ -76,7 +76,7 @@ class UpdateBar extends Component {
                 Update
               </Button>
             </Col>
-            <Col xs="6">
+            <Col xs="2">
               <Button color="danger"  onClick={(evt) => this.reloadActivities()}>
                 Reload(!)
               </Button>
