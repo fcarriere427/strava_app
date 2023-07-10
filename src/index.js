@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { Home, Header, Footer, Tracker, List, Reports, Activity } from './components';
 
 import 'bootstrap/dist/css/bootstrap.css';
