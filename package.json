@@ -2,7 +2,8 @@
   "name": "strava_app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://letsq.xyz",
+  "proxy": "https://letsq.xyz",
+  "homepage": "https://letsq.xyz/strava_app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
