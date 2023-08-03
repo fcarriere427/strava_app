@@ -23,11 +23,11 @@ root.render(
       <Footer />
     </Router>
     <a
-      href="/strava_old_app"
+      href="/strava_old_app/strava_report.html"
       style={{color: "grey"}}
       className="text-center"
     >
-      <i>Old app</i>
+      <i>Old app monthly report</i>
     </a>
   </React.StrictMode>
 );
