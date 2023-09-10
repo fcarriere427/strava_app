@@ -19,6 +19,15 @@ class Header extends Component {
             </img>
           </NavbarBrand>
 
+          <NavbarBrand href="/">
+            <img className="Image-fluid" src={require("../assets/strava.png")}
+              alt="logo"
+              width="100"
+              height="30"
+            >
+            </img>
+          </NavbarBrand>
+
           <Nav className="ml-auto" pills>
             <NavItem>
               <NavLink
