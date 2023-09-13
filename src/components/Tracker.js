@@ -7,7 +7,7 @@ import { UpdateBar } from './Tracker/UpdateBar'
 
 const axios = require('axios').default;
 
-const init_target = 1095;
+const init_target = 1200;
 
 class Tracker extends Component {
   constructor(props){
