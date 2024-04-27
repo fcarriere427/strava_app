@@ -14,9 +14,9 @@ root.render(
       <Header name="Florian"/>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/*
         <Route path="/tracker" element={<Tracker />} />
-        {
-        /* <Route path="/list" element={<List />} />
+        <Route path="/list" element={<List />} />
         <Route path="/reports" element={<Reports />} />
         <Route exact path="/activity/:id" element={<Activity />} />
          */}
