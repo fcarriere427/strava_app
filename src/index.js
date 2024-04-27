@@ -14,13 +14,11 @@ root.render(
       <Header name="Florian"/>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/*
         <Route path="/tracker" element={<Tracker />} />
         <Route path="/list" element={<List />} />
         <Route path="/reports" element={<Reports />} />
         <Route exact path="/activity/:id" element={<Activity />} />
-         */}
-         <Route path="/strava_old_app/strava_report.html" />
+        <Route path="/strava_old_app/strava_report.html" />
       </Routes>
       <Footer />
     </Router>
