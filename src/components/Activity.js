@@ -3,7 +3,9 @@ import { Container, Row, Col } from 'reactstrap'
 import { useParams } from "react-router-dom"
 import { strTime, strTimeElapsed, strDate, strSpeed, strSpeedMax } from "./functions"
 import { Map } from "./Activity/Map";
-const axios = require('axios').default;
+import axios from 'axios';
+//OLD = const axios = require('axios').default;
+
 export default function Activity() {
   const [activity, setActivity] = useState("");
   const { id } = useParams();

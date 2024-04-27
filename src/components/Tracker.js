@@ -5,7 +5,8 @@ import { StatsBar } from './Tracker/StatsBar'
 import { TargetBlock } from './Tracker/TargetBlock'
 import { UpdateBar } from './Tracker/UpdateBar'
 
-const axios = require('axios').default;
+import axios from 'axios';
+//OLD = const axios = require('axios').default;
 
 const init_target = 1200;
 

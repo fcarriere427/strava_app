@@ -3,7 +3,8 @@ import { Container, Row } from 'reactstrap'
 import { ActivitySummary } from './List/ActivitySummary'
 import { SelectYear } from './List/SelectYear'
 
-const axios = require('axios').default;
+import axios from 'axios';
+//OLD = const axios = require('axios').default;
 
 class List extends Component {
   constructor(props){
