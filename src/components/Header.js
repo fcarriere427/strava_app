@@ -52,9 +52,9 @@ class Header extends Component {
                 >
                 Reports
               </NavLink>
-            </NavItem> }
+            </NavItem>
             
-            { <NavbarText>
+            <NavbarText>
               {this.props.name}
               </NavbarText>
               
