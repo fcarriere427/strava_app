@@ -54,9 +54,9 @@ class Header extends Component {
               </NavLink>
             </NavItem>
             
-            <NavbarText>
+           {/*  <NavbarText>
               {this.props.name}
-              </NavbarText>
+              </NavbarText> */}
               
           </Nav>
 
