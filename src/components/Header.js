@@ -45,7 +45,7 @@ class Header extends Component {
                 List
               </NavLink>
             </NavItem>
-            {/* <NavItem>
+            <NavItem>
               <NavLink
                 to ="/old_app/strava_report.html"
                 tag={RRNavLink} activeclassname="active">
@@ -53,11 +53,11 @@ class Header extends Component {
                 Reports
               </NavLink>
             </NavItem> }
-             */}
+            
             { <NavbarText>
               {this.props.name}
               </NavbarText>
-
+              
           </Nav>
 
         </Navbar>
