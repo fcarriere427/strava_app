@@ -1,3 +1,11 @@
+#### TO DO Florian ####
+- créer la page Report, sur le modèle de l'ancienne appli
+    * 
+- depuis la page List, ouvrir une Activité en affichant les infos + la map
+    * xxx
+#### fin to to ########
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
