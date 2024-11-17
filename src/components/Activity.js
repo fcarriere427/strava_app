@@ -18,7 +18,7 @@ export default function Activity() {
   // }, []);
 
   const getActivity = (id) => {
-    let url = 'https://strava.letsq.xyz/api/strava/activity?id=' + id;
+    let url = '/api/strava/activity?id=' + id;
     axios.get(url)
     .then(
       (response) => { setActivity(response.data) },
