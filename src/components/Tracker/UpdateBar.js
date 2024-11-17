@@ -15,7 +15,7 @@ class UpdateBar extends Component {
 
   componentDidMount(){
     // Récupération de la date de la dernière activité (format lisible, en local time)
-    let url = 'https://letsq.xyz/api/strava/last_activity_date';
+    let url = 'https://strava.letsq.xyz/api/strava/last_activity_date';
     axios.get(url)
     .then(
       (response) => {
@@ -31,7 +31,7 @@ class UpdateBar extends Component {
   // Actions pour les boutons "update" & "reload"
   updateActivities() {
     console.log("on va lancer updateActivities");
-    let url = 'https://letsq.xyz/api/strava/update';
+    let url = 'https://strava.letsq.xyz/api/strava/update';
     this.setState({ message : "fetching activities..." });
     axios.get(url)
     .then(
@@ -48,7 +48,7 @@ class UpdateBar extends Component {
 
   reloadActivities() {
     console.log("on va lancer reloadActivities, c'est long !!!")
-    let url = 'https://letsq.xyz/api/strava/reload';
+    let url = 'https://strava.letsq.xyz/api/strava/reload';
     this.setState({ message : "fetching activities..." });
     axios.get(url)
     .then(

@@ -34,7 +34,7 @@ class List extends Component {
 
   // Récupération des activités pour l'année donnée
   getActivities(year) {
-    let url = 'https://letsq.xyz/api/strava/activities_list?year=' + year;
+    let url = 'https://strava.letsq.xyz/api/strava/activities_list?year=' + year;
     axios.get(url)
     .then(
       (response) => { this.setState({ activitiesList: response.data }) },
